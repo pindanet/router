@@ -1,0 +1,219 @@
+HP Pavilion Elite HPE (procedure getest op VMWare virtuele computers
+====================================================================
+
+VMware Player in vmx configuratiebestand:
+  firmware = "efi"
+
+Schijfbeheer
+============
+/dev/sda1	300 GB	Ext4	/var/backup
+/dev/sda2	4 GB	swap	
+/dev/sda3	395 GB	Ext4	/
+
+/dev/sdb1	699 GB	Ext4	/usr/home/Documents
+
+OpenSuSE Leap 42.1
+==================
+Opstarten met installatie x86_64 netwerk USB
+Esc
+F2: Nederlands
+F2: Toetsenbord > Belgian
+F3: Tekstmodus
+Installatie
+Welkom
+  Language: Dutch - Nederlands
+  Toetsenbordindeling: Belgish > Volgende > OK
+Installatie-opties > Volgende
+Aanvullende Partitioner...
+	Apparaten opnieuw scannen
+	Harde schijven > sda > sda2 > Bewerken
+		Formatteer de partitie.
+		Swap
+		Aankoppelpunt: swap > Voltooien
+	Harde schijven > sda > sda3 > Bewerken
+		Formatteer de partitie.
+		Ext4
+		Aankoppelpunt: / > Voltooien
+	> Accepteren > Volgende
+Tijdzone:
+  Hardwareklok instellen op UTC inschakelen
+  Tijdzone: België
+  Andere instellingen...
+    Met NTP-server synchroniseren
+    Adres van de NTP-server: be.pool.ntp.org > Accepteren > Volgende
+Desktopselectie: Overige > Minimale serverselectie (tekstmodus) > Volgende
+Nieuwe gebruiker aanmaken
+	SNT Beheerder
+	sntbeheerder
+	snt+4567
+	snt+4567
+	Volgende
+Installatie instellingen:
+	Opstarten > Bootloader: Installeer geen enkele bootloader > Doorgaan > OK
+	Firewall inshakelen, SSH-poort openen en SSH-service inschakelen
+	Installeren > Installeren
+Computer laten herstarten zonder installatie USB
+Aanmelden als root
+zypper up
+shutdown -r now
+
+Opstarten met SystemRescueCD
+  mount /dev/sda1 /mnt/backup/
+  vanaf CD/USB:
+    grub2-install --root-directory=/mnt/backup /dev/sda
+  vanaf geïnstalleerd systeem:
+    mount /livemnt/boot -o rw,remount
+    grub2-install --root-directory=/livemnt/boot /dev/sda
+  mkdir /mnt/backup/sysrcd
+  cp /livemnt/boot/{sysrcd.dat,sysrcd.md5} /mnt/backup/sysrcd/
+  vanaf CD/USB:
+    cp /livemnt/boot/isolinux/{initram.igz,rescue64} /mnt/backup/sysrcd/
+    wget -O /mnt/backup/boot/grub/themes/starfield/starfield.png http://users.snt.be/dany.p/public_html/installatie/snt.png
+  vanaf geïnstalleerd systeem:
+    cp /livemnt/boot/syslinux/{initram.igz,rescue64} /mnt/backup/sysrcd/
+    mount /livemnt/boot -o rw,remount
+    wget -O /livemnt/boot/boot/grub/themes/starfield/starfield.png http://users.snt.be/dany.p/public_html/installatie/snt.png
+  wget -P /mnt/backup/grub/locale/ http://users.snt.be/dany.p/public_html/installatie/nl.mo
+  wget -P /mnt/backup/boot/grub/ http://users.snt.be/dany.p/public_html/installatie/bios/grub.cfg
+  joe /mnt/backup/boot/grub/grub.cfg
+# Global options
+set timeout=8
+set default=0
+set fallback=1
+set pager=1
+
+# Display settings
+if loadfont /boot/grub/fonts/unicode.pf2 ; then
+        set gfxmode=auto
+        insmod all_video
+        insmod gfxterm
+        insmod videotest
+        insmod videoinfo
+        terminal_output gfxterm
+        insmod gfxmenu
+        insmod png
+        set theme=/boot/grub/themes/starfield/theme.txt
+        export theme
+        set locale_dir=/boot/grub/locale
+        set lang=nl
+        insmod gettext
+fi
+menuentry "Router starten" {
+        set root='(hd0,msdos3)'
+        linux /boot/vmlinuz root=/dev/sda3 resume=/dev/sda2 splash=silent quiet showopts
+        initrd  /boot/initrd
+}
+menuentry "Router terugzetten" {
+        set gfxpayload=keep
+        set root='(hd0,msdos1)'
+        linux   /sysrcd/rescue64 setkmap=be subdir=sysrcd restorerouter
+        initrd  /sysrcd/initram.igz
+}
+
+  partclone.extfs --clone --source /dev/sda3 | gzip -c > /mnt/backup/child.linux.partclone.gz
+
+  vanaf CD/USB:
+    joe /mnt/backup/autorun
+  vanaf geïnstalleerd systeem:
+    mount /livemnt/boot -o rw,remount
+    joe /livemnt/boot/autorun
+echo "Automatisch systeemherstel"                                                                                      
+echo "=========================="                                                                                      
+echo "(C) PindaNet.be, Brugge, Dany Pinoy, `date -r /livemnt/boot/autorun +'%d %B %Y'`"                                                                                                          
+echo                                                                                                                   
+echo "Dit is experimentele software.                                                                                 
+Het gebruik ervan is geheel voor eigen risico.                                                                                         
+PindaNet.be en openSUSE e.v. aanvaarden geen enkele aansprakelijkheid voor                                                              
+schade aan hard- en software, verloren gegane data of andere direct of                                                                  
+indirect door het gebruik van deze software ontstane schade.                                                                          
+In sommige landen kunnen de gebruikte software en andere componenten aan                                                                
+exportregelingen of patenten gebonden zijn.                                                                                           
+In deze landen mag deze software niet verspreid worden zoals dat normaal bij
+software onder de gpl-licentie gebruikelijk is.
+Als u het met deze condities niet eens bent, mag u deze software niet
+gebruiken."
+echo
+while true; do
+  echo
+  echo 'Typ een opdracht (restore, halt, reboot, terminal, backup): '
+  read keuze
+  case "$keuze" in
+    "restore")  mount /livemnt/boot -o rw,remount
+      echo
+      echo 'Welke backup terugzetten (child, parent, grandparent): '
+      read keuze
+      case "$keuze" in
+        "parent") zcat /livemnt/boot/parent.linux.partclone.gz | partclone.restore --output /dev/sda3;;
+        "grandparent") zcat /livemnt/boot/grandparent.linux.partclone.gz | partclone.restore --output /dev/sda3;;
+        *) zcat /livemnt/boot/child.linux.partclone.gz | partclone.restore --output /dev/sda3;;
+      esac;;
+    "halt")  echo "De computer wordt automatisch afgesloten."
+      echo "U hoeft enkel te wachten..............."
+      shutdown -h now
+      sleep 3000;;
+    "reboot")   echo "De computer wordt automatisch herstart."
+      echo "U hoeft enkel te wachten..............."
+      shutdown -r now
+      sleep 3000;;
+    "terminal") break;;
+    "backup") mount /livemnt/boot -o rw,remount
+      rm /livemnt/boot/grandparent.linux.partclone.gz
+      mv /livemnt/boot/parent.linux.partclone.gz /livemnt/boot/grandparent.linux.partclone.gz
+      mv /livemnt/boot/child.linux.partclone.gz /livemnt/boot/parent.linux.partclone.gz
+      partclone.extfs --clone --source /dev/sda3 | gzip -c > /livemnt/boot/child.linux.partclone.gz;;
+  esac
+done
+
+Router
+======
+Onderaan	82573E Gigabit Ethernet Controller	eth0		External WAN	SNT: Onderaan 24
+Bovenaan	RTL-8169 Gigabit Ethernet		eth1		Internal LAN	SNT: Bovenaan 21
+Wireless						wlan0
+
+su
+route > Gateway: 192.168.1.1
+cat /etc/resolv.conf > Nameserver: 192.168.1.1
+
+zypper up
+shutdown -r now
+
+wget http://users.snt.be/dany.p/public_html/thuisnetwerken/router.setup.sh
+sh router.setup.sh router
+sh router.setup.sh services
+
+WinPE aanmaken met Windows 10 ADK
+---------------------------------
+Plak in de opdrachtprompt met rechtermuisklik
+Windows 10 ADK downloaden en installeren
+Start > Deployment and Imaging Tools Environment Als administrator starten
+copype.cmd amd64 c:\WinPE_amd64
+
+# Als administrator
+Dism /mount-image /imagefile:C:\winpe_amd64\media\sources\boot.wim /index:1 /mountdir:C:\winpe_amd64\mount
+REG LOAD HKLM\WINFE2 C:\winpe_amd64\mount\Windows\System32\config\DEFAULT
+REG DELETE "HKLM\WINFE2\Keyboard Layout\Preload" /f
+REG ADD "HKLM\WINFE2\Keyboard Layout\Preload" /v 1 /t REG_MULTI_SZ /D "0001080c" /f
+REG UNLOAD HKLM\WINFE2
+
+# toevoegen met notepad
+notepad C:\WinPE_amd64\mount\Windows\System32\startnet.cmd
+wpeinit
+:TEST
+ping -n 1 router | find "TTL=" >nul
+if errorlevel 1 (
+    goto RETRY
+) else (
+    goto DOSTUFF
+)
+
+:RETRY
+ping 127.0.0.1 -n 10>nul REM waits given amount of time, set to 10 seconds
+goto TEST
+
+:DOSTUFF
+net use s: \\router\sntbeheerder snt+4567 /user:sntbeheerder
+s:
+
+Dism /unmount-image /mountdir:C:\winpe_amd64\mount\ /commit
+# terug in Deployment and imaging Tools Environment
+MakeWinPEMedia /ISO C:\WinPE_amd64 C:\WinPE_amd64\WinPE_amd64.iso
