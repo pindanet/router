@@ -37,6 +37,7 @@ if [ -d /sys/firmware/efi ]; then
         exit
     fi
 else
+# de BIOS versie wordt niet langer onderhouden
 	echo BIOS, dus msdos partitionering
 	start=`parted /dev/sda print | tail -2 | head -1 | awk '{ print $3; }'`
 	parted /dev/sda mkpart primary ext4 $start 100%
