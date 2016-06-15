@@ -1,8 +1,5 @@
 ToDo
 ====
-Geavanceerde opties voor Windows Update
-  Kiezen op welke manier updates worden geleverd
-    Updates van meerdere locaties INSCHAKELEN
 
 Back-upsysteem St Andries
 =========================
