@@ -1,0 +1,204 @@
+ToDo
+====
+Geavanceerde opties voor Windows Update
+  Kiezen op welke manier updates worden geleverd
+    Updates van meerdere locaties INSCHAKELEN
+
+Back-upsysteem St Andries
+=========================
+Start de computer
+Als je 20 seconden wacht start Windows 10 automatisch op.
+Selecteer binnen de 20 seconden met de pijltoetsen op het toetsenbord de optie Windows 10 terugzetten en druk Return
+  De back-up met Windows 10 en de extra geïnstalleerde software wordt automatisch teruggezet
+Selecteer binnen de 20 seconden met de pijltoetsen op het toetsenbord de optie SystemRescueCd (64bit) en druk Return
+  Na een tijdje moet je een Backupwachtwoord ingeven
+  Je moet het wachtwoord blind intypen, er verschijnt tijdens het typen dus niets op het scherm
+  Een overzicht van de mogelijke wachtwoorden en hun functies:
+    sntlcvo: maakt een gewone back-up (bijvoorbeeld na het installeren van extra software)
+    herstel: Windows 10 wordt teruggezet naar een minimale basis, dus zonder geïnstalleerde software (fabrieksinstellingen)
+    parent: vorige back-up wordt teruggezet (te gebruiken als de huidige back-up beschadigd is en dus niet werkt)
+    basis: maakt een nieuwe minimale basis back-up (wordt afgeraden en is op eigen risico)
+    sysrec: Kom je in de Linux omgeving
+    ander wachtwoord: wordt de computer na een melding automatisch uitgeschakeld
+Bij een foutmelding:
+  herstart (reboot) met de opdracht
+    shutdown -r now
+  of sluit af (halt) met de opdracht
+    shutdown -h now
+  telkens afsluiten met Return
+    
+Ik (Dany Pinoy) heb een minimale Windows 10 back-up gemaakt.
+
+Ik (Dany Pinoy) lever de computers af met een gewone back-up waarin de printerconfiguratie en D-schijf deling is opgenomen.
+    Deling met gebruikerswachtwoord snt+456
+
+Installatieprocedure HP EliteDesk 800 G1 SFF St Andries
+=======================================================
+Esc > Computer Setup (F10)
+Security > System Security
+  Virtualization Technology (VTx) Enabled
+  Virtualization Technology Directed I/O (VTd) Enabled
+  F10=Accept
+Security > Secure Boot Configuration
+  Legacy Support Disabled OK
+  F10-Accept
+File > Save Changes and Exit > Yes
+
+Partitioneren
+=============
+Op router voor de les Thuisnetwerken
+  joe /etc/dnsmask
+    bootx64.efi inschakelen
+    ipxe.efi uitschakelen
+  systemctl restart dnsmask.service
+
+Esc > Network Boot (F12)
+  IP4 Intel(R) Ethernet Connection I217-LM
+
+  part.sh wordt van internet gehaald
+  sh part.sh part
+  shutdown -r now
+
+sda1	500 MB	ntfs    hidden, diag            Basic data partition
+sda2	105 MB	fat32	EFI system partition
+sda3	17 MB		Microsoft reserved partition
+sda4    127 GB  ntfs    C:
+
+sdb1	10%	ext4	SystemRescueCD	(vrijmaken na Windows installatie)
+sdb2	90%	ntfs	D:Werkschijf	
+
+Windows 10 x64 Pro St Andries
+=============================
+Op router voor de les Thuisnetwerken
+  joe /etc/dnsmask
+    bootx64.efi uitschakelen
+    ipxe.efi inschakelen
+  systemctl restart dnsmask.service
+  sh router.setup.sh windows
+
+Esc > Network Boot (F12)
+  IP4 Intel(R) Ethernet Connection I217-LM
+
+windows\setup.exe
+
+Windows Setup
+  Te installeren taal: Nederlands (Nederland)
+  Indeling voor tijd en valuta: Nederlands (België)
+  Toetsenbord of invoermethode: Belgisch (punt)
+  Volgende
+  
+  Nu installeren
+  
+  Productcode: Originele Windows 7 Pro OA Productcode gebruikt
+  
+  Ik ga akkoord met de licentievoorwaarden > Volgende
+  
+  Aangepast: alleen Windows installeren (geavanceerd)
+  
+Partitionering
+  Niet-toegewezen ruimte van station 0
+    Volgende
+
+Expressinstellingen gebruiken
+
+Ik ben de eigenaar ervan > Volgende
+
+Bewijzen dat jij het bent
+  Deze stap overslaan
+					      
+Een account maken voor deze pc
+  Wie gaat deze pc gebruiken? SNT Cursist
+  snt+456
+  snt+456
+  SNT
+  Volgende
+
+Op router voor de les Thuisnetwerken
+  joe /etc/dnsmask
+    bootx64.efi inschakelen
+    ipxe.efi uitschakelen
+  systemctl restart dnsmask.service
+
+Computer herstarten
+Esc > Network Boot (F12) > IP4 Intel(R) Ethernet Connection I217-LM
+  part.sh wordt van internet gehaald
+  end of autorun scripts, press <Enter> to continue
+  sh part.sh bootmgr
+  shutdown -r now
+Bootmanager > SystemRescueCD starten
+  Backupwachtwoord: basis (blind typen en eindigen met Return)
+  Druk [Return] om de computer te herstarten...
+
+Windows + R
+  netplwiz > OK
+  Gebruikers moeten een gebruikersnaam en wachtwoord opgeven ... UITschakelen > OK
+  snt+456
+  snt+456
+  
+Energiebeheerschema bewerken: 
+  Het beeldscherm uitschakelen na: Nooit
+  De computer in slaapstand zetten: Nooit > Wijzigingen opslaan
+
+Naar updates zoeken > Wachten tot alle updates gedownload en geïnstalleerd zijn.
+  Nu opnieuw opstarten
+Naar updates zoeken > Nu installeren > Verschillende malen Opnieuw proberen
+  Nu opnieuw opstarten
+
+Systeem > Instellingen wijzigen > Wijzigen... > Computernaam: PCxx > OK > OK > Sluiten > Nu opnieuw opstarten
+
+Energiebeheer > Het gedrag van de aan/uit-knoppen bepalen
+  Instellingen wijzigen die momenteel nie beschikbaar zijn
+  Actie als ik op de aan/uit-knop druk: Afsluiten
+  Snel opstarten uitschakelen > Wijzigingen opslaan (noodzakelijk voor het maken en terugzetten van back-ups, NTFS afsluiten)
+
+HP Support Assistant installeren vanaf de router
+HP Support Assistant opstarten
+  Aanbevolen opties INschakelen > Volgende > OK
+  Controleren op updates en berichten
+  Updates > Aanvinken > Downloaden en installeren
+  Nu opnieuw opstarten > Sluiten
+HP Support Assistant opstarten
+  Berichten
+    Alle berichten verwijderen > Sluiten
+
+Computer herstarten
+Bootmanager > SystemRescueCD starten
+  Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
+  Druk [Return] om de computer te herstarten...
+
+Computer in het netwerk van de Triangel herstarten naar Windows 10
+
+Opdrachtprompt (administrator) > Ja > format D: /fs:exFAT /Q
+  Current volume label: Werkschijf
+  Proceed with Format (Y/N)? Y
+  Volume label? Werkschijf
+  
+Werkschijf (D:) > Eigenschappen > Delen > Geavanceerd delen... > Deze map delen, Machtigingen > Iedereen Volledig beheer Toestaan > OK > OK > Sluiten.
+Instellingen voor geavanceerd delen beheren > Alle netwerken > Met wachtwoord beveiligd delen uitschakelen
+  Wijzigingen opslaan
+
+Apparaten en printers > Een printer toevoegen
+  De printer die ik wil staat niet in de lijst
+  Een printer met behulp van een TCP/IP-adres of hostnaam toevoegen
+  Hostnaam of IP-adres: 10.10.7.220 > Volgende
+  Windows updates
+  Kyocera FS-1300D
+  Deze printer niet delen
+
+Netwerken
+  Ja de pc moet door andere pc's en apparaten gevonden worden
+
+Computer herstarten
+
+Bootmanager > SystemRescueCD starten
+  Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
+  Druk [Return] om de computer te herstarten...
+
+Windows 10 VMWare
+=================
+DVD Shrink 3.2, ShareX, Office 365, resolutie: 1280 x 720 (Youtube filmformaat)
+
+Back-upsysteem St Andries aanpassen
+===================================
+mount /dev/sda4 /livemnt/boot -o rw,remount
+joe /livemnt/boot/autorun
