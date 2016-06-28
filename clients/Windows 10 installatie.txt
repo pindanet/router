@@ -41,6 +41,9 @@ Security > Secure Boot Configuration
   F10-Accept
 File > Save Changes and Exit > Yes
 
+VMware Player in vmx configuratiebestand:
+  firmware = "efi"
+
 Partitioneren
 =============
 Op router voor de les Thuisnetwerken
@@ -126,11 +129,14 @@ Bootmanager > SystemRescueCD starten
   Backupwachtwoord: basis (blind typen en eindigen met Return)
   De computer sluit automatisch af na het voltooien van de back-up
 
+Computer starten
 Windows + R
   netplwiz > OK
   Gebruikers moeten een gebruikersnaam en wachtwoord opgeven ... UITschakelen > OK
   snt+456
   snt+456
+
+(VMware Tools installeren)
   
 Energiebeheerschema bewerken: 
   Het beeldscherm uitschakelen na: Nooit
@@ -193,9 +199,6 @@ Bootmanager > SystemRescueCD starten
 
 Windows 10 VMWare
 =================
-VMware Player in vmx configuratiebestand:
-  firmware = "efi"
-
 DVD Shrink 3.2, ShareX, Office 365, resolutie: 1280 x 720 (Youtube filmformaat)
 
 Back-upsysteem St Andries aanpassen
