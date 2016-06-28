@@ -124,7 +124,7 @@ Esc > Network Boot (F12) > IP4 Intel(R) Ethernet Connection I217-LM
   shutdown -r now
 Bootmanager > SystemRescueCD starten
   Backupwachtwoord: basis (blind typen en eindigen met Return)
-  Druk [Return] om de computer te herstarten...
+  De computer sluit automatisch af na het voltooien van de back-up
 
 Windows + R
   netplwiz > OK
@@ -161,7 +161,7 @@ HP Support Assistant opstarten
 Computer herstarten
 Bootmanager > SystemRescueCD starten
   Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
-  Druk [Return] om de computer te herstarten...
+  De computer sluit automatisch af na het voltooien van de back-up
 
 Computer in het netwerk van de Triangel herstarten naar Windows 10
 
@@ -189,10 +189,13 @@ Computer herstarten
 
 Bootmanager > SystemRescueCD starten
   Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
-  Druk [Return] om de computer te herstarten...
+  De computer sluit automatisch af na het voltooien van de back-up
 
 Windows 10 VMWare
 =================
+VMware Player in vmx configuratiebestand:
+  firmware = "efi"
+
 DVD Shrink 3.2, ShareX, Office 365, resolutie: 1280 x 720 (Youtube filmformaat)
 
 Back-upsysteem St Andries aanpassen
