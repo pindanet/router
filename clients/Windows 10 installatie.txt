@@ -177,7 +177,9 @@ Computer in het netwerk van de Triangel herstarten naar Windows 10
 Partities op harde schijf maken en formatteren
 	Cd-rom-station 0 > Snelmenu > Stationsletter en paden wijzigen... > Wijzigen > E > OK
 	Schijf 1, Part 2 > Snelmenu > Verwijderen > Ja
-	Schijf 1, Part 2 > Snelmenu > Nieuw eenvoudig volume... > Volgende > Volgende > D > Volgende
+	Schijf 1, Part 2 > Snelmenu > Nieuw eenvoudig volume... > Volgende > Volgende
+		Deze stationsletter toewijzen: D > Volgende
+		Bestandssysteem: exFAT
 		Volumenaam: Werkschijf > Volgende > Voltooien
 Opdrachtprompt (administrator) > Ja > format D: /fs:exFAT /Q
   Current volume label: Werkschijf
