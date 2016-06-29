@@ -155,7 +155,7 @@ Naar updates zoeken > Nu installeren > Verschillende malen Opnieuw proberen
   
 (HiDPI: Beeldscherminstellingen > De grootte van tekst, apps en andere items wijzigen: 150%)
 
-Systeeminstellingen > Naam van de pc wijzigen: PCxx > Volgende > Nu opnieuw opstarten
+Informatie over uw pc > Naam van pc wijzigen: PCxx > Volgende > Nu opnieuw opstarten
 
 HP Support Assistant installeren vanaf de router
 HP Support Assistant opstarten
