@@ -96,7 +96,6 @@ Windows Setup
   Aangepast: alleen Windows installeren (geavanceerd)
   
 Partitionering
-  Schijf 1, Part 2: NTFS formatteren en toewijzen aan D:
   Niet-toegewezen ruimte van station 0
     Volgende
 
