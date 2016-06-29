@@ -142,6 +142,12 @@ Energiebeheerschema bewerken:
   Het beeldscherm uitschakelen na: Nooit
   De computer in slaapstand zetten: Nooit > Wijzigingen opslaan
 
+Energiebeheer > Het gedrag van de aan/uit-knoppen bepalen
+  Instellingen wijzigen die momenteel niet beschikbaar zijn
+  Actie als ik op de aan/uit-knop druk: Afsluiten
+  Wachtwoordbeveiliging tijdens het uit slaapstand komen: Geen wachtwoord vereisen
+  Snel opstarten uitschakelen > Wijzigingen opslaan (noodzakelijk voor het maken en terugzetten van back-ups, NTFS afsluiten)
+
 Naar updates zoeken > Wachten tot alle updates gedownload en geïnstalleerd zijn.
   Nu opnieuw opstarten
 Naar updates zoeken > Nu installeren > Verschillende malen Opnieuw proberen
@@ -150,12 +156,6 @@ Naar updates zoeken > Nu installeren > Verschillende malen Opnieuw proberen
 (HiDPI: Beeldscherminstellingen > De grootte van tekst, apps en andere items wijzigen: 150%)
 
 Systeeminstellingen > Naam van de pc wijzigen: PCxx > Volgende > Nu opnieuw opstarten
-
-Energiebeheer > Het gedrag van de aan/uit-knoppen bepalen
-  Instellingen wijzigen die momenteel niet beschikbaar zijn
-  Actie als ik op de aan/uit-knop druk: Afsluiten
-  Wachtwoordbeveiliging tijdens het uit slaapstand komen: Geen wachtwoord vereisen
-  Snel opstarten uitschakelen > Wijzigingen opslaan (noodzakelijk voor het maken en terugzetten van back-ups, NTFS afsluiten)
 
 HP Support Assistant installeren vanaf de router
 HP Support Assistant opstarten
