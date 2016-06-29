@@ -209,7 +209,7 @@ Bootmanager > SystemRescueCD starten
 
 Windows 10 VMWare
 =================
-DVD Shrink 3.2, ShareX, Office 365, resolutie: 1280 x 720 (Youtube filmformaat)
+DVD Shrink 3.2, ShareX, Office 365, Wisa, resolutie: 1280 x 720 (Youtube filmformaat)
 
 Back-upsysteem St Andries aanpassen
 ===================================
