@@ -8,6 +8,8 @@ op linux systeem
     kopieer /mnt/isolinux/{initram.igz,rescue64} /var/backup/sysrcd/
     kopieer /mnt/{sysrcd.dat,sysrcd.md5} /var/backup/sysrcd/
   sudo umount /mnt/
+  via fish van linux systeem naar router
+    kopieer Documenten/Software/SNT/Windows.iso /usr/home/Documents/
 
 HP Pavilion Elite HPE (procedure getest op VMWare virtuele computers
 ====================================================================
