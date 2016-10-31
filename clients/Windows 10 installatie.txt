@@ -47,7 +47,7 @@ VMware Player in vmx configuratiebestand:
 Partitioneren
 =============
 Op router voor de les Thuisnetwerken
-  joe /etc/dnsmask
+  joe /etc/dnsmask.conf
     bootx64.efi inschakelen
     ipxe.efi uitschakelen
   systemctl restart dnsmask.service
@@ -70,7 +70,7 @@ sdb2	90%	ntfs	D:Werkschijf
 Windows 10 x64 Pro St Andries
 =============================
 Op router voor de les Thuisnetwerken
-  joe /etc/dnsmask
+  joe /etc/dnsmask.conf
     bootx64.efi uitschakelen
     ipxe.efi inschakelen
   systemctl restart dnsmask.service
