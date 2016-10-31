@@ -7,6 +7,8 @@ op linux systeem
   via fish van linux systeem naar router
     kopieer /mnt/isolinux/{initram.igz,rescue64} /var/backup/sysrcd/
     kopieer /mnt/{sysrcd.dat,sysrcd.md5} /var/backup/sysrcd/
+    kopieer /mnt/isolinux/{initram.igz,rescue64} /srv/www/htdocs/tftpboot/
+    kopieer /mnt/{sysrcd.dat,sysrcd.md5} /srv/www/htdocs/tftpboot/
   sudo umount /mnt/
   via fish van linux systeem naar router
     kopieer Documenten/Software/SNT/Windows.iso /usr/home/Documents/
