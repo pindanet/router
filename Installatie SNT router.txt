@@ -10,6 +10,7 @@ op linux systeem
   sudo umount /mnt/
   via fish van linux systeem naar router
     kopieer Documenten/Software/SNT/Windows.iso /usr/home/Documents/
+    kopieer Downloads/WinPE_amd64.iso /usr/home/Documents/
 
 HP Pavilion Elite HPE (procedure getest op VMWare virtuele computers
 ====================================================================
