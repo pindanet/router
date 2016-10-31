@@ -1,3 +1,7 @@
+ToDo
+====
+sudo zypper update
+
 HP Pavilion Elite HPE (procedure getest op VMWare virtuele computers
 ====================================================================
 
