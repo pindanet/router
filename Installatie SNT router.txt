@@ -1,6 +1,13 @@
-ToDo
-====
-sudo zypper update
+Update
+======
+op router via ssh
+  sudo zypper update
+op linux systeem
+  sudo mount Downloads/systemrescuecd-x86-4.9.0.iso /mnt/
+  via fish van linux systeem naar router
+    kopieer /mnt/isolinux/{initram.igz,rescue64} /var/backup/sysrcd/
+    kopieer /mnt/{sysrcd.dat,sysrcd.md5} /var/backup/sysrcd/
+
 
 HP Pavilion Elite HPE (procedure getest op VMWare virtuele computers
 ====================================================================
