@@ -7,6 +7,7 @@ op linux systeem
   via fish van linux systeem naar router
     kopieer /mnt/isolinux/{initram.igz,rescue64} /var/backup/sysrcd/
     kopieer /mnt/{sysrcd.dat,sysrcd.md5} /var/backup/sysrcd/
+  sudo umount /mnt/
 
 HP Pavilion Elite HPE (procedure getest op VMWare virtuele computers
 ====================================================================
