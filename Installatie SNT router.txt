@@ -1,7 +1,7 @@
 Update
 ======
-op router via ssh
-  sudo zypper update
+op router via ssh als root
+  zypper update
 op linux systeem
   sudo mount Downloads/systemrescuecd-x86-4.9.0.iso /mnt/
   via fish van linux systeem naar router
