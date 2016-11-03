@@ -211,8 +211,9 @@ EOF
   systemctl enable nfsserver.service
   systemctl start nfsserver.service
 
-  # Download bij het opstarten van SystemRescueCD amatisch een script
-  echo "wget -P /root/ users.snt.be/dany.p/public_html/installatie/part.sh" > /srv/www/htdocs/tftpboot/autorun
+  # Download bij het opstarten van SystemRescueCD automatisch een script
+#  echo "wget -P /root/ users.snt.be/dany.p/public_html/installatie/part.sh" > /srv/www/htdocs/tftpboot/autorun
+  echo "wget -P /root/ router/part.sh" > /srv/www/htdocs/tftpboot/autorun
   
   # SoftAP
   zypper --non-interactive install hostapd iw
