@@ -32,13 +32,17 @@ Ik (Dany Pinoy) lever de computers af met een gewone back-up waarin de printerco
 Installatieprocedure HP EliteDesk 800 G1 SFF St Andries
 =======================================================
 Esc > Computer Setup (F10)
+Bestand > Systeem-ROM flashen
+  vanaf USB-stick
 Security > System Security
   Virtualization Technology (VTx) Enabled
   Virtualization Technology Directed I/O (VTd) Enabled
   F10=Accept
-Security > Secure Boot Configuration
-  Legacy Support Disabled OK
-  F10-Accept
+Geavanceerd > Optie ROM startbeleid
+  PXE Opties ROM's Alleen UEFI
+  Opslag Opties ROM's Alleen UEFI
+  Video Opties ROM's Alleen UEFI
+  F10-Accepteer
 File > Save Changes and Exit > Yes
 
 VMware Player configuratie
