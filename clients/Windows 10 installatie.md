@@ -45,22 +45,25 @@ Deling terug zonder wachtwoord (vroeger: snt+456).
   * F10-Accepteer
 5. File > Save Changes and Exit > Yes
 
-VMware Player configuratie
-==========================
-Maak een Virtuele computer met een NAT en een Bridged interface.
-Start de virtuele computer NIET op.
-Sluit VMware af.
-Pas .vmx bestand als volgt aan:
-  ethernet0.connectionType = "nat"
+##VMware Player configuratie
+1. Maak een Virtuele computer met een NAT en een Bridged interface.
+2. Start de virtuele computer NIET op.
+3. Sluit VMware af.
+4. Pas .vmx bestand als volgt aan:
+```
+ethernet0.connectionType = "nat"
+```
 wordt
-  ethernet0.connectionType = "pvn"
-  ethernet0.pvnID = "52 dd bc d5 36 19 1b 6b-0f f1 fb 1c 4c ac 44 f7"
+```
+ethernet0.connectionType = "pvn"
+ethernet0.pvnID = "52 dd bc d5 36 19 1b 6b-0f f1 fb 1c 4c ac 44 f7"
 firmware = "efi"
-Start de virtuele computer
+```
+5. Start de virtuele computer
+
 Het pvnIP moet op beide virtuele computers hetzelfde zijn
 
-Partitioneren
-=============
+#Partitioneren
 Op router voor de les Thuisnetwerken
   joe /etc/dnsmask.conf
     bootx64.efi inschakelen
