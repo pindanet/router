@@ -31,19 +31,19 @@ Ik (Dany Pinoy) lever de computers af met een gewone back-up waarin de printerco
 Deling terug zonder wachtwoord (vroeger: snt+456).
 
 # Installatieprocedure HP EliteDesk 800 G1 SFF St Andries
-Esc > Computer Setup (F10)
-Bestand > Systeem-ROM flashen
+1. Esc > Computer Setup (F10)
+2. Bestand > Systeem-ROM flashen
   vanaf USB-stick
-Security > System Security
-  Virtualization Technology (VTx) Enabled
-  Virtualization Technology Directed I/O (VTd) Enabled
-  F10=Accept
-Geavanceerd > Optie ROM startbeleid
-  PXE Opties ROM's Alleen UEFI
-  Opslag Opties ROM's Alleen UEFI
-  Video Opties ROM's Alleen UEFI
-  F10-Accepteer
-File > Save Changes and Exit > Yes
+3. Security > System Security
+  * Virtualization Technology (VTx) Enabled
+  * Virtualization Technology Directed I/O (VTd) Enabled
+  * F10=Accept
+4. Geavanceerd > Optie ROM startbeleid
+  * PXE Opties ROM's Alleen UEFI
+  * Opslag Opties ROM's Alleen UEFI
+  * Video Opties ROM's Alleen UEFI
+  * F10-Accepteer
+5. File > Save Changes and Exit > Yes
 
 VMware Player configuratie
 ==========================
