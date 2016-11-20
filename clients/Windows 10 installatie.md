@@ -75,19 +75,19 @@ Het pvnIP moet op beide virtuele computers hetzelfde zijn
   * IP4 Intel(R) Ethernet Connection I217-LM
 
   * part.sh wordt van internet gehaald
-```
-sh part.sh part
-shutdown -r now
 
-sda1	500 MB	ntfs    hidden, diag            Basic data partition
-sda2	105 MB	fat32	EFI system partition
-sda3	17 MB		Microsoft reserved partition
-sda4    127 GB  ntfs    C:
+        sh part.sh part
+        shutdown -r now
 
-sdb	750 GB
-sdb1	10%	ext4	SystemRescueCD	(vrijmaken na Windows installatie)
-sdb2	90%	ntfs	D:Werkschijf	
-```
+        sda1	500 MB	ntfs    hidden, diag            Basic data partition
+        sda2	105 MB	fat32	EFI system partition
+        sda3	17 MB		Microsoft reserved partition
+        sda4    127 GB  ntfs    C:
+
+        sdb	750 GB
+        sdb1	10%	ext4	SystemRescueCD	(vrijmaken na Windows installatie)
+        sdb2	90%	ntfs	D:Werkschijf	
+
 #Windows 10 x64 Pro St Andries
 1. Op router voor de les Thuisnetwerken
 ```
