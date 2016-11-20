@@ -26,8 +26,9 @@ Bij een foutmelding:
     
 Ik (Dany Pinoy) heb een minimale Windows 10 back-up gemaakt.
 
-Ik (Dany Pinoy) lever de computers af met een gewone back-up waarin de printerconfiguratie en D-schijf deling is opgenomen.</br>
-&nbsp;&nbsp;Deling terug zonder wachtwoord (vroeger: snt+456)
+Ik (Dany Pinoy) lever de computers af met een gewone back-up waarin de printerconfiguratie en D-schijf deling is opgenomen.
+
+Deling terug zonder wachtwoord (vroeger: snt+456).
 
 # Installatieprocedure HP EliteDesk 800 G1 SFF St Andries
 Esc > Computer Setup (F10)
