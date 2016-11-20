@@ -1,11 +1,10 @@
 #ToDo
 #Back-upsysteem St Andries
-Start de computer
-
-1. Als je 20 seconden wacht start Windows 10 automatisch op.
-2. Selecteer binnen de 20 seconden met de pijltoetsen op het toetsenbord de optie Windows 10 terugzetten en druk Return</br>
+1. Start de computer
+2. Als je 20 seconden wacht start Windows 10 automatisch op.
+3. Selecteer binnen de 20 seconden met de pijltoetsen op het toetsenbord de optie Windows 10 terugzetten en druk Return</br>
 De back-up met Windows 10 en de extra geïnstalleerde software wordt automatisch teruggezet
-3. Selecteer binnen de 20 seconden met de pijltoetsen op het toetsenbord de optie SystemRescueCd (64bit) en druk Return</br>
+4. Selecteer binnen de 20 seconden met de pijltoetsen op het toetsenbord de optie SystemRescueCd (64bit) en druk Return</br>
   Na een tijdje moet je een Backupwachtwoord ingeven</br>
   Je moet het wachtwoord blind intypen, er verschijnt tijdens het typen dus niets op het scherm</br>
   Een overzicht van de mogelijke wachtwoorden en hun functies:
@@ -90,18 +89,16 @@ sdb2	90%	ntfs	D:Werkschijf
 ```
 #Windows 10 x64 Pro St Andries
 1. Op router voor de les Thuisnetwerken
-```
-joe /etc/dnsmask.conf
-  bootx64.efi uitschakelen
-  ipxe.efi inschakelen
-systemctl restart dnsmask.service
-sh router.setup.sh windows
-```
+
+        joe /etc/dnsmask.conf
+          bootx64.efi uitschakelen
+          ipxe.efi inschakelen
+        systemctl restart dnsmask.service
+        sh router.setup.sh windows
 2. Esc > Network Boot (F12)
   * IP4 Intel(R) Ethernet Connection I217-LM
-```
-windows\setup.exe
-```
+
+            windows\setup.exe
 3. Windows Setup
   * Te installeren taal: Nederlands (Nederland)
   * Indeling voor tijd en valuta: Nederlands (België)
@@ -125,20 +122,18 @@ windows\setup.exe
   * SNT
   * Volgende
 13. Op router voor de les Thuisnetwerken
-```
-joe /etc/dnsmask
-  bootx64.efi inschakelen
-  ipxe.efi uitschakelen
-systemctl restart dnsmask.service
-```
+
+        joe /etc/dnsmask
+          bootx64.efi inschakelen
+          ipxe.efi uitschakelen
+        systemctl restart dnsmask.service
 14. Computer herstarten
 15. Esc > Network Boot (F12) > IP4 Intel(R) Ethernet Connection I217-LM
   * part.sh wordt van internet gehaald
   * end of autorun scripts, press Enter to continue
-```
-sh part.sh bootmgr
-shutdown -r now
-```
+
+        sh part.sh bootmgr
+        shutdown -r now
 15. Bootmanager > SystemRescueCD starten
   * Backupwachtwoord: basis (blind typen en eindigen met Return)
   * De computer sluit automatisch af na het voltooien van de back-up
@@ -149,7 +144,7 @@ shutdown -r now
   * snt+456
   * snt+456
 
-(VMware Tools installeren)
+    (VMware Tools installeren)
   
 18. Energiebeheerschema bewerken: 
   * Het beeldscherm uitschakelen na: Nooit
@@ -164,7 +159,7 @@ shutdown -r now
 21. Naar updates zoeken > Nu installeren > Verschillende malen Opnieuw proberen
   * Nu opnieuw opstarten
   
-(HiDPI: Beeldscherminstellingen > De grootte van tekst, apps en andere items wijzigen: 150%)
+    (HiDPI: Beeldscherminstellingen > De grootte van tekst, apps en andere items wijzigen: 150%)
 
 22. Informatie over uw pc > Naam van pc wijzigen: PCxx > Volgende > Nu opnieuw opstarten
 
@@ -190,13 +185,13 @@ shutdown -r now
     * Bestandssysteem: exFAT
     * Volumenaam: Werkschijf > Volgende > Voltooien
 
-Opdrachtprompt (administrator) > Ja
-```
-format D: /fs:exFAT /Q
-Current volume label: Werkschijf
-Proceed with Format (Y/N)? Y
-Volume label? Werkschijf
-```  
+      Opdrachtprompt (administrator) > Ja
+
+            format D: /fs:exFAT /Q
+            Current volume label: Werkschijf
+            Proceed with Format (Y/N)? Y
+            Volume label? Werkschijf
+
 Werkschijf (D:) > Eigenschappen > Delen > Geavanceerd delen... > Deze map delen, Machtigingen > Iedereen Volledig beheer Toestaan > OK > OK > Sluiten.
 Instellingen voor geavanceerd delen beheren > Alle netwerken > Met wachtwoord beveiligd delen uitschakelen
   Wijzigingen opslaan
