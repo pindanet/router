@@ -65,12 +65,12 @@ Het pvnIP moet op beide virtuele computers hetzelfde zijn
 
 #Partitioneren
 1. Op router voor de les Thuisnetwerken
-```
-joe /etc/dnsmask.conf
-  bootx64.efi inschakelen
-  ipxe.efi uitschakelen
-systemctl restart dnsmask.service
-```
+
+       joe /etc/dnsmask.conf
+         bootx64.efi inschakelen
+         ipxe.efi uitschakelen
+       systemctl restart dnsmask.service
+
 2. Esc > Network Boot (F12)
   * IP4 Intel(R) Ethernet Connection I217-LM
 
