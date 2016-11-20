@@ -192,26 +192,22 @@ sdb2	90%	ntfs	D:Werkschijf
             Proceed with Format (Y/N)? Y
             Volume label? Werkschijf
 
-Werkschijf (D:) > Eigenschappen > Delen > Geavanceerd delen... > Deze map delen, Machtigingen > Iedereen Volledig beheer Toestaan > OK > OK > Sluiten.
-Instellingen voor geavanceerd delen beheren > Alle netwerken > Met wachtwoord beveiligd delen uitschakelen
-  Wijzigingen opslaan
-
-Apparaten en printers > Een printer toevoegen
-  De printer die ik wil staat niet in de lijst
-  Een printer met behulp van een TCP/IP-adres of hostnaam toevoegen
-  Hostnaam of IP-adres: 10.10.7.220 > Volgende
-  Windows updates
-  Kyocera FS-1300D
-  Deze printer niet delen
-
-Netwerken
-  Ja de pc moet door andere pc's en apparaten gevonden worden
-
-Computer herstarten
-
-Bootmanager > SystemRescueCD starten
-  Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
-  De computer sluit automatisch af na het voltooien van de back-up
+30. Werkschijf (D:) > Eigenschappen > Delen > Geavanceerd delen... > Deze map delen, Machtigingen > Iedereen Volledig beheer Toestaan > OK > OK > Sluiten.
+    * Instellingen voor geavanceerd delen beheren > Alle netwerken > Met wachtwoord beveiligd delen uitschakelen
+      * Wijzigingen opslaan
+31. Apparaten en printers > Een printer toevoegen
+  * De printer die ik wil staat niet in de lijst
+  * Een printer met behulp van een TCP/IP-adres of hostnaam toevoegen
+  * Hostnaam of IP-adres: 10.10.7.220 > Volgende
+  * Windows updates
+  * Kyocera FS-1300D
+  * Deze printer niet delen
+32. Netwerken
+  * Ja de pc moet door andere pc's en apparaten gevonden worden
+33. Computer herstarten
+34. Bootmanager > SystemRescueCD starten
+  * Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
+  * De computer sluit automatisch af na het voltooien van de back-up
 
 Windows 10 VMWare
 =================
