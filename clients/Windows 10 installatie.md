@@ -208,12 +208,9 @@ sdb2	90%	ntfs	D:Werkschijf
 34. Bootmanager > SystemRescueCD starten
   * Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
   * De computer sluit automatisch af na het voltooien van de back-up
-
-Windows 10 VMWare
-=================
+##Windows 10 VMWare
 DVD Shrink 3.2, ShareX, Office 365, Wisa, resolutie: 1280 x 720 (Youtube filmformaat)
+#Back-upsysteem St Andries aanpassen
 
-Back-upsysteem St Andries aanpassen
-===================================
-mount /dev/sda4 /livemnt/boot -o rw,remount
-joe /livemnt/boot/autorun
+    mount /dev/sda4 /livemnt/boot -o rw,remount
+    joe /livemnt/boot/autorun
