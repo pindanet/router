@@ -1,36 +1,35 @@
-ToDo
-====
-
-Back-upsysteem St Andries
-=========================
+#ToDo
+#Back-upsysteem St Andries
 Start de computer
-Als je 20 seconden wacht start Windows 10 automatisch op.
-Selecteer binnen de 20 seconden met de pijltoetsen op het toetsenbord de optie Windows 10 terugzetten en druk Return
-  De back-up met Windows 10 en de extra geïnstalleerde software wordt automatisch teruggezet
-Selecteer binnen de 20 seconden met de pijltoetsen op het toetsenbord de optie SystemRescueCd (64bit) en druk Return
-  Na een tijdje moet je een Backupwachtwoord ingeven
-  Je moet het wachtwoord blind intypen, er verschijnt tijdens het typen dus niets op het scherm
+
+1. Als je 20 seconden wacht start Windows 10 automatisch op.
+2. Selecteer binnen de 20 seconden met de pijltoetsen op het toetsenbord de optie Windows 10 terugzetten en druk Return</br>
+De back-up met Windows 10 en de extra geïnstalleerde software wordt automatisch teruggezet
+3. Selecteer binnen de 20 seconden met de pijltoetsen op het toetsenbord de optie SystemRescueCd (64bit) en druk Return</br>
+  Na een tijdje moet je een Backupwachtwoord ingeven</br>
+  Je moet het wachtwoord blind intypen, er verschijnt tijdens het typen dus niets op het scherm</br>
   Een overzicht van de mogelijke wachtwoorden en hun functies:
-    sntlcvo: maakt een gewone back-up (bijvoorbeeld na het installeren van extra software)
-    herstel: Windows 10 wordt teruggezet naar een minimale basis, dus zonder geïnstalleerde software (fabrieksinstellingen)
-    parent: vorige back-up wordt teruggezet (te gebruiken als de huidige back-up beschadigd is en dus niet werkt)
-    basis: maakt een nieuwe minimale basis back-up (wordt afgeraden en is op eigen risico)
-    sysrec: Kom je in de Linux omgeving
-    ander wachtwoord: wordt de computer na een melding automatisch uitgeschakeld
+    * sntlcvo: maakt een gewone back-up (bijvoorbeeld na het installeren van extra software)
+    * herstel: Windows 10 wordt teruggezet naar een minimale basis, dus zonder geïnstalleerde software (fabrieksinstellingen)
+    * parent: vorige back-up wordt teruggezet (te gebruiken als de huidige back-up beschadigd is en dus niet werkt)
+    * basis: maakt een nieuwe minimale basis back-up (wordt afgeraden en is op eigen risico)
+    * sysrec: Kom je in de Linux omgeving
+    * ander wachtwoord: wordt de computer na een melding automatisch uitgeschakeld
+
 Bij een foutmelding:
-  herstart (reboot) met de opdracht
-    shutdown -r now
-  of sluit af (halt) met de opdracht
-    shutdown -h now
+  * herstart (reboot) met de opdracht
+    `shutdown -r now`
+  * of sluit af (halt) met de opdracht
+    `shutdown -h now`
+
   telkens afsluiten met Return
     
 Ik (Dany Pinoy) heb een minimale Windows 10 back-up gemaakt.
 
-Ik (Dany Pinoy) lever de computers af met een gewone back-up waarin de printerconfiguratie en D-schijf deling is opgenomen.
-    Deling met gebruikerswachtwoord snt+456
+Ik (Dany Pinoy) lever de computers af met een gewone back-up waarin de printerconfiguratie en D-schijf deling is opgenomen.</br>
+&nbsp;&nbsp;Deling terug zonder wachtwoord (vroeger: snt+456)
 
-Installatieprocedure HP EliteDesk 800 G1 SFF St Andries
-=======================================================
+# Installatieprocedure HP EliteDesk 800 G1 SFF St Andries
 Esc > Computer Setup (F10)
 Bestand > Systeem-ROM flashen
   vanaf USB-stick
