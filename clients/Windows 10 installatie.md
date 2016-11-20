@@ -51,13 +51,13 @@ Deling terug zonder wachtwoord (vroeger: snt+456).
 3. Sluit VMware af.
 4. Pas .vmx bestand als volgt aan:
 
-    ethernet0.connectionType = "nat"
+        ethernet0.connectionType = "nat"
 
    wordt
 
-       ethernet0.connectionType = "pvn"
-       ethernet0.pvnID = "52 dd bc d5 36 19 1b 6b-0f f1 fb 1c 4c ac 44 f7"
-       firmware = "efi"
+        ethernet0.connectionType = "pvn"
+        ethernet0.pvnID = "52 dd bc d5 36 19 1b 6b-0f f1 fb 1c 4c ac 44 f7"
+        firmware = "efi"
 
 5. Start de virtuele computer
 
