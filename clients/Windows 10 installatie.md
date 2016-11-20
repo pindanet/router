@@ -45,7 +45,7 @@ Deling terug zonder wachtwoord (vroeger: snt+456).
   * F10-Accepteer
 5. File > Save Changes and Exit > Yes
 
-##VMware Player configuratie
+##VMware Player testconfiguratie
 1. Maak een Virtuele computer met een NAT en een Bridged interface.
 2. Start de virtuele computer NIET op.
 3. Sluit VMware af.
@@ -64,18 +64,20 @@ firmware = "efi"
 Het pvnIP moet op beide virtuele computers hetzelfde zijn
 
 #Partitioneren
-Op router voor de les Thuisnetwerken
-  joe /etc/dnsmask.conf
-    bootx64.efi inschakelen
-    ipxe.efi uitschakelen
-  systemctl restart dnsmask.service
+1. Op router voor de les Thuisnetwerken
+```
+joe /etc/dnsmask.conf
+  bootx64.efi inschakelen
+  ipxe.efi uitschakelen
+systemctl restart dnsmask.service
+```
+2. Esc > Network Boot (F12)
+  * IP4 Intel(R) Ethernet Connection I217-LM
 
-Esc > Network Boot (F12)
-  IP4 Intel(R) Ethernet Connection I217-LM
-
-  part.sh wordt van internet gehaald
-  sh part.sh part
-  shutdown -r now
+  * part.sh wordt van internet gehaald
+```
+sh part.sh part
+shutdown -r now
 
 sda1	500 MB	ntfs    hidden, diag            Basic data partition
 sda2	105 MB	fat32	EFI system partition
@@ -85,7 +87,7 @@ sda4    127 GB  ntfs    C:
 sdb	750 GB
 sdb1	10%	ext4	SystemRescueCD	(vrijmaken na Windows installatie)
 sdb2	90%	ntfs	D:Werkschijf	
-
+```
 Windows 10 x64 Pro St Andries
 =============================
 Op router voor de les Thuisnetwerken
