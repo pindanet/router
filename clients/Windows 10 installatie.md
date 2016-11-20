@@ -17,9 +17,9 @@ De back-up met Windows 10 en de extra geïnstalleerde software wordt automatisch
     * ander wachtwoord: wordt de computer na een melding automatisch uitgeschakeld
 
 Bij een foutmelding:
-  * herstart (reboot) met de opdracht
+* herstart (reboot) met de opdracht
     `shutdown -r now`
-  * of sluit af (halt) met de opdracht
+* of sluit af (halt) met de opdracht
     `shutdown -h now`
 
   telkens afsluiten met Return
@@ -50,15 +50,15 @@ Deling terug zonder wachtwoord (vroeger: snt+456).
 2. Start de virtuele computer NIET op.
 3. Sluit VMware af.
 4. Pas .vmx bestand als volgt aan:
-```
-ethernet0.connectionType = "nat"
-```
-wordt
-```
-ethernet0.connectionType = "pvn"
-ethernet0.pvnID = "52 dd bc d5 36 19 1b 6b-0f f1 fb 1c 4c ac 44 f7"
-firmware = "efi"
-```
+
+    ethernet0.connectionType = "nat"
+
+   wordt
+
+       ethernet0.connectionType = "pvn"
+       ethernet0.pvnID = "52 dd bc d5 36 19 1b 6b-0f f1 fb 1c 4c ac 44 f7"
+       firmware = "efi"
+
 5. Start de virtuele computer
 
 Het pvnIP moet op beide virtuele computers hetzelfde zijn
