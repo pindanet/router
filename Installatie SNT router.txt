@@ -23,10 +23,11 @@ VMware Player in vmx configuratiebestand:
 Schijfbeheer
 ============
 /dev/sda1	300 GB	Ext4	/var/backup
-/dev/sda2	4 GB	swap	
-/dev/sda3	395 GB	Ext4	/
+/dev/sda2	8 GB	swap	
+/dev/sda1	119 GB	Ext4	/
 
-/dev/sdb1	699 GB	Ext4	/usr/home/Documents
+/dev/sdb1	100 GB	Ext4	/var/backup
+/dev/sdb2	832 GB	Ext4	/usr/home/Documents
 
 OpenSuSE Leap 42.1
 ==================
@@ -74,7 +75,7 @@ zypper up
 shutdown -r now
 
 Opstarten met SystemRescueCD
-  mount /dev/sda1 /mnt/backup/
+  mount /dev/sdb1 /mnt/backup/
   vanaf CD/USB:
     grub2-install --root-directory=/mnt/backup /dev/sda
   vanaf geïnstalleerd systeem:
