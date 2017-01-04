@@ -198,7 +198,7 @@ sdb2	90%	ntfs	D:Werkschijf
 31. Apparaten en printers > Een printer toevoegen
   * De printer die ik wil staat niet in de lijst
   * Een printer met behulp van een TCP/IP-adres of hostnaam toevoegen
-  * Hostnaam of IP-adres: 10.10.7.220 > Volgende
+  * Hostnaam of IP-adres: printerpcklas (vroeger: 10.10.7.220, nu dynamisch via DHCP) > Volgende
   * Windows updates
   * Kyocera FS-1300D
   * Deze printer niet delen
