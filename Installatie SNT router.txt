@@ -119,8 +119,7 @@ menuentry "Router starten" {
         insmod part_gpt
         insmod gzio
         insmod part_gpt
-        insmod ext4
-        set root='(hd1,gpt3)'
+        set root='(hd0,gpt3)'
         echo 'Laden van Linux 4.4...'
         linuxefi /boot/vmlinuz root=/dev/sda3 ro resume=/dev/sda2 splash=silent quiet showopts 
         echo    'Laden van initiële RAM-schijf...'
