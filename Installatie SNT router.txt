@@ -86,11 +86,12 @@ Opstarten met SystemRescueCD vanaf USB
   mkdir /mnt/backup/sysrcd
   cp /livemnt/boot/{sysrcd.dat,sysrcd.md5} /mnt/backup/sysrcd/
   cp /livemnt/boot/syslinux/{initram.igz,rescue64} /mnt/backup/sysrcd/
-  wget -O /mnt/backup/grub/themes/starfield/starfield.png http://users.snt.be/dany.p/public_html/installatie/snt.png
   wget -P /mnt/backup/grub/locale/ http://users.snt.be/dany.p/public_html/installatie/nl.mo
-  wget -P /mnt/backup/grub/ http://users.snt.be/dany.p/public_html/installatie/grub.cfg
-  wget -P /mnt/backup/ http://users.snt.be/dany.p/public_html/installatie/autorun
   umount /mnt/custom
+  joe /mnt/backup/grub/themes/starfield/theme.txt
+    in sectie boot_menu
+      item_color = "#fff"
+      selected_item_color= "#fff"
   joe /mnt/backup/grub/grub.cfg
 # Global options
 set timeout=8
