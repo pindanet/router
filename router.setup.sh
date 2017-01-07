@@ -363,9 +363,9 @@ EOF
   #   1 logout
 
 # Webserver
-  zypper --non-interactive install apache2 apache2-mod_fcgid php5-bcmath php5-bz2 php5-calendar php5-ctype php5-curl php5-dom php5-ftp php5-gd php5-gettext php5-gmp php5-iconv php5-imap php5-ldap php5-mbstring php5-mcrypt php5-mysql php5-odbc php5-openssl php5-pcntl php5-pgsql php5-posix php5-shmop php5-snmp php5-soap php5-sockets php5-sqlite php5-sysvsem php5-tokenizer php5-wddx php5-xmlrpc php5-xsl php5-zlib php5-exif php5-fastcgi php5-pear php5-sysvmsg php5-sysvshm ImageMagick curl apache2-mod_php5
-  # activeer php5
-  a2enmod php5
+  zypper --non-interactive install apache2 apache2-mod_fcgid php7-bcmath php7-bz2 php7-calendar php7-ctype php7-curl php7-dom php7-ftp php7-gd php7-gettext php7-gmp php7-iconv php7-imap php7-ldap php7-mbstring php7-mcrypt php7-mysql php7-odbc php7-openssl php7-pcntl php7-pgsql php7-posix php7-shmop php7-snmp php7-soap php7-sockets php7-sqlite php7-sysvsem php7-tokenizer php7-wddx php7-xmlrpc php7-xsl php7-zlib php7-exif php7-fastcgi php7-pear php7-sysvmsg php7-sysvshm ImageMagick curl apache2-mod_php7
+  # activeer php7
+  a2enmod php7
   systemctl enable apache2.service
   systemctl start apache2.service
   yast2 firewall services add zone=EXT service=service:apache2
@@ -419,7 +419,7 @@ EOF
   # ToDo phpMyAdmin geavanceerde functies instellen
 
 # Webmail
-  zypper --non-interactive install php5-pear-Auth_SASL php5-pear-Net_SMTP php5-pear-Net_IDNA2 php5-pear-Mail_mimeDecode php5-fileinfo php5-intl
+  zypper --non-interactive install php7-pear-Auth_SASL php7-pear-Net_SMTP php7-pear-Net_IDNA2 php7-pear-Mail_mimeDecode php7-fileinfo php7-intl
   wget https://github.com/roundcube/roundcubemail/releases/download/1.2.3/roundcubemail-1.2.3-complete.tar.gz
   tar xfz roundcubemail-1.2.3-complete.tar.gz -C /srv/www/htdocs/
   rm roundcubemail-1.2.0-complete.tar.gz
@@ -499,13 +499,13 @@ EOF
   systemctl enable vsftpd
   yast2 firewall services add zone=EXT service=service:vsftpd
 
-# OwnCloud
-  zypper addrepo http://download.owncloud.org/download/repositories/stable/openSUSE_Leap_42.1/ce:stable.repo
+# NextCloud
+  zypper addrepo http://download.opensuse.org/repositories/server:/php:/applications/openSUSE_Leap_42.2/server:php:applications.repo
   zypper --gpg-auto-import-keys refresh
-  zypper --non-interactive install owncloud owncloud-files php5-fileinfo
+  zypper --non-interactive install nextcloud php7-fileinfo
 
-  # Surf naar router.pinda.snt/owncloud
-  curl --request POST "http://router.$domein/owncloud/index.php" --data-urlencode "install=true" --data-urlencode "adminlogin=root" --data-urlencode "adminpass=$wachtwoord" --data-urlencode "adminpass-clone=$wachtwoord" --data-urlencode "directory=/srv/www/htdocs/owncloud/data" --data-urlencode "dbtype=sqlite" --data-urlencode "dbuser=" --data-urlencode "dbpass=" --data-urlencode "dbpass-clone=" --data-urlencode "dbname=" --data-urlencode "dbhost=localhost"
+  # Surf naar router.pinda.snt/nextcloud
+  curl --request POST "http://router.$domein/nextcloud/index.php" --data-urlencode "install=true" --data-urlencode "adminlogin=root" --data-urlencode "adminpass=$wachtwoord" --data-urlencode "adminpass-clone=$wachtwoord" --data-urlencode "directory=/srv/www/htdocs/nextcloud/data" --data-urlencode "dbtype=sqlite" --data-urlencode "dbuser=" --data-urlencode "dbpass=" --data-urlencode "dbpass-clone=" --data-urlencode "dbname=" --data-urlencode "dbhost=localhost"
 
   # Laat het gebruik van ENV Variabelen in PHP cli toe
   sed -i.ori "s|^\(variables_order =\).*$|\1 \"EGPCS\"|" /etc/php5/cli/php.ini
