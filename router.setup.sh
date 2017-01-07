@@ -464,7 +464,7 @@ EOF
   wget --output-document=/home/sntbeheerder/Videos/kajimba.mp4 https://webdesign.pindanet.be/deel2/Linecraft/films/kajimba_-_snippets_640x368.mp4
   wget --directory-prefix=/home/sntbeheerder/Videos/ https://webdesign.pindanet.be/deel2/Linecraft/films/kajimba.jpg
 
-  cat <<EOF > /usr/lib/systemd/system/minidlna.service
+  cat <<EOF > /etc/systemd/system/minidlna.service
 [Unit]
 Description=MiniDLNA UPnP-A/V and DLNA media server
 After=network.target
