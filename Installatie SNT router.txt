@@ -128,7 +128,7 @@ menuentry "Router starten" {
 menuentry "SystemRescueCd (64bit)" {
         set gfxpayload=keep
         set root='(hd1,gpt1)'
-        linux   /sysrcd/rescue64 setkmap=be subdir=sysrcd restorerouter
+        linux   /sysrcd/rescue64 setkmap=be subdir=sysrcd
         initrd  /sysrcd/initram.igz
 }
 
@@ -139,6 +139,7 @@ menuentry "SystemRescueCd (64bit)" {
   vanaf geïnstalleerd systeem:
     mount /livemnt/boot -o rw,remount
     joe /livemnt/boot/autorun
+#!/bin/bash
 echo "Automatisch systeemherstel"                                                                                      
 echo "=========================="                                                                                      
 echo "(C) PindaNet.be, Brugge, Dany Pinoy, `date -r /livemnt/boot/autorun +'%d %B %Y'`"                                                                                                          
@@ -188,9 +189,9 @@ done
 
 Router
 ======
-Onderaan	82573E Gigabit Ethernet Controller	eth0		External WAN	SNT: Onderaan 24
-Bovenaan	RTL-8169 Gigabit Ethernet		eth1		Internal LAN	SNT: Bovenaan 21
-Wireless						wlan0
+Onboard 	Ethernet Connection I217-LM					eth0		External WAN
+PCIE x1 	RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller	eth1		Internal LAN
+Wireless									wlan0
 
 su
 route > Gateway: 192.168.1.1
