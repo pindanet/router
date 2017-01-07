@@ -508,9 +508,9 @@ EOF
   curl --request POST "http://router.$domein/nextcloud/index.php" --data-urlencode "install=true" --data-urlencode "adminlogin=root" --data-urlencode "adminpass=$wachtwoord" --data-urlencode "adminpass-clone=$wachtwoord" --data-urlencode "directory=/srv/www/htdocs/nextcloud/data" --data-urlencode "dbtype=sqlite" --data-urlencode "dbuser=" --data-urlencode "dbpass=" --data-urlencode "dbpass-clone=" --data-urlencode "dbname=" --data-urlencode "dbhost=localhost"
 
   # Laat het gebruik van ENV Variabelen in PHP cli toe
-  sed -i.ori "s|^\(variables_order =\).*$|\1 \"EGPCS\"|" /etc/php5/cli/php.ini
+  sed -i.ori "s|^\(variables_order =\).*$|\1 \"EGPCS\"|" /etc/php7/cli/php.ini
   for gebruiker in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30; do
-    sudo -u wwwrun sh -c "export OC_PASS=$wachtwoord; /srv/www/htdocs/owncloud/occ user:add --password-from-env pc$gebruiker"
+    sudo -u wwwrun sh -c "export OC_PASS=$wachtwoord; /srv/www/htdocs/nextcloud/occ user:add --password-from-env pc$gebruiker"
   done
   sudo -u wwwrun /srv/www/htdocs/owncloud/occ user:report
   sed -i -e "/installed/a\  'default_language' => 'nl'," /srv/www/htdocs/owncloud/config/config.php
