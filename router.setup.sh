@@ -420,10 +420,10 @@ EOF
 
 # Webmail
   zypper --non-interactive install php5-pear-Auth_SASL php5-pear-Net_SMTP php5-pear-Net_IDNA2 php5-pear-Mail_mimeDecode php5-fileinfo php5-intl
-  wget https://github.com/roundcube/roundcubemail/releases/download/1.2.0/roundcubemail-1.2.0-complete.tar.gz
-  tar xfz roundcubemail-1.2.0-complete.tar.gz -C /srv/www/htdocs/
+  wget https://github.com/roundcube/roundcubemail/releases/download/1.2.3/roundcubemail-1.2.3-complete.tar.gz
+  tar xfz roundcubemail-1.2.3-complete.tar.gz -C /srv/www/htdocs/
   rm roundcubemail-1.2.0-complete.tar.gz
-  mv /srv/www/htdocs/roundcubemail-1.2.0/ /srv/www/htdocs/webmail/
+  mv /srv/www/htdocs/roundcubemail-1.2.3/ /srv/www/htdocs/webmail/
   chown -R wwwrun /srv/www/htdocs/webmail/temp/
   chown -R wwwrun /srv/www/htdocs/webmail/logs/
 
