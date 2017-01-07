@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # router.setup.sh - script to setup and configure the openSUSE router
-# 2016-06 Dany Pinoy <pindanet.be>
+# 2017-01 Dany Pinoy <pindanet.be>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
