@@ -201,6 +201,6 @@ cat /etc/resolv.conf > Nameserver: 192.168.1.1
 zypper up
 shutdown -r now
 
-wget http://users.snt.be/dany.p/public_html/thuisnetwerken/router.setup.sh
+wget https://raw.githubusercontent.com/pindanet/router/master/router.setup.sh
 sh router.setup.sh router
 sh router.setup.sh services
