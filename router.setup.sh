@@ -373,7 +373,7 @@ EOF
   #   1 logout
 
 # MariaDB server
-  zypper --non-interactive install mariadb phpMyAdmin
+  zypper --non-interactive install mariadb
   systemctl enable mysql.service
   systemctl start mysql.service
   # mysqladmin -u root password "$wachtwoord"
