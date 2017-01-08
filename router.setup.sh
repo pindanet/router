@@ -308,11 +308,6 @@ EOF
   # echo "<?php phpinfo(); ?>" > /srv/www/htdocs/info.php
   # rm /srv/www/htdocs/info.php
 
-  # herstart noodzakelijk
-  shutdown -r now
-fi
-# Variabelen met routerinstellingen heruitvoeren
-if [ "$1" == "services" ]; then
 # Samba server
   zypper --non-interactive install samba
   echo -e '[SNTcursist]\n\tcomment = Cursist\n\tpath = /usr/home/Documents\n\tread only = yes\n\tpublic = yes\n\thide dot files = no\n' >> /etc/samba/smb.conf
@@ -332,6 +327,11 @@ if [ "$1" == "services" ]; then
 #  systemctl start nmb.service
 #  systemctl enable nmb.service
 
+  # herstart noodzakelijk
+  shutdown -r now
+fi
+# Variabelen met routerinstellingen heruitvoeren
+if [ "$1" == "services" ]; then
 # Gebruikers aanmaken
   for gebruiker in pc01 pc02 pc03 pc04 pc05 pc06 pc07 pc08 pc09 pc10 pc11 pc12 pc13 pc14 pc15 pc16 pc17 pc18 pc19 pc20 pc21 pc22 pc23 pc24 pc25 pc26 pc27 pc28 pc29 pc30; do
   useradd $gebruiker -p $wachtwoord -d /srv/www/htdocs/$gebruiker -s /bin/false;
