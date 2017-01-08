@@ -418,7 +418,7 @@ EOF
   # ToDo phpMyAdmin geavanceerde functies instellen
 
 # Webmail
-  zypper --non-interactive install php7-pear-Auth_SASL php7-pear-Net_SMTP php7-pear-Net_IDNA2 php7-pear-Mail_mimeDecode php7-fileinfo php7-intl
+  zypper --non-interactive install php7-pear php7-fileinfo php7-intl
   wget https://github.com/roundcube/roundcubemail/releases/download/1.2.3/roundcubemail-1.2.3-complete.tar.gz
   tar xfz roundcubemail-1.2.3-complete.tar.gz -C /srv/www/htdocs/
   rm roundcubemail-1.2.0-complete.tar.gz
