@@ -298,15 +298,10 @@ EOF
   # systemctl list-timers
 
 # Webserver
-  zypper --non-interactive install apache2 apache2-mod_fcgid php7-bcmath php7-bz2 php7-calendar php7-ctype php7-curl php7-dom php7-ftp php7-gd php7-gettext php7-gmp php7-iconv php7-imap php7-ldap php7-mbstring php7-mcrypt php7-mysql php7-odbc php7-openssl php7-pcntl php7-pgsql php7-posix php7-shmop php7-snmp php7-soap php7-sockets php7-sqlite php7-sysvsem php7-tokenizer php7-wddx php7-xmlrpc php7-xsl php7-zlib php7-exif php7-fastcgi php7-pear php7-sysvmsg php7-sysvshm ImageMagick curl apache2-mod_php7
-  # activeer php7
-  a2enmod php7
+  zypper --non-interactive install apache2 apache2-mod_fcgid
   systemctl enable apache2.service
   systemctl start apache2.service
   yast2 firewall services add zone=EXT service=service:apache2
-  # # Test Webserver met PHP
-  # echo "<?php phpinfo(); ?>" > /srv/www/htdocs/info.php
-  # rm /srv/www/htdocs/info.php
 
 # Samba server
   zypper --non-interactive install samba
@@ -418,7 +413,13 @@ EOF
   # ToDo phpMyAdmin geavanceerde functies instellen
 
 # Webmail
-  zypper --non-interactive install php7-pear php7-fileinfo php7-intl
+  zypper --non-interactive install php7-pear php7-fileinfo php7-intl php7-bcmath php7-bz2 php7-calendar php7-ctype php7-curl php7-dom php7-ftp php7-gd php7-gettext php7-gmp php7-iconv php7-imap php7-ldap php7-mbstring php7-mcrypt php7-mysql php7-odbc php7-openssl php7-pcntl php7-pgsql php7-posix php7-shmop php7-snmp php7-soap php7-sockets php7-sqlite php7-sysvsem php7-tokenizer php7-wddx php7-xmlrpc php7-xsl php7-zlib php7-exif php7-fastcgi php7-pear php7-sysvmsg php7-sysvshm ImageMagick curl apache2-mod_php7
+  # activeer php7
+  a2enmod php7
+  # # Test Webserver met PHP
+  # echo "<?php phpinfo(); ?>" > /srv/www/htdocs/info.php
+  # rm /srv/www/htdocs/info.php
+
   wget https://github.com/roundcube/roundcubemail/releases/download/1.2.3/roundcubemail-1.2.3-complete.tar.gz
   tar xfz roundcubemail-1.2.3-complete.tar.gz -C /srv/www/htdocs/
   rm roundcubemail-1.2.0-complete.tar.gz
