@@ -513,9 +513,9 @@ EOF
   for gebruiker in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30; do
     sudo -u wwwrun sh -c "export OC_PASS=$wachtwoord; /srv/www/htdocs/nextcloud/occ user:add --password-from-env pc$gebruiker"
   done
-  sudo -u wwwrun /srv/www/htdocs/owncloud/occ user:report
-  sed -i -e "/installed/a\  'default_language' => 'nl'," /srv/www/htdocs/owncloud/config/config.php
-  sed -i -e "/return array(/a\'nl'=>'Nederlands'," /srv/www/htdocs/owncloud/settings/languageCodes.php
+  sudo -u wwwrun /srv/www/htdocs/nextcloud/occ user:report
+  sed -i -e "/installed/a\  'default_language' => 'nl'," /srv/www/htdocs/nextcloud/config/config.php
+#  sed -i -e "/return array(/a\'nl'=>'Nederlands'," /srv/www/htdocs/nextcloud/settings/languageCodes.php
 
 # Monitor Linux Dash
   wget https://github.com/afaqurk/linux-dash/archive/master.zip
