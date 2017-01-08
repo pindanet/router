@@ -509,6 +509,7 @@ EOF
 
   # Laat het gebruik van ENV Variabelen in PHP cli toe
   sed -i.ori "s|^\(variables_order =\).*$|\1 \"EGPCS\"|" /etc/php7/cli/php.ini
+  chmod +x /srv/www/htdocs/nextcloud/occ
   for gebruiker in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30; do
     sudo -u wwwrun sh -c "export OC_PASS=$wachtwoord; /srv/www/htdocs/nextcloud/occ user:add --password-from-env pc$gebruiker"
   done
