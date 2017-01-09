@@ -15,8 +15,8 @@ op linux systeem
     kopieer Documenten/SNT/Thuisnetwerken/WinPE_amd64.iso /usr/home/Documents/
     kopieer Downloads/HP Support Assistant.exe /usr/home/Documents/
 
-HP Pavilion Elite HPE (procedure getest op VMWare virtuele computers)
-=====================================================================
+HP EliteDesk 800 G1 SFF (procedure getest op VMWare virtuele computers)
+=======================================================================
 VMware Player in vmx configuratiebestand:
   firmware = "efi"
 
