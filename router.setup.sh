@@ -504,7 +504,8 @@ EOF
   zypper --gpg-auto-import-keys refresh
   zypper --non-interactive install nextcloud php7-fileinfo
 
-  # Surf naar router.pinda.snt/nextcloud
+  systemctl restart apache2.service
+  # Surf naar router.pindanet.home/nextcloud
   curl --request POST "http://router.$domein/nextcloud/index.php" --data-urlencode "install=true" --data-urlencode "adminlogin=root" --data-urlencode "adminpass=$wachtwoord" --data-urlencode "adminpass-clone=$wachtwoord" --data-urlencode "directory=/srv/www/htdocs/nextcloud/data" --data-urlencode "dbtype=sqlite" --data-urlencode "dbuser=" --data-urlencode "dbpass=" --data-urlencode "dbpass-clone=" --data-urlencode "dbname=" --data-urlencode "dbhost=localhost"
 
   # Laat het gebruik van ENV Variabelen in PHP cli toe
