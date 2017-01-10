@@ -16,11 +16,12 @@ VMware Player in vmx configuratiebestand:
 |/dev/sdb1 |  100 GB |	         Ext4 |	/var/backup
 |/dev/sdb2 |  832 GB |           Ext4 |	/usr/home/Documents
 ### OpenSuSE Leap 42.2
-*Opstarten met installatie x86_64 USB  
-*Esc  
-*Installation  
-*Language: Dutch - Nederlands  
-  *Toetsenbordindeling > Belgisch  
+* Opstarten met installatie x86_64 USB  
+* Esc  
+* Installation  
+* Language: Dutch - Nederlands  
+  * Toetsenbordindeling > Belgisch  
+
 Partitionering door expert...  
   Apparaten opnieuw scannen  
   Vaste schijven > sda > sda1 > Bewerken  
