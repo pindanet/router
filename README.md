@@ -7,12 +7,13 @@ VMware Player in vmx configuratiebestand:
 
     firmware = "efi"
 ### Schijfbeheer
-	/dev/sda1	512 MB	FAT	/boot/efi
+
+<pre>   /dev/sda1	512 MB	FAT	/boot/efi
 	/dev/sda2	8 GB	swap	
 	/dev/sda1	111 GB	Ext4	/
 
 	/dev/sdb1	100 GB	Ext4	/var/backup
-	/dev/sdb2	832 GB	Ext4	/usr/home/Documents
+	/dev/sdb2	832 GB	Ext4	/usr/home/Documents</pre>
 ### OpenSuSE Leap 42.2
 	Opstarten met installatie x86_64 USB
 	Esc
