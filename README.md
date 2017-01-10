@@ -21,25 +21,24 @@ VMware Player in vmx configuratiebestand:
 * Installation  
 * Language: Dutch - Nederlands  
   * Toetsenbordindeling > Belgisch  
-
-Partitionering door expert...  
-  Apparaten opnieuw scannen  
-  Vaste schijven > sda > sda1 > Bewerken  
-    Aankoppelpunt: /boot/efi > Voltooien  
-  Vaste schijven > sda > sda2 > Bewerken  
-    Formatteer de partitie.  
-    Swap  
-    Aankoppelpunt: swap > Voltooien  
-  Vaste schijven > sda > sda3 > Bewerken  
-    Formatteer de partitie.  
-    Ext4  
-    Aankoppelpunt: / > Voltooien  
-  Vaste schijven > sdb > sdb1 > Bewerken  
-    Formatteer de partitie.  
-    Ext4  
-    Aankoppelpunt: /var/backup > Voltooien  
-  Vaste schijven > sdb > sdb2 > Bewerken  
-    Formatteer de partitie.  
-    Ext4  
-    Aankoppelpunt: /usr/home/Documents > Voltooien  
-  > Accepteren > Volgende  
+* Partitionering door expert...  
+  * Apparaten opnieuw scannen  
+  * Vaste schijven > sda > sda1 > Bewerken  
+    * Aankoppelpunt: /boot/efi > Voltooien  
+  * Vaste schijven > sda > sda2 > Bewerken  
+    * Formatteer de partitie.  
+    * Swap  
+    * Aankoppelpunt: swap > Voltooien  
+  * Vaste schijven > sda > sda3 > Bewerken  
+    * Formatteer de partitie.  
+    * Ext4  
+    * Aankoppelpunt: / > Voltooien  
+  * Vaste schijven > sdb > sdb1 > Bewerken  
+    * Formatteer de partitie.  
+    * Ext4  
+    * Aankoppelpunt: /var/backup > Voltooien  
+  * Vaste schijven > sdb > sdb2 > Bewerken  
+    * Formatteer de partitie.  
+    * Ext4  
+    * Aankoppelpunt: /usr/home/Documents > Voltooien  
+  * > Accepteren > Volgende  
