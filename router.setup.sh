@@ -90,10 +90,6 @@ bind-interfaces
 dhcp-range=lan,$lanrange,4h
 dhcp-option=lan,3,0.0.0.0
 dhcp-option=lan,6,$lanip
-# http://simpledns.com/private-ipv6.aspx
-dhcp-range=fd55:4624:04a3:4c80::100,fd55:4624:04a3:4c80::1500
-dhcp-option=option6:dns-server,[::]
-enable-ra
 server=$dnsserver1
 server=$dnsserver2
 server=$dnsserver3
