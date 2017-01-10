@@ -42,3 +42,9 @@ VMware Player in vmx configuratiebestand:
     * Ext4  
     * Aankoppelpunt: /usr/home/Documents > Voltooien  
   * > Accepteren > Volgende  
+* Tijdzone:
+  * Hardwareklok instellen op UTC inschakelen
+  * Tijdzone: België
+  * Andere instellingen...
+    * Met NTP-server synchroniseren
+    * Adres van de NTP-server: be.pool.ntp.org > Accepteren > Volgende
