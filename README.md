@@ -8,7 +8,7 @@ VMware Player in vmx configuratiebestand:
     firmware = "efi"
 ### Schijfbeheer
 | Partitie | Grootte | Bestandssyteem | Koppelpunt |
-|----------|---------|----------------|------------|
+|----------|--------:|:--------------:|------------|
 |/dev/sda1 |  512 MB |	          FAT |	/boot/efi  |
 |/dev/sda2 |	8 GB |	         swap ||
 |/dev/sda1 |  111 GB |	         Ext4 |	/  | 
