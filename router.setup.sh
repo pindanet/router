@@ -265,7 +265,7 @@ fi
 IPadres=\`/sbin/ip -f inet -oneline addr show $wan | cut -d " " -f7\`
 echo
 echo -ne "Welkom op de router\nDeze router is bereikbaar via SSH op \$IPadres
-2016 Dany Pinoy voor SNT Brugge\n\nusers login: " > /dev/tty1
+2017 Dany Pinoy voor SNT Brugge\n\nusers login: " > /dev/tty1
 EOF
   chmod a+x /root/PindaNetRouter.sh
   
