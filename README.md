@@ -19,7 +19,7 @@ VMware Player in vmx configuratiebestand:
 Opstarten met installatie x86_64 USB  
 Esc  
 Installation  
-  Language: Dutch - Nederlands  
+&nbsp;&nbsp;Language: Dutch - Nederlands  
   Toetsenbordindeling > Belgisch  
 Partitionering door expert...  
   Apparaten opnieuw scannen  
