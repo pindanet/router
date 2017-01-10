@@ -48,3 +48,10 @@ VMware Player in vmx configuratiebestand:
   * Andere instellingen...
     * Met NTP-server synchroniseren
     * Adres van de NTP-server: be.pool.ntp.org > Accepteren > Volgende
+* Bureaubladselectie: Server (tekstmodus) > Volgende
+* Nieuwe gebruiker aanmaken
+	* SNT Beheerder
+	* sntbeheerder
+	* snt+4567
+	* snt+4567
+	* Volgende
