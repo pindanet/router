@@ -2,10 +2,13 @@
 This desribes how to build a router from scratch on a openSUSE Leap 42.2 system.
 
 Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://linux.pindanet.be/faq/tips16/router.html).
-## Hardware: HP EliteDesk 800 G1 SFF (procedure getest op VMWare virtuele computers)
-VMware Player in vmx configuratiebestand:
+## Hardware
+### Systeem
+* HP EliteDesk 800 G1 SFF 
+* VMWare virtuele computers (testsysteem)
+  VMware Player in vmx configuratiebestand:
 
-    firmware = "efi"
+        firmware = "efi"
 ### Netwerk
 | Verbinding | Netwerkkaart                                              | Apparaat | Functie |
 |------------|-----------------------------------------------------------|----------|---------|
@@ -21,6 +24,7 @@ VMware Player in vmx configuratiebestand:
 |||||
 |/dev/sdb1 |  100 GB |	         Ext4 |	/var/backup
 |/dev/sdb2 |  832 GB |           Ext4 |	/usr/home/Documents
+## Software
 ### OpenSuSE Leap 42.2
 * Opstarten met installatie x86_64 USB  
 * Esc  
