@@ -76,3 +76,7 @@ VMware Player in vmx configuratiebestand:
         cp /livemnt/boot/syslinux/{initram.igz,rescue64} /mnt/backup/sysrcd/
         wget -P /mnt/backup/grub/locale/ http://users.snt.be/dany.p/public_html/installatie/nl.mo
         umount /mnt/custom
+        joe /mnt/backup/grub/themes/starfield/theme.txt
+            in sectie boot_menu
+                item_color = "#fff"
+                selected_item_color= "#fff"
