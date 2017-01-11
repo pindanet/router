@@ -187,6 +187,10 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
     sh router.setup.sh services
 
 ### Updaten enz.
+* Info
+
+        cat /etc/resolv.conf
+        sudo route
 * Backuppartitie koppelen vanaf CD/USB:
 
         joe /mnt/backup/autorun
