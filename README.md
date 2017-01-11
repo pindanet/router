@@ -80,3 +80,43 @@ VMware Player in vmx configuratiebestand:
             in sectie boot_menu
                 item_color = "#fff"
                 selected_item_color= "#fff"
+      joe /mnt/backup/grub/grub.cfg
+        # Global options
+        set timeout=8
+        set default=0
+        set fallback=1
+        set pager=1
+
+        # Display settings
+        if loadfont /grub/fonts/unicode.pf2 ; then
+                set gfxmode=auto
+                insmod efi_gop
+                insmod efi_uga
+                insmod gfxterm
+                insmod videotest
+                insmod videoinfo
+                terminal_output gfxterm
+                insmod gfxmenu
+                insmod png
+                set theme=/grub/themes/starfield/theme.txt
+                export theme
+                set locale_dir=/grub/locale
+                set lang=nl
+                insmod gettext
+        fi
+        menuentry "Router starten" {
+                insmod part_gpt
+                insmod gzio
+                insmod part_gpt
+                set root='(hd0,gpt3)'
+                echo 'Laden van Linux 4.4...'
+                linuxefi /boot/vmlinuz root=/dev/sda3 ro resume=/dev/sda2 splash=silent quiet showopts 
+                echo    'Laden van initiële RAM-schijf...'
+                initrdefi /boot/initrd
+        }
+        menuentry "SystemRescueCd (64bit)" {
+                set gfxpayload=keep
+                set root='(hd1,gpt1)'
+                linux   /sysrcd/rescue64 setkmap=be subdir=sysrcd
+                initrd  /sysrcd/initram.igz
+        }
