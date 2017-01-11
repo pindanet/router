@@ -62,5 +62,6 @@ VMware Player in vmx configuratiebestand:
 * Computer laten herstarten zonder installatie USB
 * Aanmelden als root
 
-      zypper up
+      zypper up  
       shutdown -r now
+### Backupsysteem
