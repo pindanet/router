@@ -59,3 +59,8 @@ VMware Player in vmx configuratiebestand:
   * Opstarten > Bootloader: Niet beheerd > Doorgaan > OK
   * Firewall inshakelen, SSH-poort openen en SSH-service inschakelen
   * Installeren > Installeren
+* Computer laten herstarten zonder installatie USB
+* Aanmelden als root
+
+      zypper up
+      shutdown -r now
