@@ -124,7 +124,7 @@ VMware Player in vmx configuratiebestand:
 * Backuppartitie koppelen vanaf CD/USB:
 
         joe /mnt/backup/autorun
-* vanaf geïnstalleerd systeem:
+* Backuppartitie koppelen vanaf geïnstalleerd systeem:
 
         mount /livemnt/boot -o rw,remount
 * Backup maken
