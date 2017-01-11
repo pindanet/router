@@ -211,10 +211,8 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
     * kopieer /mnt/{sysrcd.dat,sysrcd.md5} /var/backup/sysrcd/
     * kopieer /mnt/isolinux/{initram.igz,rescue64} /srv/www/htdocs/tftpboot/
     * kopieer /mnt/{sysrcd.dat,sysrcd.md5} /srv/www/htdocs/tftpboot/
-  *
 
-
-        sudo umount /mnt/
+          sudo umount /mnt/
 * Update Windows installatiebestanden via fish van linux systeem naar router als root
   * kopieer Documenten/Software/SNT/Windows.iso /usr/home/Documents/
   * kopieer Documenten/SNT/Thuisnetwerken/WinPE_amd64.iso /usr/home/Documents/
