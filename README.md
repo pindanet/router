@@ -179,6 +179,10 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
                   partclone.extfs --clone --source /dev/sda3 | gzip -c > /livemnt/boot/child.linux.partclone.gz;;
               esac
             done
+### Installatie
+    wget https://raw.githubusercontent.com/pindanet/router/master/router.setup.sh
+    sh router.setup.sh router
+    sh router.setup.sh services
 ### Updaten enz.
 * Backuppartitie koppelen vanaf CD/USB:
 
