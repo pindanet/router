@@ -181,9 +181,9 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
             done
 ### Installatie
 
-    wget https://raw.githubusercontent.com/pindanet/router/master/router.setup.sh
-    sh router.setup.sh router
-    sh router.setup.sh services
+      wget https://raw.githubusercontent.com/pindanet/router/master/router.setup.sh
+      sh router.setup.sh router
+      sh router.setup.sh services
 ### Updaten enz.
 * Backuppartitie koppelen vanaf CD/USB:
 
