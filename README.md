@@ -121,11 +121,12 @@ VMware Player in vmx configuratiebestand:
                     initrd  /sysrcd/initram.igz
             }
 ### Updaten enz.
-    partclone.extfs --clone --source /dev/sda3 | gzip -c > /mnt/backup/child.linux.partclone.gz
-
 * Backuppartitie koppelen vanaf CD/USB:
 
         joe /mnt/backup/autorun
 * vanaf geïnstalleerd systeem:
 
         mount /livemnt/boot -o rw,remount
+* Backup maken
+
+        partclone.extfs --clone --source /dev/sda3 | gzip -c > /mnt/backup/child.linux.partclone.gz
