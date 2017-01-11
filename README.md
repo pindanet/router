@@ -200,3 +200,20 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
 * Backup maken
 
         partclone.extfs --clone --source /dev/sda3 | gzip -c > /mnt/backup/child.linux.partclone.gz
+* Update router via ssh als root
+
+      zypper update
+* Update backupsysteem via linux systeem
+
+      sudo mount Downloads/systemrescuecd-x86-4.9.0.iso /mnt/
+* Update backupsysteem via fish van linux systeem naar router als root
+  * kopieer /mnt/isolinux/{initram.igz,rescue64} /var/backup/sysrcd/
+  * kopieer /mnt/{sysrcd.dat,sysrcd.md5} /var/backup/sysrcd/
+  * kopieer /mnt/isolinux/{initram.igz,rescue64} /srv/www/htdocs/tftpboot/
+  * kopieer /mnt/{sysrcd.dat,sysrcd.md5} /srv/www/htdocs/tftpboot/
+  
+        sudo umount /mnt/
+* Update Windows installatiebestanden via fish van linux systeem naar router als root
+  * kopieer Documenten/Software/SNT/Windows.iso /usr/home/Documents/
+  * kopieer Documenten/SNT/Thuisnetwerken/WinPE_amd64.iso /usr/home/Documents/
+  * kopieer Downloads/HP Support Assistant.exe /usr/home/Documents/
