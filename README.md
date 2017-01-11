@@ -120,3 +120,12 @@ VMware Player in vmx configuratiebestand:
                     linux   /sysrcd/rescue64 setkmap=be subdir=sysrcd
                     initrd  /sysrcd/initram.igz
             }
+### Updaten enz.
+    partclone.extfs --clone --source /dev/sda3 | gzip -c > /mnt/backup/child.linux.partclone.gz
+
+* Backuppartitie koppelen vanaf CD/USB:
+
+        joe /mnt/backup/autorun
+* vanaf geïnstalleerd systeem:
+
+        mount /livemnt/boot -o rw,remount
