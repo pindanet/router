@@ -9,6 +9,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
   VMware Player in vmx configuratiebestand:
 
         firmware = "efi"
+
 ### Netwerk
 | Verbinding | Netwerkkaart                                              | Apparaat | Functie |
 |------------|-----------------------------------------------------------|----------|---------|
