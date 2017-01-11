@@ -191,10 +191,10 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
 
         cat /etc/resolv.conf
         sudo route
-* Backuppartitie koppelen vanaf CD/USB:
+* Backuppartitie koppelen vanaf SystemRescueCD/USB:
 
         joe /mnt/backup/autorun
-* Backuppartitie koppelen vanaf geïnstalleerd systeem:
+* Backuppartitie koppelen vanaf geïnstalleerd backupsysteem:
 
         mount /livemnt/boot -o rw,remount
 * Backup maken
@@ -206,11 +206,11 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
 * Update backupsysteem via linux systeem
 
         sudo mount Downloads/systemrescuecd-x86-4.9.0.iso /mnt/
-* Update backupsysteem via fish van linux systeem naar router als root
-  * kopieer /mnt/isolinux/{initram.igz,rescue64} /var/backup/sysrcd/
-  * kopieer /mnt/{sysrcd.dat,sysrcd.md5} /var/backup/sysrcd/
-  * kopieer /mnt/isolinux/{initram.igz,rescue64} /srv/www/htdocs/tftpboot/
-  * kopieer /mnt/{sysrcd.dat,sysrcd.md5} /srv/www/htdocs/tftpboot/
+  * Update backupsysteem via fish van linux systeem naar router als root
+    * kopieer /mnt/isolinux/{initram.igz,rescue64} /var/backup/sysrcd/
+    * kopieer /mnt/{sysrcd.dat,sysrcd.md5} /var/backup/sysrcd/
+    * kopieer /mnt/isolinux/{initram.igz,rescue64} /srv/www/htdocs/tftpboot/
+    * kopieer /mnt/{sysrcd.dat,sysrcd.md5} /srv/www/htdocs/tftpboot/
   
           sudo umount /mnt/
 * Update Windows installatiebestanden via fish van linux systeem naar router als root
