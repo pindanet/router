@@ -2,10 +2,16 @@
 This desribes how to build a router from scratch on a openSUSE Leap 42.2 system.
 
 Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://linux.pindanet.be/faq/tips16/router.html).
-## HP EliteDesk 800 G1 SFF (procedure getest op VMWare virtuele computers)
+## Hardware: HP EliteDesk 800 G1 SFF (procedure getest op VMWare virtuele computers)
 VMware Player in vmx configuratiebestand:
 
     firmware = "efi"
+### Netwerk
+| Verbinding | Netwerkkaart                                              | Apparaat | Functie |
+|------------|-----------------------------------------------------------|----------|---------|
+| Onboard 	 | Ethernet Connection I217-LM					             | eth0     | WAN
+| PCIE x1 	 | RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller | eth1		| LAN
+| Wireless	 |							                                 | wlan0    | Access Point
 ### Schijfbeheer
 | Partitie | Grootte | Bestandssyteem | Koppelpunt |
 |----------|--------:|:--------------:|------------|
