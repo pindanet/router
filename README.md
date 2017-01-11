@@ -67,6 +67,7 @@ VMware Player in vmx configuratiebestand:
 
 ### Backupsysteem
 * Opstarten met SystemRescueCD vanaf USB
+
         mount /dev/sda1 /mnt/custom
         mount /dev/sdb1 /mnt/backup
         grub2-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/backup --bootloader-id=grub --recheck /dev/sda
