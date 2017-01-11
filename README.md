@@ -50,8 +50,12 @@ VMware Player in vmx configuratiebestand:
     * Adres van de NTP-server: be.pool.ntp.org > Accepteren > Volgende
 * Bureaubladselectie: Server (tekstmodus) > Volgende
 * Nieuwe gebruiker aanmaken
-	* SNT Beheerder
-	* sntbeheerder
-	* snt+4567
-	* snt+4567
-	* Volgende
+  * SNT Beheerder
+  * sntbeheerder
+  * snt+4567
+  * snt+4567
+  * Volgende
+* Installatie instellingen:
+  * Opstarten > Bootloader: Niet beheerd > Doorgaan > OK
+  * Firewall inshakelen, SSH-poort openen en SSH-service inschakelen
+  * Installeren > Installeren
