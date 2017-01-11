@@ -66,3 +66,12 @@ VMware Player in vmx configuratiebestand:
           shutdown -r now
 
 ### Backupsysteem
+* Opstarten met SystemRescueCD vanaf USB
+        mount /dev/sda1 /mnt/custom
+        mount /dev/sdb1 /mnt/backup
+        grub2-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/backup --bootloader-id=grub --recheck /dev/sda
+        mkdir /mnt/backup/sysrcd
+        cp /livemnt/boot/{sysrcd.dat,sysrcd.md5} /mnt/backup/sysrcd/
+        cp /livemnt/boot/syslinux/{initram.igz,rescue64} /mnt/backup/sysrcd/
+        wget -P /mnt/backup/grub/locale/ http://users.snt.be/dany.p/public_html/installatie/nl.mo
+        umount /mnt/custom
