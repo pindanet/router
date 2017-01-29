@@ -373,6 +373,9 @@ EOF
   systemctl start mysql.service
   # mysqladmin -u root password "$wachtwoord"
   # Alternatief voor mysql_secure_installation --use-default op http://howtolamp.com/lamp/mysql/5.6/securing/
+  
+  # ToDO http://www.esecurityplanet.com/open-source-security/securing-mysql-dbms-1.html
+  
   /usr/bin/mysql -e "set password for 'root'@'localhost' = password('$wachtwoord');"
   /usr/bin/mysql --password=$wachtwoord -e "set password for 'root'@'127.0.0.1' = password('$wachtwoord');"
   /usr/bin/mysql --password=$wachtwoord -e "set password for 'root'@'::1' = password('$wachtwoord');"
