@@ -105,6 +105,7 @@ sda4   54 GB  ext4    backup
   * Computer herstart automatisch
   * Bootmanager > SystemRescueCd (64bit) > backup
   * De computer sluit automatisch af na het voltooien van de back-up
+
 #SystemRescueCD USB autorun script
 
 
