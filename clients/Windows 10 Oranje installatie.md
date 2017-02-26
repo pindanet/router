@@ -10,6 +10,7 @@ De back-up met Windows 10 en de extra geïnstalleerde software wordt automatisch
     * restore: Windows 10 wordt teruggezet naar een vorig herstelpunt
       * parent: vorige back-up terugzetten (bijvoorbeeld bij een beschadigde hoofdback-up)
       * grandparent: oudste back-up terugzetten (bijvoorbeeld bij een beschadigde vorige en hoofdback-up)
+      * elke andere keuze: hoofdback-up terugzetten
     * halt: wordt de computer na automatisch uitgeschakeld
     * reboot: wordt de computer automatisch herstart
     * terminal: Kom je in de Linux omgeving
@@ -31,30 +32,11 @@ Deling terug zonder wachtwoord (vroeger: snt+456).
 * F1 Bios instellen
 * F12 Boot menu
 * Bios updaten met CD
-#Partitioneren
-1. Op router voor de les Thuisnetwerken
-
-        joe /etc/dnsmask.conf
-          bootx64.efi inschakelen
-          ipxe.efi uitschakelen
-        systemctl restart dnsmask.service
-
-2. Esc > Network Boot (F12)
-  * IP4 Intel(R) Ethernet Connection I217-LM
-
-  * part.sh wordt van internet gehaald
-
-           sh part.sh part
-           shutdown -r now
 ```
-sda1	500 MB	ntfs    hidden, diag            Basic data partition
-sda2	105 MB	fat32	EFI system partition
-sda3	17 MB		Microsoft reserved partition
-sda4    127 GB  ntfs    C:
-
-sdb	750 GB
-sdb1	10%	ext4	SystemRescueCD	(vrijmaken na Windows installatie)
-sdb2	90%	ntfs	D:Werkschijf	
+sda1	524 MB	ntfs    boot
+sda2	128 GB	ntfs	  C:
+sda3	318 GB	exFat	  D:
+sda4   54 GB  ext4    backup
 ```
 #Windows 10 x64 Pro St Andries
 1. Op router voor de les Thuisnetwerken
