@@ -107,6 +107,7 @@ sda4   54 GB  ext4    backup
   * De computer sluit automatisch af na het voltooien van de back-up
 #SystemRescueCD USB autorun script
 
+
           #!/bin/bash
           function fout {
             printf "\n\033[1;31;40m %s. Computer NIET uitschakelen. Verwittig de systeembeheerder." "$1"
