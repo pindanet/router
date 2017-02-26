@@ -100,15 +100,8 @@ sda4   54 GB  ext4    backup
   * VLC
   * Chrome
 22. Computer herstarten
-34. Boot menu (F12) > SystemRescueCD vanaf USB starten
+23. Boot menu (F12) > SystemRescueCD vanaf USB starten
   * bootmgr: installatie bootmanager en back-upsysteem
   * Computer herstart automatisch
-  
+  * Bootmanager > SystemRescueCd (64bit) > backup
   * De computer sluit automatisch af na het voltooien van de back-up
-
-##Windows 10 VMWare
-DVD Shrink 3.2, ShareX, Office 365, Wisa, resolutie: 1280 x 720 (Youtube filmformaat)
-#Back-upsysteem St Andries aanpassen
-
-    mount /dev/sda4 /livemnt/boot -o rw,remount
-    joe /livemnt/boot/autorun
