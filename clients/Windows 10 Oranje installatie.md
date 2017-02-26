@@ -109,86 +109,86 @@ sda4   54 GB  ext4    backup
 #SystemRescueCD USB autorun script
 
 
-          #!/bin/bash
-          function fout {
-            printf "\n\033[1;31;40m %s. Computer NIET uitschakelen. Verwittig de systeembeheerder." "$1"
-            read line
-            exit
-          }
-          echo "Automatisch systeemherstel"                                                                                      
-          echo "=========================="                                                                                      
-          echo "(C) PindaNet.be, Brugge, Dany Pinoy, `date -r /livemnt/boot/autorun +'%d %B %Y'`"                                                                                                          
-          echo                                                                                                                   
-          echo "Dit is experimentele software.                                                                                 
-          Het gebruik ervan is geheel voor eigen risico.                                                                                         
-          PindaNet.be en openSUSE e.v. aanvaarden geen enkele aansprakelijkheid voor                                                              
-          schade aan hard- en software, verloren gegane data of andere direct of                                                                  
-          indirect door het gebruik van deze software ontstane schade.                                                                          
-          In sommige landen kunnen de gebruikte software en andere componenten aan                                                                
-          exportregelingen of patenten gebonden zijn.                                                                                           
-          In deze landen mag deze software niet verspreid worden zoals dat normaal bij
-          software onder de gpl-licentie gebruikelijk is.
-          Als u het met deze condities niet eens bent, mag u deze software niet
-          gebruiken."
-          echo
-          if [ "`grep restorewindows /proc/cmdline`" ]; then
-                  gunzip -c /livemnt/boot/child.windows.img.gz | ntfsclone --restore-image --overwrite /dev/sda2 -
-                  if [ $? -ne 0 ]; then
-                    fout "Herstellen Windows mislukt"
-                  fi
-                  shutdown -h now
-          fi
-          while true; do
-            echo
-            echo 'Typ een opdracht (restore, halt, reboot, terminal, backup, bootmgr): '
-            read keuze
-            case "$keuze" in
-            "restore")  mount /livemnt/boot -o rw,remount
-              echo
-              echo 'Welke backup terugzetten (child, parent, grandparent): '
-              read keuze
-              case "$keuze" in
-              "parent") gunzip -c /livemnt/boot/parent.windows.img.gz | ntfsclone --restore-image --overwrite /dev/sda2 -;;
-              "grandparent") gunzip -c /livemnt/boot/grandparent.windows.img.gz | ntfsclone --restore-image --overwrite /dev/sda2 -;;
-              *) gunzip -c /livemnt/boot/child.windows.img.gz | ntfsclone --restore-image --overwrite /dev/sda2 -;;
-              esac;;
-            "halt")  echo "De computer wordt automatisch afgesloten."
-              echo "U hoeft enkel te wachten..............."
-              shutdown -h now
-              sleep 3000;;
-            "reboot")   echo "De computer wordt automatisch herstart."
-              echo "U hoeft enkel te wachten..............."
-              shutdown -r now
-              sleep 3000;;
-            "terminal") break;;
-            "backup") mount /livemnt/boot -o rw,remount
-              rm /livemnt/boot/grandparent.windows.img.gz
-              mv /livemnt/boot/parent.windows.img.gz /livemnt/boot/grandparent.windows.img.gz
-              mv /livemnt/boot/child.windows.img.gz /livemnt/boot/parent.windows.img.gz
-              ntfsclone --save-image -o - /dev/sda2 | gzip -c > /livemnt/boot/child.windows.img.gz;;
-            "bootmgr") start=`parted /dev/sda print | tail -2 | head -1 | awk '{ print $3; }'`
-              parted /dev/sda mkpart primary ext4 $start 100%
-              partnr=`parted /dev/sda print | tail -2 | head -1 | awk '{ print $1; }'`
-                mkfs.ext4 -L systemrescue /dev/sda$partnr
-              parted /dev/sda print
+    #!/bin/bash
+    function fout {
+      printf "\n\033[1;31;40m %s. Computer NIET uitschakelen. Verwittig de systeembeheerder." "$1"
+      read line
+      exit
+    }
+    echo "Automatisch systeemherstel"                                                                                      
+    echo "=========================="                                                                                      
+    echo "(C) PindaNet.be, Brugge, Dany Pinoy, `date -r /livemnt/boot/autorun +'%d %B %Y'`"                                                                                                          
+    echo                                                                                                                   
+    echo "Dit is experimentele software.                                                                                 
+    Het gebruik ervan is geheel voor eigen risico.                                                                                         
+    PindaNet.be en openSUSE e.v. aanvaarden geen enkele aansprakelijkheid voor                                                              
+    schade aan hard- en software, verloren gegane data of andere direct of                                                                  
+    indirect door het gebruik van deze software ontstane schade.                                                                          
+    In sommige landen kunnen de gebruikte software en andere componenten aan                                                                
+    exportregelingen of patenten gebonden zijn.                                                                                           
+    In deze landen mag deze software niet verspreid worden zoals dat normaal bij
+    software onder de gpl-licentie gebruikelijk is.
+    Als u het met deze condities niet eens bent, mag u deze software niet
+    gebruiken."
+    echo
+    if [ "`grep restorewindows /proc/cmdline`" ]; then
+            gunzip -c /livemnt/boot/child.windows.img.gz | ntfsclone --restore-image --overwrite /dev/sda2 -
+            if [ $? -ne 0 ]; then
+              fout "Herstellen Windows mislukt"
+            fi
+            shutdown -h now
+    fi
+    while true; do
+      echo
+      echo 'Typ een opdracht (restore, halt, reboot, terminal, backup, bootmgr): '
+      read keuze
+      case "$keuze" in
+      "restore")  mount /livemnt/boot -o rw,remount
+        echo
+        echo 'Welke backup terugzetten (child, parent, grandparent): '
+        read keuze
+        case "$keuze" in
+        "parent") gunzip -c /livemnt/boot/parent.windows.img.gz | ntfsclone --restore-image --overwrite /dev/sda2 -;;
+        "grandparent") gunzip -c /livemnt/boot/grandparent.windows.img.gz | ntfsclone --restore-image --overwrite /dev/sda2 -;;
+        *) gunzip -c /livemnt/boot/child.windows.img.gz | ntfsclone --restore-image --overwrite /dev/sda2 -;;
+        esac;;
+      "halt")  echo "De computer wordt automatisch afgesloten."
+        echo "U hoeft enkel te wachten..............."
+        shutdown -h now
+        sleep 3000;;
+      "reboot")   echo "De computer wordt automatisch herstart."
+        echo "U hoeft enkel te wachten..............."
+        shutdown -r now
+        sleep 3000;;
+      "terminal") break;;
+      "backup") mount /livemnt/boot -o rw,remount
+        rm /livemnt/boot/grandparent.windows.img.gz
+        mv /livemnt/boot/parent.windows.img.gz /livemnt/boot/grandparent.windows.img.gz
+        mv /livemnt/boot/child.windows.img.gz /livemnt/boot/parent.windows.img.gz
+        ntfsclone --save-image -o - /dev/sda2 | gzip -c > /livemnt/boot/child.windows.img.gz;;
+      "bootmgr") start=`parted /dev/sda print | tail -2 | head -1 | awk '{ print $3; }'`
+        parted /dev/sda mkpart primary ext4 $start 100%
+        partnr=`parted /dev/sda print | tail -2 | head -1 | awk '{ print $1; }'`
+          mkfs.ext4 -L systemrescue /dev/sda$partnr
+        parted /dev/sda print
 
-              mount /dev/sda$partnr /mnt/gentoo
-              grub2-install --root-directory=/mnt/gentoo /dev/sda
-              mkdir /mnt/gentoo/sysrcd
-              cp /livemnt/boot/{sysrcd.dat,sysrcd.md5} /mnt/gentoo/sysrcd/
-              cp /livemnt/boot/syslinux/{initram.igz,rescue64} /mnt/gentoo/sysrcd/
-              wget -O /mnt/gentoo/boot/grub/themes/starfield/starfield.png https://github.com/pindanet/router/raw/master/clients/snt.png
-              wget -P /mnt/gentoo/boot/grub/locale/ https://github.com/pindanet/router/raw/master/clients/nl.mo
-              wget -P /mnt/gentoo/boot/grub/ https://raw.githubusercontent.com/pindanet/router/master/clients/bios/grub.cfg
-              sed -i "s/msdos4/msdos$partnr/" /mnt/gentoo/boot/grub/grub.cfg
+        mount /dev/sda$partnr /mnt/gentoo
+        grub2-install --root-directory=/mnt/gentoo /dev/sda
+        mkdir /mnt/gentoo/sysrcd
+        cp /livemnt/boot/{sysrcd.dat,sysrcd.md5} /mnt/gentoo/sysrcd/
+        cp /livemnt/boot/syslinux/{initram.igz,rescue64} /mnt/gentoo/sysrcd/
+        wget -O /mnt/gentoo/boot/grub/themes/starfield/starfield.png https://github.com/pindanet/router/raw/master/clients/snt.png
+        wget -P /mnt/gentoo/boot/grub/locale/ https://github.com/pindanet/router/raw/master/clients/nl.mo
+        wget -P /mnt/gentoo/boot/grub/ https://raw.githubusercontent.com/pindanet/router/master/clients/bios/grub.cfg
+        sed -i "s/msdos4/msdos$partnr/" /mnt/gentoo/boot/grub/grub.cfg
 
-              cp /livemnt/boot/autorun /mnt/gentoo/
-              # bootmgr opdracht uitschakelen
-              sed -i "s/backup, bootmgr/backup/" /mnt/gentoo/autorun
+        cp /livemnt/boot/autorun /mnt/gentoo/
+        # bootmgr opdracht uitschakelen
+        sed -i "s/backup, bootmgr/backup/" /mnt/gentoo/autorun
 
-              echo "De computer wordt automatisch herstart."
-              echo "U hoeft enkel te wachten..............."
-              shutdown -r now
-              sleep 3000;;
-            esac
-          done
+        echo "De computer wordt automatisch herstart."
+        echo "U hoeft enkel te wachten..............."
+        shutdown -r now
+        sleep 3000;;
+      esac
+    done
