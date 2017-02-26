@@ -84,35 +84,26 @@ sda4   54 GB  ext4    backup
 
 17. Informatie over uw pc > Naam van pc wijzigen: OranjePCxx > Volgende > Nu opnieuw opstarten
 18. Partities op harde schijf maken en formatteren
-  * Cd-rom-station 0 > Snelmenu > Stationsletter en paden wijzigen... > Wijzigen > E > OK
-  * Schijf 1, Part 2 > Snelmenu > Verwijderen > Ja
-  * Schijf 1, Part 2 > Snelmenu > Nieuw eenvoudig volume... > Volgende > Volgende
+  * Schijf 0, Part 2 > Snelmenu > Volume verkleinen... > naar 121856 MB > OK
+  * Schijf 0, Part 3 > Snelmenu > Nieuw eenvoudig volume... >
+    * Grootte: 303104 MB
     * Deze stationsletter toewijzen: D > Volgende
     * Bestandssysteem: exFAT
     * Volumenaam: Werkschijf > Volgende > Voltooien
-
-      Opdrachtprompt (administrator) > Ja
-
-            format D: /fs:exFAT /Q
-            Current volume label: Werkschijf
-            Proceed with Format (Y/N)? Y
-            Volume label? Werkschijf
-
-30. Werkschijf (D:) > Eigenschappen > Delen > Geavanceerd delen... > Deze map delen, Machtigingen > Iedereen Volledig beheer Toestaan > OK > OK > Sluiten.
+19. Werkschijf (D:) > Eigenschappen > Delen > Geavanceerd delen... > Deze map delen, Machtigingen > Iedereen Volledig beheer Toestaan > OK > OK > Sluiten.
     * Instellingen voor geavanceerd delen beheren > Alle netwerken > Met wachtwoord beveiligd delen uitschakelen
       * Wijzigingen opslaan
-31. Apparaten en printers > Een printer toevoegen
-  * De printer die ik wil staat niet in de lijst
-  * Een printer met behulp van een TCP/IP-adres of hostnaam toevoegen
-  * Hostnaam of IP-adres: printerpcklas (vroeger: 10.10.7.220, nu dynamisch via DHCP) > Volgende
-  * Windows updates
-  * Kyocera FS-1300D
-  * Deze printer niet delen
-32. Netwerken
+20. Netwerken
   * Ja de pc moet door andere pc's en apparaten gevonden worden
-33. Computer herstarten
-34. Bootmanager > SystemRescueCD starten
-  * Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
+21. Software installeren:
+  * Firefox
+  * VLC
+  * Chrome
+22. Computer herstarten
+34. Boot menu (F12) > SystemRescueCD vanaf USB starten
+  * bootmgr: installatie bootmanager en back-upsysteem
+  * Computer herstart automatisch
+  
   * De computer sluit automatisch af na het voltooien van de back-up
 
 ##Windows 10 VMWare
