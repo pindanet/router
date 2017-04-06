@@ -1,4 +1,5 @@
 #ToDo
+
 #Back-upsysteem St Andries
 1. Start de computer
 2. Als je 20 seconden wacht start Windows 10 automatisch op.
