@@ -51,6 +51,7 @@ sda4   54 GB  ext4    backup
 6. Partitionering
   * Niet-toegewezen ruimte van station 0
   * Volgende
+
 7. Expressinstellingen gebruiken
 8. Ik ben de eigenaar ervan > Volgende
 9. Bewijzen dat jij het bent
