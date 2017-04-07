@@ -66,7 +66,7 @@ sda4   54 GB  ext4    backup
   * Volgende
 10. Privacyinstellingen voor uw apparaat kiezen > Akkoord
 11. Computer herstarten
-12.Windows + R
+12. Windows + R
   * netplwiz > OK
   * Gebruikers moeten een gebruikersnaam en wachtwoord opgeven ... UITschakelen > OK
   * snt+456
