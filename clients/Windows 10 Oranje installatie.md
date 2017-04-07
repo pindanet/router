@@ -1,5 +1,5 @@
-#ToDo
-#Back-upsysteem Oranje
+# ToDo
+# Back-upsysteem Oranje
 1. Start de computer
 2. Als je 20 seconden wacht start Windows 10 automatisch op.
 3. Selecteer binnen de 20 seconden met de pijltoetsen op het toetsenbord de optie Windows 10 terugzetten en druk Return</br>
