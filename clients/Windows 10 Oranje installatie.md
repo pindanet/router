@@ -51,17 +51,20 @@ sda4   54 GB  ext4    backup
 6. Partitionering
   * Niet-toegewezen ruimte van station 0
   * Volgende
-
-7. Expressinstellingen gebruiken
-8. Ik ben de eigenaar ervan > Volgende
-9. Bewijzen dat jij het bent
-  * Deze stap overslaan
-10. Een account maken voor deze pc
+7. Instellingen
+  * Regio: België
+  * Toetsenbordindeling: Belgisch (punt)
+  * Tweede toetsenbordindeling Overslaan
+  * Netwerkverbinding: Netwerk > Volgende
+  * Instellen voor persoonlijk gebruik > Volgende
+8. Aanmelden bij Microsoft > Offlineaccount
+9. Account
   * Wie gaat deze pc gebruiken? SNT Cursist
   * snt+456
   * snt+456
   * SNT
   * Volgende
+10. Privacyinstellingen voor uw apparaat kiezen > Akkoord
 11. Computer herstarten
 12.Windows + R
   * netplwiz > OK
