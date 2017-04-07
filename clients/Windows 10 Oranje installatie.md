@@ -38,7 +38,7 @@ sda2	128 GB	ntfs	  C:
 sda3	318 GB	exFat	  D:
 sda4   54 GB  ext4    backup
 ```
-#Windows 10 x64 Pro
+# Windows 10 x64 Pro
 1. Windows Setup
   * Te installeren taal: Nederlands (Nederland)
   * Indeling voor tijd en valuta: Nederlands (België)
