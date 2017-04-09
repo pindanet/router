@@ -34,9 +34,9 @@ Deling terug zonder wachtwoord (vroeger: snt+456).
 * Bios updaten met CD
 ```
 sda1	524 MB	ntfs    boot
-sda2	128 GB	ntfs	  C:
-sda3	318 GB	exFat	  D:
-sda4   54 GB  ext4    backup
+sda2	250 GB	ntfs	  C:
+sda3	125 GB	exFat	  D:
+sda4  125 GB  ext4    backup
 ```
 # Windows 10 x64 Pro
 1. Windows Setup
