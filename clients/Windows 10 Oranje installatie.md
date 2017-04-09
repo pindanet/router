@@ -36,7 +36,7 @@ Deling terug zonder wachtwoord (vroeger: snt+456).
 sda1	524 MB	ntfs    boot
 sda2	250 GB	ntfs	  C:
 sda3	125 GB	exFat	  D:
-sda4  125 GB  ext4    backup
+sda4	125 GB  ext4    backup
 ```
 # Windows 10 x64 Pro
 1. Windows Setup
