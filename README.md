@@ -217,3 +217,5 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
   * kopieer Documenten/Software/SNT/Windows.iso /usr/home/Documents/
   * kopieer Documenten/SNT/Thuisnetwerken/WinPE_amd64.iso /usr/home/Documents/
   * kopieer Downloads/HP Support Assistant.exe /usr/home/Documents/
+# ToDo
+* https://opensource.com/business/16/2/creating-disk-images-with-fog
