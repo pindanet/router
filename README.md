@@ -85,7 +85,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
         mkdir /mnt/backup/sysrcd
         cp /livemnt/boot/{sysrcd.dat,sysrcd.md5} /mnt/backup/sysrcd/
         cp /livemnt/boot/syslinux/{initram.igz,rescue64} /mnt/backup/sysrcd/
-        wget -P /mnt/backup/grub/locale/ http://users.snt.be/dany.p/public_html/installatie/nl.mo
+        wget -P /mnt/backup/grub/locale/ https://raw.githubusercontent.com/pindanet/router/master/clients/nl.mo
         umount /mnt/custom
         joe /mnt/backup/grub/themes/starfield/theme.txt
             in sectie boot_menu
