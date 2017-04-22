@@ -6,17 +6,11 @@ echo "(C) PindaNet.be, Brugge, Dany Pinoy, `date -r /livemnt/boot/autorun +'%d %
 echo                                                                                                                   
 echo "Dit is experimentele software.                                                                                 
 Het gebruik ervan is geheel voor eigen risico.                                                                                       
-  
 PindaNet.be en openSUSE e.v. aanvaarden geen enkele aansprakelijkheid voor                                                           
-   
 schade aan hard- en software, verloren gegane data of andere direct of                                                               
-   
 indirect door het gebruik van deze software ontstane schade.                                                                         
- 
 In sommige landen kunnen de gebruikte software en andere componenten aan                                                             
-   
 exportregelingen of patenten gebonden zijn.                                                                                          
- 
 In deze landen mag deze software niet verspreid worden zoals dat normaal bij
 software onder de gpl-licentie gebruikelijk is.
 Als u het met deze condities niet eens bent, mag u deze software niet
