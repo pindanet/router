@@ -8,6 +8,8 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
 * VMWare virtuele computers (testsysteem)
   VMware Player in vmx configuratiebestand:
 
+        ethernet1.connectionType = "pvn"
+        ethernet1.pvnID = "52 dd bc d5 36 19 1b 6b-0f f1 fb 1c 4c ac 44 f7"
         firmware = "efi"
 
 ### Netwerk
