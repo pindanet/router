@@ -193,7 +193,7 @@ menuentry 'SystemRescueCD' --class os {
      net_ls_routes
 
      echo 'Loading SystemRescueCD ...'
-     linux (http)/tftpboot/rescue64 dodhcp netboot=nfs://router.$domein:/srv/www/htdocs/tftpboot/ setkmap=be
+     linux (http)/tftpboot/rescue64 dodhcp netboot=nfs://$lanip:/srv/www/htdocs/tftpboot/ setkmap=be
 
      echo 'Loading initial ramdisk ...'
      initrd (http)/tftpboot/initram.igz
