@@ -97,6 +97,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
         wget -P /mnt/backup https://raw.githubusercontent.com/pindanet/router/master/autorun
 
 ### Installatie
+Zorg voor een actieve LAN verbinding (kabel naar ingeschakelde switch of computer)
 
     wget https://raw.githubusercontent.com/pindanet/router/master/router.setup.sh
     sh router.setup.sh router
