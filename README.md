@@ -91,6 +91,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
             in sectie boot_menu
                 item_color = "#fff"
                 selected_item_color= "#fff"
+        wget -P /mnt/backup/grub/grub https://raw.githubusercontent.com/pindanet/router/master/clients/grub.cfg
         joe /mnt/backup/grub/grub.cfg
             # Global options
             set timeout=8
