@@ -67,6 +67,9 @@ Het pvnIP moet op beide virtuele computers hetzelfde zijn
 
   * part.sh wordt van internet gehaald
 
+           joe part.sh
+             pas 10% aan naar 80% (tweemaal) voor een grotere backuppartitie
+           
            sh part.sh part
            shutdown -r now
 ```
