@@ -30,7 +30,7 @@ Ik (Dany Pinoy) lever de computers af met een gewone back-up waarin de printerco
 
 Deling terug zonder wachtwoord (vroeger: snt+456).
 
-# VMware Player testconfiguratie
+# VMware Player configuratie
 1. Maak een Virtuele computer
   * Windows 10 x64
   * 10240 MB geheugen
