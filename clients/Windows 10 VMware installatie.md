@@ -78,11 +78,11 @@ sda2	105 MB	fat32	EFI system partition
 sda3	17 MB		Microsoft reserved partition
 sda4    127 GB  ntfs    C:
 
-sdb	750 GB
-sdb1	10%	ext4	SystemRescueCD	(vrijmaken na Windows installatie)
-sdb2	90%	ntfs	D:Werkschijf	
+sdb	60 GB
+sdb1	80%	ext4	SystemRescueCD	(vrijmaken na Windows installatie)
+sdb2	20%	ntfs	D:Werkschijf	
 ```
-#Windows 10 x64 Pro St Andries
+# Windows 10 x64 Pro
 1. Op router voor de les Thuisnetwerken
 
         joe /etc/dnsmask.conf
