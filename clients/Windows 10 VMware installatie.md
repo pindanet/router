@@ -120,7 +120,7 @@ sdb2	20%	ntfs	D:Werkschijf
 12. Privacyinstellingen > Akkoord
 13. Op router voor de les Thuisnetwerken
 
-        joe /etc/dnsmask
+        joe /etc/dnsmask.conf
           bootx64.efi inschakelen
           ipxe.efi uitschakelen
         systemctl restart dnsmask.service
