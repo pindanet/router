@@ -151,11 +151,12 @@ sdb2	20%	ntfs	D:Werkschijf
   * Snel opstarten uitschakelen > Wijzigingen opslaan (noodzakelijk voor het maken en terugzetten van back-ups, NTFS afsluiten)
 21. Naar updates zoeken > Wachten tot alle updates gedownload en geïnstalleerd zijn.
   * Nu opnieuw opstarten
-26. Computer herstarten
-27. Bootmanager > SystemRescueCD starten
+22. Weerbericht Brugge
+23. Computer herstarten
+24. Bootmanager > SystemRescueCD starten
   * Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
   * De computer sluit automatisch af na het voltooien van de back-up
-28. Computer in het netwerk van de Triangel herstarten naar Windows 10
+
 29. Partities op harde schijf maken en formatteren
   * Cd-rom-station 0 > Snelmenu > Stationsletter en paden wijzigen... > Wijzigen > E > OK
   * Schijf 1, Part 2 > Snelmenu > Verwijderen > Ja
