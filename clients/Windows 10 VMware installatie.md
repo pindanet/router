@@ -156,42 +156,31 @@ sdb2	20%	ntfs	D:Werkschijf
 24. Bootmanager > SystemRescueCD starten
   * Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
   * De computer sluit automatisch af na het voltooien van de back-up
-
-29. Partities op harde schijf maken en formatteren
-  * Cd-rom-station 0 > Snelmenu > Stationsletter en paden wijzigen... > Wijzigen > E > OK
+25. Partities op harde schijf maken en formatteren
   * Schijf 1, Part 2 > Snelmenu > Verwijderen > Ja
   * Schijf 1, Part 2 > Snelmenu > Nieuw eenvoudig volume... > Volgende > Volgende
-    * Deze stationsletter toewijzen: D > Volgende
-    * Bestandssysteem: exFAT
+    * Deze stationsletter toewijzen: E > Volgende
+    * Bestandssysteem: exFAT (Of FAT32)
     * Volumenaam: Werkschijf > Volgende > Voltooien
-
-      Opdrachtprompt (administrator) > Ja
-
-            format D: /fs:exFAT /Q
-            Current volume label: Werkschijf
-            Proceed with Format (Y/N)? Y
-            Volume label? Werkschijf
-
-30. Werkschijf (D:) > Eigenschappen > Delen > Geavanceerd delen... > Deze map delen, Machtigingen > Iedereen Volledig beheer Toestaan > OK > OK > Sluiten.
+26. Werkschijf (D:) > Eigenschappen > Delen > Geavanceerd delen... > Deze map delen, Machtigingen > Iedereen Volledig beheer Toestaan > OK > OK > Sluiten.
     * Instellingen voor geavanceerd delen beheren > Alle netwerken > Met wachtwoord beveiligd delen uitschakelen
       * Wijzigingen opslaan
-31. Apparaten en printers > Een printer toevoegen
-  * De printer die ik wil staat niet in de lijst
-  * Een printer met behulp van een TCP/IP-adres of hostnaam toevoegen
-  * Hostnaam of IP-adres: printerpcklas (vroeger: 10.10.7.220, nu dynamisch via DHCP) > Volgende
-  * Windows updates
-  * Kyocera FS-1300D
-  * Deze printer niet delen
-32. Netwerken
+27. Printer aanzetten en laten detecteren
+28. Netwerken
   * Ja de pc moet door andere pc's en apparaten gevonden worden
-33. Computer herstarten
-34. Bootmanager > SystemRescueCD starten
+29. Schermresolutie: 1280 x 720 (YouTube formaat)
+30. Computer herstarten
+31. Bootmanager > SystemRescueCD starten
   * Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
   * De computer sluit automatisch af na het voltooien van de back-up
 
-##Windows 10 VMWare
-DVD Shrink 3.2, ShareX, Office 365, Wisa, resolutie: 1280 x 720 (Youtube filmformaat)
-#Back-upsysteem St Andries aanpassen
+## Software
+1. DVD Shrink 3.2
+2. ShareX
+3. Office 365
+4. Wisa
+5. Sibelius 7 (10240 MB geheugen)
+# Back-upsysteem aanpassen
 
     mount /dev/sda4 /livemnt/boot -o rw,remount
     joe /livemnt/boot/autorun
