@@ -140,35 +140,17 @@ sdb2	20%	ntfs	D:Werkschijf
   * Gebruikers moeten een gebruikersnaam en wachtwoord opgeven ... UITschakelen > OK
   * snt+456
   * snt+456
-
-    (VMware Tools installeren)
-  
-18. Energiebeheerschema bewerken: 
+18. VMware Tools installeren
+19. Energiebeheerschema bewerken: 
   * Het beeldscherm uitschakelen na: Nooit
   * De computer in slaapstand zetten: Nooit > Wijzigingen opslaan
-19. Energiebeheer > Het gedrag van de aan/uit-knoppen bepalen
+20. Energiebeheer > Het gedrag van de aan/uit-knoppen bepalen
   * Instellingen wijzigen die momenteel niet beschikbaar zijn
   * Actie als ik op de aan/uit-knop druk: Afsluiten
   * Wachtwoordbeveiliging tijdens het uit slaapstand komen: Geen wachtwoord vereisen
   * Snel opstarten uitschakelen > Wijzigingen opslaan (noodzakelijk voor het maken en terugzetten van back-ups, NTFS afsluiten)
-20. Naar updates zoeken > Wachten tot alle updates gedownload en geïnstalleerd zijn.
+21. Naar updates zoeken > Wachten tot alle updates gedownload en geïnstalleerd zijn.
   * Nu opnieuw opstarten
-21. Naar updates zoeken > Nu installeren > Verschillende malen Opnieuw proberen
-  * Nu opnieuw opstarten
-  
-    (HiDPI: Beeldscherminstellingen > De grootte van tekst, apps en andere items wijzigen: 150%)
-
-22. Informatie over uw pc > Naam van pc wijzigen: PCxx > Volgende > Nu opnieuw opstarten
-
-23. HP Support Assistant installeren vanaf de router
-24. HP Support Assistant opstarten
-  * Aanbevolen opties INschakelen > Volgende > OK
-  * Controleren op updates en berichten
-  * Updates > Aanvinken > Downloaden en installeren
-  * Nu opnieuw opstarten > Sluiten
-25. HP Support Assistant opstarten
-  * Berichten
-    * Alle berichten verwijderen > Sluiten
 26. Computer herstarten
 27. Bootmanager > SystemRescueCD starten
   * Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
