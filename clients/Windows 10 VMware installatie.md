@@ -73,10 +73,10 @@ Het pvnIP moet op beide virtuele computers hetzelfde zijn
            sh part.sh part
            shutdown -r now
 ```
-sda1	500 MB	ntfs    hidden, diag            Basic data partition
-sda2	105 MB	fat32	EFI system partition
-sda3	17 MB		Microsoft reserved partition
-sda4    127 GB  ntfs    C:
+sda1	450 MB	ntfs    hidden, diag            Basic data partition
+sda2	100 MB	fat32	EFI system partition
+sda3	16 MB		Microsoft reserved partition
+sda4    99 GB  ntfs    C:
 
 sdb	60 GB
 sdb1	80%	ext4	SystemRescueCD	(vrijmaken na Windows installatie)
