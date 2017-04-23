@@ -33,7 +33,7 @@ Deling terug zonder wachtwoord (vroeger: snt+456).
 # VMware Player configuratie
 1. Maak een Virtuele computer
   * Windows 10 x64
-  * 10240 MB geheugen
+  * 4096 MB geheugen
   * 2 processors
   * 100 GB Harde schijf
   * 60 GB Harde schijf
