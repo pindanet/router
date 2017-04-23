@@ -125,7 +125,7 @@ sdb2	20%	ntfs	D:Werkschijf
           ipxe.efi uitschakelen
         systemctl restart dnsmask.service
 14. Computer herstarten
-15. Esc > Network Boot (F12) > IP4 Intel(R) Ethernet Connection I217-LM
+15. Esc > EFI Network
   * part.sh wordt van internet gehaald
   * end of autorun scripts, press Enter to continue
 
