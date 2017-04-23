@@ -135,7 +135,7 @@ sdb2	20%	ntfs	D:Werkschijf
   * Backupwachtwoord: basis (blind typen en eindigen met Return)
   * De computer sluit automatisch af na het voltooien van de back-up
 16. Computer starten
-17.Windows + R
+17. Windows + R
   * netplwiz > OK
   * Gebruikers moeten een gebruikersnaam en wachtwoord opgeven ... UITschakelen > OK
   * snt+456
