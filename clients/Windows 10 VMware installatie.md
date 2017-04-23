@@ -1,6 +1,6 @@
 # ToDo
 
-# Back-upsysteem St Andries
+# Back-upsysteem
 1. Start de computer
 2. Als je 20 seconden wacht start Windows 10 automatisch op.
 3. Selecteer binnen de 20 seconden met de pijltoetsen op het toetsenbord de optie Windows 10 terugzetten en druk Return</br>
@@ -30,23 +30,14 @@ Ik (Dany Pinoy) lever de computers af met een gewone back-up waarin de printerco
 
 Deling terug zonder wachtwoord (vroeger: snt+456).
 
-# Installatieprocedure HP EliteDesk 800 G1 SFF St Andries
-1. Esc > Computer Setup (F10)
-2. Bestand > Systeem-ROM flashen
-  vanaf USB-stick
-3. Security > System Security
-  * Virtualization Technology (VTx) Enabled
-  * Virtualization Technology Directed I/O (VTd) Enabled
-  * F10=Accept
-4. Geavanceerd > Optie ROM startbeleid
-  * PXE Opties ROM's Alleen UEFI
-  * Opslag Opties ROM's Alleen UEFI
-  * Video Opties ROM's Alleen UEFI
-  * F10-Accepteer
-5. File > Save Changes and Exit > Yes
-
-##VMware Player testconfiguratie
-1. Maak een Virtuele computer met een NAT en een Bridged interface.
+# VMware Player testconfiguratie
+1. Maak een Virtuele computer
+  * Windows 10 x64
+  * 10240 MB geheugen
+  * 2 processors
+  * 100 GB Harde schijf
+  * 60 GB Harde schijf
+  * met een NAT en een Bridged interface
 2. Start de virtuele computer NIET op.
 3. Sluit VMware af.
 4. Pas .vmx bestand als volgt aan:
@@ -59,11 +50,11 @@ Deling terug zonder wachtwoord (vroeger: snt+456).
         ethernet0.pvnID = "52 dd bc d5 36 19 1b 6b-0f f1 fb 1c 4c ac 44 f7"
         firmware = "efi"
 
-5. Start de virtuele computer
+5. Start de virtuele computer (voor het starten van de virtuele router)
 
 Het pvnIP moet op beide virtuele computers hetzelfde zijn
 
-#Partitioneren
+# Partitioneren
 1. Op router voor de les Thuisnetwerken
 
         joe /etc/dnsmask.conf
