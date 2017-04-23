@@ -105,16 +105,19 @@ sdb2	20%	ntfs	D:Werkschijf
 8. Partitionering
   * Niet-toegewezen ruimte van station 0
   * Volgende
-9. Expressinstellingen gebruiken
-10. Ik ben de eigenaar ervan > Volgende
-11. Bewijzen dat jij het bent
-  * Deze stap overslaan
-12. Een account maken voor deze pc
+9. Instellingen
+  * Regio: Belgiê > Ja
+  * Toetsenbordindeling: Belgisch (punt) > Ja
+  * Tweede toetsenbordindeling Overslaan
+10. Instellen voor persoonlijk gebruik > Volgende
+11. Account
+  * Offlineaccount
   * Wie gaat deze pc gebruiken? SNT Cursist
   * snt+456
   * snt+456
   * SNT
   * Volgende
+12. Privacyinstellingen > Akkoord
 13. Op router voor de les Thuisnetwerken
 
         joe /etc/dnsmask
