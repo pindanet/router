@@ -90,8 +90,7 @@ sdb2	20%	ntfs	D:Werkschijf
           ipxe.efi inschakelen
         systemctl restart dnsmask.service
         sh router.setup.sh windows
-2. Esc > Network Boot (F12)
-  * IP4 Intel(R) Ethernet Connection I217-LM
+2. Esc > EFI Network
 
             windows\setup.exe
 3. Windows Setup
