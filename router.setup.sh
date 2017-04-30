@@ -220,7 +220,7 @@ EOF
   cat <<EOF > /etc/hostapd.conf
 interface=$wlan
 driver=nl80211
-channel=6
+channel=11
 ssid=SoftAP-SNT
 hw_mode=g
 auth_algs=1
