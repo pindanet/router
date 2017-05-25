@@ -108,7 +108,7 @@ sda4	125 GB  ext4    backup
   * bootmgr: installatie bootmanager en back-upsysteem
   * Computer herstart automatisch
   * Bootmanager > SystemRescueCd (64bit) > backup
-  * De computer sluit automatisch af na het voltooien van de back-up
+  * Typ na het voltooien van de back-up halt om de computer af te sluiten
 
 #SystemRescueCD USB autorun script
 
