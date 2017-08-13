@@ -90,10 +90,6 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
         cp /livemnt/boot/syslinux/{initram.igz,rescue64} /mnt/backup/sysrcd/
         wget -P /mnt/backup/grub/locale/ https://raw.githubusercontent.com/pindanet/router/master/clients/nl.mo
         umount /mnt/custom
-        joe /mnt/backup/grub/themes/starfield/theme.txt
-            in sectie boot_menu
-                item_color = "#fff"
-                selected_item_color= "#fff"
         wget -P /mnt/backup/grub/grub https://raw.githubusercontent.com/pindanet/router/master/grub.cfg
         wget -P /mnt/backup https://raw.githubusercontent.com/pindanet/router/master/autorun
 
