@@ -23,7 +23,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
 |----------|--------:|:--------------:|------------|
 |/dev/sda1 |  512 MB |	          FAT |	/boot/efi  |
 |/dev/sda2 |	8 GB |	         swap ||
-|/dev/sda1 |  111 GB |	         Ext4 |	/  | 
+|/dev/sda3 |  111 GB |	         Ext4 |	/  | 
 |||||
 |/dev/sdb1 |  100 GB |	         Ext4 |	/var/backup
 |/dev/sdb2 |  832 GB |           Ext4 |	/usr/home/Documents
