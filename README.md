@@ -54,7 +54,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
     * Formatteer de partitie.  
     * Ext4  
     * Aankoppelpunt: /usr/home/Documents > Voltooien  
-  * > Accepteren > Volgende  
+  * Accepteren > Volgende  
 * Tijdzone:
   * Hardwareklok instellen op UTC inschakelen
   * Tijdzone: België
