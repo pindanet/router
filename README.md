@@ -28,7 +28,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
 |/dev/sdb1 |  100 GB |	         Ext4 |	/var/backup
 |/dev/sdb2 |  832 GB |           Ext4 |	/usr/home/Documents
 ## Software
-### OpenSuSE Leap 42.2
+### OpenSuSE Leap 42.3
 * Opstarten met installatie x86_64 USB  
 * Esc  
 * Installation  
@@ -71,6 +71,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
 * Installatie instellingen:
   * Opstarten > Bootloader: Niet beheerd > Doorgaan > OK
   * Firewall inshakelen, SSH-poort openen en SSH-service inschakelen
+  * SSH-hostsleutels en -configuratie NIET importeren
   * Installeren > Installeren
 * Computer laten herstarten zonder installatie USB
 * Aanmelden als root
