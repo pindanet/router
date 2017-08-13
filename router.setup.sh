@@ -18,8 +18,8 @@
 #
 
 # Router Instellingen
-wan=eth0
-lan=eth1
+wan=eth1
+lan=eth0
 lanip=192.168.0.1     # SNT: 192.168.2.1
 lansubnet=192.168.0.0 # SNT: 192.168.2.0
 lanrange='192.168.0.2,192.168.0.200'  # SNT: 192.168.2.100,192.168.2.200
