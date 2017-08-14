@@ -360,6 +360,8 @@ EOF
   sed -i.ori "s/#mail_location =/mail_location = mbox:~\/Mail:INBOX=\/var\/spool\/mail\/%u/" /etc/dovecot/conf.d/10-mail.conf
   # Uitschakelen gebruik van ssl certificaten
   sed -i.ori "s/#ssl = yes/ssl = no/" /etc/dovecot/conf.d/10-ssl.conf
+  # Inschakelen onsleutelde wachtwoorden
+  sed -i.ori "s/#disable_plaintext_auth = yes/disable_plaintext_auth = no/" /etc/dovecot/conf.d/10-auth.conf
   systemctl enable dovecot.service
   systemctl start dovecot.service
   # # Testen
