@@ -471,7 +471,7 @@ EOF
   chown sntbeheerder:users /home/sntbeheerder/Music
   wget --directory-prefix=/home/sntbeheerder/Music/ https://webdesign.pindanet.be/deel2/Linecraft/muziek/erotic_dream.mp3
   wget --output-document=/home/sntbeheerder/Music/erotic_dream.jpg https://webdesign.pindanet.be/deel2/Linecraft/muziek/speedsound.jpg
-  wget --output-document=/home/sntbeheerder/Videos/kajimba.mp4 https://webdesign.pindanet.be/deel2/Linecraft/films/kajimba_-_snippets_640x368.mp4
+  wget --output-document=/home/sntbeheerder/Videos/kajimba.mp4 https://webdesign.pindanet.be/deel2/Linecraft/films/Kajimba.mp4
   wget --directory-prefix=/home/sntbeheerder/Videos/ https://webdesign.pindanet.be/deel2/Linecraft/films/kajimba.jpg
 
   cat <<EOF > /etc/systemd/system/minidlna.service
