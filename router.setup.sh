@@ -455,9 +455,9 @@ EOF
   rm -rf /srv/www/htdocs/webmail/installer
 
 # ReadyMedia
-  wget http://downloads.sourceforge.net/project/minidlna/minidlna/1.1.5/minidlna-1.1.5_static.tar.gz
-  tar xvzf minidlna-1.1.5_static.tar.gz -C /
-  rm minidlna-1.1.5_static.tar.gz
+  wget http://downloads.sourceforge.net/project/minidlna/minidlna/1.2.0/minidlna-1.2.0_static.tar.gz
+  tar xvzf minidlna-1.2.0_static.tar.gz -C /
+  rm minidlna-1.2.0_static.tar.gz
   sed -i.ori "/#network_interface=eth0/anetwork_interface=br0" /etc/minidlna.conf
   sed -i "/#user=jmaggard/auser=root" /etc/minidlna.conf
   sed -i "s/media_dir=\/opt/#media_dir=\/opt/" /etc/minidlna.conf
