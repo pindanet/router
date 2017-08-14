@@ -343,6 +343,7 @@ EOF
   zypper --non-interactive install exim mailx
   sed -i.ori "s/# primary_hostname =/primary_hostname = $domein/" /etc/exim/exim.conf
   sed -i 's/  require verify        = sender/#  require verify        = sender/' /etc/exim/exim.conf
+  yast2 firewall services add zone=EXT tcpport=25
   systemctl enable exim.service
   systemctl start exim.service
 # Mailboxen initialiseren
