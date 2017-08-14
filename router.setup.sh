@@ -526,6 +526,7 @@ EOF
   done
   sudo -u wwwrun /srv/www/htdocs/nextcloud/occ user:report
   sed -i -e "/installed/a\  'default_language' => 'nl'," /srv/www/htdocs/nextcloud/config/config.php
+  sed -i -e "/installed/a\  'force_language' => 'nl'," /srv/www/htdocs/nextcloud/config/config.php
 #  sed -i -e "/return array(/a\'nl'=>'Nederlands'," /srv/www/htdocs/nextcloud/settings/languageCodes.php
 
 # Monitor Linux Dash
