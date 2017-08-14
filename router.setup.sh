@@ -510,7 +510,7 @@ EOF
   yast2 firewall services add zone=EXT service=service:vsftpd
 
 # NextCloud
-  zypper addrepo http://download.opensuse.org/repositories/server:/php:/applications/openSUSE_Leap_42.2/server:php:applications.repo
+  zypper addrepo http://download.opensuse.org/repositories/server:/php:/applications/openSUSE_Leap_42.3/server:php:applications.repo
   zypper --gpg-auto-import-keys refresh
   zypper --non-interactive install nextcloud php7-fileinfo
 
