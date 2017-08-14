@@ -427,10 +427,10 @@ EOF
   # echo "<?php phpinfo(); ?>" > /srv/www/htdocs/info.php
   # rm /srv/www/htdocs/info.php
 
-  wget https://github.com/roundcube/roundcubemail/releases/download/1.2.3/roundcubemail-1.2.3-complete.tar.gz
-  tar xfz roundcubemail-1.2.3-complete.tar.gz -C /srv/www/htdocs/
-  rm roundcubemail-1.2.0-complete.tar.gz
-  mv /srv/www/htdocs/roundcubemail-1.2.3/ /srv/www/htdocs/webmail/
+  wget https://github.com/roundcube/roundcubemail/releases/download/1.3.0/roundcubemail-1.3.0-complete.tar.gz
+  tar xfz roundcubemail-1.3.0-complete.tar.gz -C /srv/www/htdocs/
+  rm roundcubemail-1.3.0-complete.tar.gz
+  mv /srv/www/htdocs/roundcubemail-1.3.0/ /srv/www/htdocs/webmail/
   chown -R wwwrun /srv/www/htdocs/webmail/temp/
   chown -R wwwrun /srv/www/htdocs/webmail/logs/
 
