@@ -449,6 +449,9 @@ EOF
   sed -i.ori "s|^\(\$config\['language'\] =\).*$|\1 \'nl_BE\';|" /srv/www/htdocs/webmail/config/defaults.inc.php
   # Aanmaken standaard postvakken
   sed -i "s|^\(\$config\['create_default_folders'\] =\).*$|\1 true;|" /srv/www/htdocs/webmail/config/defaults.inc.php
+  # Geen Authentificatie nodig voor het verzenden van mails 
+  sed -i.ori "s|^\(\$config\['smtp_user'\] =\).*$|\1 \'\';|" /srv/www/htdocs/webmail/config/config.inc.php
+  sed -i.ori "s|^\(\$config\['smtp_pass'\] =\).*$|\1 \'\';|" /srv/www/htdocs/webmail/config/config.inc.php
   rm -rf /srv/www/htdocs/webmail/installer
 
 # ReadyMedia
