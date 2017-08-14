@@ -534,6 +534,26 @@ EOF
   unzip master.zip -d /srv/www/htdocs/
   rm master.zip
   # bekijken via http://router.pindanet.home/linux-dash-master/
+  
+# Raspbian repository mirror
+  mkdir /srv/www/htdocs/raspbian
+  echo "/usr/home/Documents/raspbian/raspbian.org /srv/www/htdocs/raspbian/ none  defaults,bind         0 0" >> /etc/fstab
+  mount -a
+  cat <<EOF > /srv/www/htdocs/raspbian/index.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Raspbian repository</title>
+</head>
+<body>
+
+<h1>Raspbian repository mirror</h1>
+<p>Aangeboden door PindaNet.be.</p>
+
+</body>
+</html>
+EOF
+  echo "address=/mirrordirector.raspbian.org/$lanip" >> /etc/dnsmasq.conf
 
   shutdown -h now
 fi
