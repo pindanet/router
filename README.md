@@ -100,17 +100,10 @@ Zorg voor een actieve LAN verbinding (kabel naar ingeschakelde switch of compute
     sh router.setup.sh router
     sh router.setup.sh services
 
-### Raspian repository
-    mkdir /srv/www/htdocs/raspbian
-    
-    mount /dev/sdc1 /mnt/
-    rsync -avHxh --numeric-ids --progress --delete archive.raspbian.org::archive/raspbian/ /mnt/raspbian.org
-    
-    rsync -avHxh --numeric-ids --progress --delete /mnt/raspbian.org/ /usr/home/Documents/raspbian/raspbian.org
-    umount /mnt
-    
-    mount --bind /usr/home/Documents/raspbian/raspbian.org /srv/www/htdocs/raspbian/
 ### Updaten enz.
+* Raspian repository
+
+      rsync -avHxh --numeric-ids --progress --delete archive.raspbian.org::archive/raspbian/ /usr/home/Documents/raspbian/raspbian.org
 * Info
 
         cat /etc/resolv.conf
