@@ -537,6 +537,7 @@ EOF
   
 # Raspbian repository mirror
   mkdir /srv/www/htdocs/raspbian
+  mkdir -p /usr/home/Documents/raspbian/raspbian.org
   echo "/usr/home/Documents/raspbian/raspbian.org /srv/www/htdocs/raspbian/ none  defaults,bind         0 0" >> /etc/fstab
   mount -a
   cat <<EOF > /srv/www/htdocs/raspbian/index.html
