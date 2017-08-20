@@ -65,6 +65,8 @@ NAME=''
 NETWORK=''
 REMOTE_IPADDR=''
 STARTMODE='auto'
+IPADDR_0='fd86:d61b:4c69:e4e6::1'
+PREFIXLEN_0='64'
 EOF
 
   # Routering
@@ -105,6 +107,12 @@ dhcp-boot=bootx64.efi
 enable-tftp
 tftp-root=/srv/tftpboot
 interface=br0
+# IPV6
+dhcp-fqdn
+enable-ra
+dhcp-option=option6:dns-server,[::]
+#dhcp-option=option6:dns-name,pindanet.home
+dhcp-range=::100,::1ff, constructor:br0, ra-names, ra-stateless, 64, 12h
 EOF
   
   # Router intern bereikbaar via router.pindanet.home
