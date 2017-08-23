@@ -135,7 +135,6 @@ Zorg voor een actieve LAN verbinding (kabel naar ingeschakelde switch of compute
   * kopieer Documenten/SNT/Thuisnetwerken/WinPE_amd64.iso /usr/home/Documents/
   * kopieer Downloads/HP Support Assistant.exe /usr/home/Documents/
 # ToDo
-* Raspbian repository
 * Realtec hostapd
   * https://nikunjlahoti.wordpress.com/2016/09/07/run-your-wifi-dongle-as-access-point-soft-ap-8188eu-on-linux/
   * http://billauer.co.il/blog/2014/06/linux-realtek-hostapd/
