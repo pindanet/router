@@ -589,6 +589,7 @@ if [ "$1" == "windows" ]; then
 fi
 
 # ToDo
+# Mirror cursus
 # Horde Groupware
 # Prosody IM Jabber/XMPP Server
 exit
