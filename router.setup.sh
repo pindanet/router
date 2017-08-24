@@ -566,6 +566,21 @@ EOF
 
   shutdown -h now
 fi
+if [ "$1" == "rtl8188eu" ]; then
+# Hostapd versie voor Realtec WiFi USB adapters zoals de TL-WN725N
+# https://nikunjlahoti.wordpress.com/2016/09/07/run-your-wifi-dongle-as-access-point-soft-ap-8188eu-on-linux/
+# http://www.tldp.org/HOWTO/BRIDGE-STP-HOWTO/set-up-the-bridge.html
+
+  wget https://github.com/jenssegers/RTL8188-hostapd/archive/master.zip
+  unzip master.zip
+  zypper install gcc make # kernel-default-devel
+  cd RTL8188-hostapd-master/hostapd/
+  make
+  mv /usr/sbin/hostapd /usr/sbin/hostapd.ori
+  cp hostapd /usr/sbin/hostapd-rtl8188eu
+  cp /etc/hostapd.conf /etc/hostapd-rtl8188eu.conf
+  sed -i "s/nl80211/rtl871xdrv/" /etc/hostapd-rtl8188eu.conf
+fi
 if [ "$1" == "windows" ]; then
   # Windows 10 installatiebestanden eenmalig ter beschikbaar stellen
   mkdir /srv/www/htdocs/windows
