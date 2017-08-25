@@ -252,15 +252,38 @@ EOF
 #!/bin/bash
 # scherm wissen
 printf "\033c" > /dev/tty1
+# if [ \`ls -1 /sys/class/net/ | grep "wlan"\` ]; then
+#   hostapd=\`/usr/bin/systemctl is-active hostapd.service\`
+#   if [ \$hostapd == "inactive" ] || [ \$hostapd == "failed" ] || [ \$hostapd == "unknown" ]; then # herstart hostapd noodzakelijk
+#     wlandev=\`ls -1 /sys/class/net/ | grep "wlan"\`
+#     sed -i "s/wlan./\$wlandev/" /etc/hostapd.conf
+#     /usr/bin/systemctl restart hostapd.service
+#   fi
+# else
+#   /usr/bin/systemctl stop hostapd.service
+# fi
 if [ \`ls -1 /sys/class/net/ | grep "wlan"\` ]; then
-  hostapd=\`/usr/bin/systemctl is-active hostapd.service\`
-  if [ \$hostapd == "inactive" ] || [ \$hostapd == "failed" ] || [ \$hostapd == "unknown" ]; then # herstart hostapd noodzakelijk
-    wlandev=\`ls -1 /sys/class/net/ | grep "wlan"\`
-    sed -i "s/wlan./\$wlandev/" /etc/hostapd.conf
-    /usr/bin/systemctl restart hostapd.service
+  /sbin/lsmod | grep "8188eu"
+  if [ \$? == 1 ]; then
+    hostapd=\`/usr/bin/systemctl is-active hostapd.service\`
+    if [ \$hostapd == "inactive" ] || [ \$hostapd == "failed" ] || [ \$hostapd == "unknown" ]; then # herstart hostapd noodzakelijk
+      wlandev=\`ls -1 /sys/class/net/ | grep "wlan"\`
+      sed -i "s/wlan./\$wlandev/" /etc/hostapd.conf
+      /usr/bin/systemctl restart hostapd.service
+    fi
+  else # voor rtl8188eu aangepaste hostapd versie gebruiken
+    hostapd=\`/usr/bin/systemctl is-active hostapd-rtl8188eu.service\`
+    if [ \$hostapd == "inactive" ] || [ \$hostapd == "failed" ] || [ \$hostapd == "unknown" ]; then # herstart hostapd noodzakelijk
+      wlandev=\`ls -1 /sys/class/net/ | grep "wlan"\`
+      sed -i "s/wlan./\$wlandev/" /etc/hostapd-rtl8188eu.conf
+      /usr/bin/systemctl restart hostapd-rtl8188eu.service
+      /sbin/brctl addif br0 $wlandev
+    fi
   fi
 else
   /usr/bin/systemctl stop hostapd.service
+  /usr/bin/systemctl stop hostapd-rtl8188eu.service
+  /sbin/modprobe -r r8188eu
 fi
 dnsmasq=\`/usr/bin/systemctl is-active dnsmasq.service\`
 if [ \$dnsmasq == "inactive" ] || [ \$dnsmasq == "failed" ]; then # herstart dnsmasq noodzakelijk
