@@ -576,7 +576,7 @@ if [ "$1" == "rtl8188eu" ]; then
   zypper install gcc make # kernel-default-devel
   cd RTL8188-hostapd-master/hostapd/
   make
-  mv /usr/sbin/hostapd /usr/sbin/hostapd.ori
+  # mv /usr/sbin/hostapd /usr/sbin/hostapd.ori
   cp hostapd /usr/sbin/hostapd-rtl8188eu
   cp /etc/hostapd.conf /etc/hostapd-rtl8188eu.conf
   sed -i "s/nl80211/rtl871xdrv/" /etc/hostapd-rtl8188eu.conf
