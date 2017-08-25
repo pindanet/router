@@ -603,6 +603,18 @@ if [ "$1" == "rtl8188eu" ]; then
   cp hostapd /usr/sbin/hostapd-rtl8188eu
   cp /etc/hostapd.conf /etc/hostapd-rtl8188eu.conf
   sed -i "s/nl80211/rtl871xdrv/" /etc/hostapd-rtl8188eu.conf
+  cat <<EOF > /etc/systemd/system/hostapd-rtl8188eu.service
+[Unit]
+Description=Hostapd IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator
+After=network.target
+
+[Service]
+ExecStart=/usr/sbin/hostapd-rtl8188eu /etc/hostapd-rtl8188eu.conf 
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+EOF
 fi
 if [ "$1" == "windows" ]; then
   # Windows 10 installatiebestanden eenmalig ter beschikbaar stellen
