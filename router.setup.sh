@@ -277,7 +277,7 @@ if [ \`ls -1 /sys/class/net/ | grep "wlan"\` ]; then
       wlandev=\`ls -1 /sys/class/net/ | grep "wlan"\`
       sed -i "s/wlan./\$wlandev/" /etc/hostapd-rtl8188eu.conf
       /usr/bin/systemctl restart hostapd-rtl8188eu.service
-      /sbin/brctl addif br0 $wlandev
+      /sbin/brctl addif br0 \$wlandev
     fi
   fi
 else
@@ -291,6 +291,7 @@ if [ \$dnsmasq == "inactive" ] || [ \$dnsmasq == "failed" ]; then # herstart dns
 fi
 /usr/bin/systemctl status dnsmasq.service > /dev/tty1
 /usr/bin/systemctl status hostapd.service > /dev/tty1
+/usr/bin/systemctl status hostapd.service-rtl8188eu > /dev/tty1
 
 # plaats het IP adres op het scherm
 IPadres=\`/sbin/ip -f inet -oneline addr show $wan | cut -d " " -f7\`
