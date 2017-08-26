@@ -594,7 +594,7 @@ EOF
   if true; then
     wget https://github.com/jenssegers/RTL8188-hostapd/archive/master.zip
     unzip master.zip
-    zypper install gcc make # kernel-default-devel
+    zypper install gcc make
     cd RTL8188-hostapd-master/hostapd/
     make
     # mv /usr/sbin/hostapd /usr/sbin/hostapd.ori
