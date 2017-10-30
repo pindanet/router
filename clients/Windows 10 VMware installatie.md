@@ -153,7 +153,9 @@ sdb2	20%	ntfs	D:Werkschijf
   * Instellingen wijzigen die momenteel niet beschikbaar zijn
   * Actie als ik op de aan/uit-knop druk: Afsluiten
   * Wachtwoordbeveiliging tijdens het uit slaapstand komen: Geen wachtwoord vereisen
-  * Snel opstarten uitschakelen > Wijzigingen opslaan (noodzakelijk voor het maken en terugzetten van back-ups, NTFS afsluiten)
+  * Snel opstarten uitschakelen > Wijzigingen opslaan (noodzakelijk voor het maken en terugzetten van back-ups, NTFS afsluiten) of via regedit
+  
+        HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power\HiberbootEnabled DWORD op 0 zetten
 21. Naar updates zoeken > Wachten tot alle updates gedownload en geïnstalleerd zijn.
   * Nu opnieuw opstarten
 22. Weerbericht Brugge
