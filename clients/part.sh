@@ -27,6 +27,8 @@ if [ -d /sys/firmware/efi ]; then
         grub-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/gentoo --bootloader-id=grub --recheck /dev/sda
 
         mkdir /mnt/gentoo/sysrcd
+	# voor start vanaf SystemRescueCD.iso (CD-station)
+        cp /livemnt/boot/isolinux/{initram.igz,rescue64} /mnt/gentoo/sysrcd/
         cp /livemnt/boot/{sysrcd.dat,sysrcd.md5,initram.igz,rescue64} /mnt/gentoo/sysrcd/
         wget -O /mnt/gentoo/grub/themes/starfield/starfield.png https://raw.githubusercontent.com/pindanet/router/master/clients/snt.png
         wget -P /mnt/gentoo/grub/locale/ https://raw.githubusercontent.com/pindanet/router/master/clients/nl.mo
