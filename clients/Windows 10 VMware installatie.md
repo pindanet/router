@@ -126,7 +126,7 @@ sdb2	20%	ntfs	D:Werkschijf
         systemctl restart dnsmask.service
 14. Computer herstarten
 15. Esc > EFI Network
-  * part.sh wordt van internet gehaald
+  * part.sh wordt van internet gehaald (SystemRescueCD: wget -P /root/ https://raw.githubusercontent.com/pindanet/router/master/clients/part.sh)
   * end of autorun scripts, press Enter to continue
 
         sh part.sh bootmgr
