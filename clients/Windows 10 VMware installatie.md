@@ -118,7 +118,7 @@ sdb2	20%	ntfs	D:Werkschijf
   * SNT
   * Volgende
 12. Privacyinstellingen > Akkoord
-13. Op router voor de les Thuisnetwerken
+13. Opstarten via SystemRescueCD of via router voor de les Thuisnetwerken
 
         joe /etc/dnsmask.conf
           bootx64.efi inschakelen
