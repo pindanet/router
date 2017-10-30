@@ -131,7 +131,11 @@ sdb2	20%	ntfs	D:Werkschijf
 
         sh part.sh bootmgr
         shutdown -r now
-15. Bootmanager > SystemRescueCD starten
+15. Indien de Grub bootmanager niet start:
+  * Start Windows
+  * Start Windows PowerShell (Admin)
+  * bcdedit /set '{bootmgr}' path \EFI\grub\grubx64.efi
+16. Bootmanager > SystemRescueCD starten
   * Backupwachtwoord: basis (blind typen en eindigen met Return)
   * De computer sluit automatisch af na het voltooien van de back-up
 16. Computer starten
