@@ -24,7 +24,7 @@ if [ -d /sys/firmware/efi ]; then
     if [ "$1" == "bootmgr" ]; then
         mount /dev/sda2 /mnt/custom
         mount /dev/sdb1 /mnt/gentoo
-        grub2-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/gentoo --bootloader-id=grub --recheck /dev/sda
+        grub-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/gentoo --bootloader-id=grub --recheck /dev/sda
 
         mkdir /mnt/gentoo/sysrcd
         cp /livemnt/boot/{sysrcd.dat,sysrcd.md5,initram.igz,rescue64} /mnt/gentoo/sysrcd/
