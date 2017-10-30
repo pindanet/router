@@ -28,10 +28,10 @@ if [ -d /sys/firmware/efi ]; then
 
         mkdir /mnt/gentoo/sysrcd
         cp /livemnt/boot/{sysrcd.dat,sysrcd.md5,initram.igz,rescue64} /mnt/gentoo/sysrcd/
-        wget -O /mnt/gentoo/grub/themes/starfield/starfield.png http://users.snt.be/dany.p/public_html/installatie/snt.png
-        wget -P /mnt/gentoo/grub/locale/ http://users.snt.be/dany.p/public_html/installatie/nl.mo
-        wget -P /mnt/gentoo/grub/ http://users.snt.be/dany.p/public_html/installatie/grub.cfg
-        wget -P /mnt/gentoo/ http://users.snt.be/dany.p/public_html/installatie/autorun
+        wget -O /mnt/gentoo/grub/themes/starfield/starfield.png https://raw.githubusercontent.com/pindanet/router/master/clients/snt.png
+        wget -P /mnt/gentoo/grub/locale/ https://raw.githubusercontent.com/pindanet/router/master/clients/nl.mo
+        wget -O /mnt/gentoo/grub/grub.cfg https://raw.githubusercontent.com/pindanet/router/master/clients/grub.cfg
+        wget -O /mnt/gentoo/autorun http://users.snt.be/dany.p/public_html/installatie/autorun
         umount /mnt/custom
         umount /mnt/gentoo
         exit
