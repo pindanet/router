@@ -55,9 +55,7 @@ Deling terug zonder wachtwoord (vroeger: snt+456).
 Het pvnIP moet op beide virtuele computers hetzelfde zijn
 
 # Partitioneren
-1. Opstarten via SystemRescueCD
-   Of
-   Op router voor de les Thuisnetwerken
+1. Opstarten via SystemRescueCD of via router voor de les Thuisnetwerken
 
         joe /etc/dnsmask.conf
           bootx64.efi inschakelen
