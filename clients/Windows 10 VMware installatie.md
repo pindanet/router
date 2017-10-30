@@ -48,14 +48,16 @@ Deling terug zonder wachtwoord (vroeger: snt+456).
 
         ethernet0.connectionType = "pvn"
         ethernet0.pvnID = "52 dd bc d5 36 19 1b 6b-0f f1 fb 1c 4c ac 44 f7"
-        firmware = "efi"
+        firmware = "efi" (niet meer nodig)
 
 5. Start de virtuele computer (voor het starten van de virtuele router)
 
 Het pvnIP moet op beide virtuele computers hetzelfde zijn
 
 # Partitioneren
-1. Op router voor de les Thuisnetwerken
+1. Opstarten via SystemRescueCD
+   Of
+   Op router voor de les Thuisnetwerken
 
         joe /etc/dnsmask.conf
           bootx64.efi inschakelen
@@ -65,7 +67,7 @@ Het pvnIP moet op beide virtuele computers hetzelfde zijn
 2. Esc > Network Boot (F12)
   * IP4 Intel(R) Ethernet Connection I217-LM
 
-  * part.sh wordt van internet gehaald
+  * part.sh wordt van internet gehaald (SystemRescueCD: wget -P /root/ https://raw.githubusercontent.com/pindanet/router/master/clients/part.sh)
 
            joe part.sh
              pas 10% aan naar 80% (tweemaal) voor een grotere backuppartitie
