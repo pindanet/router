@@ -35,8 +35,8 @@ Deling terug zonder wachtwoord (vroeger: snt+456).
   * Windows 10 x64
   * 4096 MB geheugen
   * 2 processors
-  * 100 GB Harde schijf
-  * 60 GB Harde schijf
+  * 120 GB Harde schijf
+  * 120 GB Harde schijf
   * met een NAT en een Bridged interface
 2. Start de virtuele computer NIET op.
 3. Sluit VMware af.
@@ -68,7 +68,7 @@ Het pvnIP moet op beide virtuele computers hetzelfde zijn
   * part.sh wordt van internet gehaald (SystemRescueCD: wget -P /root/ https://raw.githubusercontent.com/pindanet/router/master/clients/part.sh)
 
            joe part.sh
-             pas 10% aan naar 80% (tweemaal) voor een grotere backuppartitie
+             pas 10% aan naar 50% (tweemaal) voor een grotere backuppartitie
            
            sh part.sh part
            shutdown -r now
@@ -78,9 +78,9 @@ sda2	100 MB	fat32	EFI system partition
 sda3	16 MB		Microsoft reserved partition
 sda4    99 GB  ntfs    C:
 
-sdb	60 GB
-sdb1	80%	ext4	SystemRescueCD	(vrijmaken na Windows installatie)
-sdb2	20%	ntfs	D:Werkschijf	
+sdb	120 GB
+sdb1	50%	ext4	SystemRescueCD	(vrijmaken na Windows installatie)
+sdb2	50%	ntfs	D:Werkschijf	
 ```
 # Windows 10 x64 Pro
 1. Op router voor de les Thuisnetwerken
@@ -103,6 +103,7 @@ sdb2	20%	ntfs	D:Werkschijf
 6. Ik ga akkoord met de licentievoorwaarden > Volgende
 7. Aangepast: alleen Windows installeren (geavanceerd)
 8. Partitionering
+  * Alle partities op station 0 verwijderen
   * Niet-toegewezen ruimte van station 0
   * Volgende
 9. Instellingen
@@ -115,9 +116,19 @@ sdb2	20%	ntfs	D:Werkschijf
   * Wie gaat deze pc gebruiken? SNT Cursist
   * snt+456
   * snt+456
-  * SNT
+  * Wat is de naam van uw eerste school? SNT
+  * In welke plaats bent u geboren? Brugge
+  * Hoe heette uw eerste huisdier? Loebas
   * Volgende
-12. Privacyinstellingen > Akkoord
+12. Privacy
+  * Gebruik spraakherkenning > Accepteren
+  * Ja Ontvang op locatie gebaseerde ervaringen > Accepteren
+  * Ja Schakel Mijn apparaat zoeken in > Accepteren
+  * Volledig Stuur alle diagnostische gegevens > Accepteren
+  * Ja Stuur handschrift- en typgegevens > Accepteren
+  * Ja Laat Microsoft op maat gemaakte ervaringen aanbieden > Accepteren
+  * Ja Apps kunnen de reclame-id gebruiken > Accepteren
+  * Privacyinstellingen > Akkoord
 13. Opstarten via SystemRescueCD of via router voor de les Thuisnetwerken
 
         joe /etc/dnsmask.conf
@@ -145,7 +156,9 @@ sdb2	20%	ntfs	D:Werkschijf
   * Gebruikers moeten een gebruikersnaam en wachtwoord opgeven ... UITschakelen > OK
   * snt+456
   * snt+456
-18. VMware Tools installeren
+18. VMware Tools
+  * Downloaden: https://softwareupdate.vmware.com/cds/vmw-desktop/ws/14.1.2/8497320/windows/packages/tools-windows.tar
+  * Installeren.
 19. Energiebeheerschema bewerken: 
   * Het beeldscherm uitschakelen na: Nooit
   * De computer in slaapstand zetten: Nooit > Wijzigingen opslaan
@@ -175,7 +188,10 @@ sdb2	20%	ntfs	D:Werkschijf
 27. Printer aanzetten en laten detecteren
 28. Netwerken
   * Ja de pc moet door andere pc's en apparaten gevonden worden
-29. Schermresolutie: 1280 x 720 (YouTube formaat)
+29. Beeldscherm
+  * Schermresolutie: 1280 x 720 (YouTube formaat)
+  * HiDPI Schermresolutie: 2560x1440
+  * HiDPI De grootte van tekst, apps en andere items wijzigen: 200%
 30. Computer herstarten
 31. Bootmanager > SystemRescueCD starten
   * Backupwachtwoord: sntlcvo (blind typen en eindigen met Return)
