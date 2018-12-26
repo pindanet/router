@@ -33,7 +33,7 @@ if [ -d /sys/firmware/efi ]; then
         wget -O /mnt/gentoo/grub/themes/starfield/starfield.png https://raw.githubusercontent.com/pindanet/router/master/clients/snt.png
         wget -P /mnt/gentoo/grub/locale/ https://raw.githubusercontent.com/pindanet/router/master/clients/nl.mo
         wget -O /mnt/gentoo/grub/grub.cfg https://raw.githubusercontent.com/pindanet/router/master/clients/grub.cfg
-        wget -O /mnt/gentoo/autorun http://users.snt.be/dany.p/public_html/installatie/autorun
+        wget -O /mnt/gentoo/autorun https://raw.githubusercontent.com/pindanet/router/master/clients/autorun
         umount /mnt/custom
         umount /mnt/gentoo
         exit
