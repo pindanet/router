@@ -29,12 +29,14 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
 |/dev/sdb2 |  832 GB |           Ext4 |	/usr/home/Documents
 ## Software
 ### OpenSuSE Leap 15.0
-* Opstarten met installatie x86_64 ISO  
+* Opstarten met installatie x86_64 DVD  
 * Esc  
 * Installation  
 * Language: Dutch - Nederlands  
   * Toetsenbordindeling > Belgisch  
-* Partitionering door expert...  
+* Gebruikersinterface: Server
+* Partitionering door expert...
+  * Begin met bestaande partities
   * Apparaten opnieuw scannen  
   * Vaste schijven > sda > sda1 > Bewerken  
     * Aankoppelpunt: /boot/efi > Voltooien  
@@ -42,7 +44,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
     * Formatteer de partitie.  
     * Swap  
     * Aankoppelpunt: swap > Voltooien  
-  * Vaste schijven > sda > sda3 > Bewerken  
+  * Vaste schijven > sda > sda3 > Bewe  
     * Formatteer de partitie.  
     * Ext4  
     * Aankoppelpunt: / > Voltooien  
@@ -61,7 +63,6 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
   * Andere instellingen...
     * Met NTP-server synchroniseren
     * Adres van de NTP-server: be.pool.ntp.org > Accepteren > Volgende
-* Bureaubladselectie: Server (tekstmodus) > Volgende
 * Nieuwe gebruiker aanmaken
   * SNT Beheerder
   * sntbeheerder
@@ -71,7 +72,6 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
 * Installatie instellingen:
   * Opstarten > Bootloader: Niet beheerd > Doorgaan > OK
   * Firewall inshakelen, SSH-poort openen en SSH-service inschakelen
-  * SSH-hostsleutels en -configuratie NIET importeren
   * Installeren > Installeren
 * Computer laten herstarten zonder installatie USB
 * Aanmelden als root
@@ -80,7 +80,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
           shutdown -r now
 
 ### Backupsysteem
-* Opstarten met SystemRescueCD vanaf USB
+* Opstarten met SystemRescueCD vanaf DVD
 
         mount /dev/sda1 /mnt/custom
         mount /dev/sdb1 /mnt/backup
