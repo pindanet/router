@@ -80,14 +80,14 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
           shutdown -r now
 
 ### Backupsysteem
-* Opstarten met SystemRescueCD vanaf DVD
+* Opstarten met SystemRescueCD vanaf CD
 
         mount /dev/sda1 /mnt/custom
         mount /dev/sdb1 /mnt/backup
         grub-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/backup --bootloader-id=grub --recheck /dev/sda
         mkdir /mnt/backup/sysrcd
         cp /livemnt/boot/{sysrcd.dat,sysrcd.md5} /mnt/backup/sysrcd/
-        cp /livemnt/boot/syslinux/{initram.igz,rescue64} /mnt/backup/sysrcd/
+        cp /livemnt/boot/???linux/{initram.igz,rescue64} /mnt/backup/sysrcd/
         wget -P /mnt/backup/grub/locale/ https://raw.githubusercontent.com/pindanet/router/master/clients/nl.mo
         umount /mnt/custom
         wget -P /mnt/backup/grub/grub https://raw.githubusercontent.com/pindanet/router/master/grub.cfg
