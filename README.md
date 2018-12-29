@@ -84,6 +84,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
 
         mount /dev/sda1 /mnt/custom
         mount /dev/sdb1 /mnt/backup
+        mount -o remount,rw /sys/firmware/efi/efivars
         grub-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/backup --bootloader-id=grub --recheck /dev/sda
         mkdir /mnt/backup/sysrcd
         cp /livemnt/boot/{sysrcd.dat,sysrcd.md5} /mnt/backup/sysrcd/
