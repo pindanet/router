@@ -44,7 +44,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
     * Formatteer de partitie.  
     * Swap  
     * Aankoppelpunt: swap > Voltooien  
-  * Vaste schijven > sda > sda3 > Bewe  
+  * Vaste schijven > sda > sda3 > Bewerken
     * Formatteer de partitie.  
     * Ext4  
     * Aankoppelpunt: / > Voltooien  
