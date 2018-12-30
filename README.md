@@ -70,7 +70,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
   * snt+4567
   * Volgende
 * Installatie instellingen:
-  * Opstarten > Bootloader: Niet beheerd > Doorgaan
+  * Opstarten > Bootloader: Niet beheerd > Doorgaan > OK
   * Firewall inshakelen, SSH-poort openen en SSH-service inschakelen
   * Installeren > Installeren
 * Computer laten herstarten zonder installatie DVD
