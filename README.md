@@ -21,7 +21,7 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
 ### Schijfbeheer
 | Partitie | Grootte | Bestandssyteem | Koppelpunt |
 |----------|--------:|:--------------:|------------|
-|/dev/sda1 |  512 MB |	          FAT |	/boot/efi  |
+|/dev/sda1 |  1 GB |	          FAT |	/boot/efi  |
 |/dev/sda2 |	8 GB |	         swap ||
 |/dev/sda3 |  111 GB |	         Ext4 |	/  | 
 |||||
