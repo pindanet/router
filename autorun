@@ -21,14 +21,14 @@ while true; do
   echo 'Typ een opdracht (restore, halt, reboot, terminal, backup): '
   read keuze
   case "$keuze" in
-    "restore")  mount /livemnt/boot -o rw,remount
+    "restore")  mount /dev/sdb1 /mnt/backup
       echo
       echo 'Welke backup terugzetten (child, parent, grandparent): '
       read keuze
       case "$keuze" in
-        "parent") zcat /livemnt/boot/parent.linux.partclone.gz | partclone.restore --output /dev/sda3;;
-        "grandparent") zcat /livemnt/boot/grandparent.linux.partclone.gz | partclone.restore --output /dev/sda3;;
-        *) zcat /livemnt/boot/child.linux.partclone.gz | partclone.restore --output /dev/sda3;;
+        "parent") fsarchiver restfs /mnt/backup/parent.linux.fsa id=0,dest=/dev/sda3;;
+        "grandparent") fsarchiver restfs /mnt/backup/grandparent.linux.fsa id=0,dest=/dev/sda3;;
+        *) fsarchiver restfs /mnt/backup/child.linux.fsa id=0,dest=/dev/sda3;;
       esac;;
     "halt")  echo "De computer wordt automatisch afgesloten."
       echo "U hoeft enkel te wachten..............."
@@ -39,10 +39,10 @@ while true; do
       shutdown -r now
       sleep 3000;;
     "terminal") break;;
-    "backup") mount /livemnt/boot -o rw,remount
-      rm /livemnt/boot/grandparent.linux.partclone.gz
-      mv /livemnt/boot/parent.linux.partclone.gz /livemnt/boot/grandparent.linux.partclone.gz
-      mv /livemnt/boot/child.linux.partclone.gz /livemnt/boot/parent.linux.partclone.gz
-      partclone.extfs --clone --source /dev/sda3 | gzip -c > /livemnt/boot/child.linux.partclone.gz;;
+    "backup") mount /dev/sdb1 /mnt/backup
+      rm /mnt/backup/grandparent.linux.fsa
+      mv /mnt/backup/parent.linux.fsa /mnt/backup/grandparent.linux.fsa
+      mv /mnt/backup/child.linux.fsa /mnt/backup/parent.linux.fsa
+      fsarchiver savefs /mnt/backup/child.linux.fsa /dev/sda3
   esac
 done
