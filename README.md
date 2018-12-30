@@ -83,16 +83,14 @@ Meer Nederlandstalige informatie bij [openSUSE Router op PindaNet.be](https://li
 * Opstarten met SystemRescueCD vanaf CD
 
         mount /dev/sda1 /mnt/custom
-        mount /dev/sdb1 /mnt/backup
         mount -o remount,rw /sys/firmware/efi/efivars
-        grub-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/backup --bootloader-id=grub --recheck /dev/sda
-        mkdir /mnt/backup/sysrcd
-        cp /livemnt/boot/{sysrcd.dat,sysrcd.md5} /mnt/backup/sysrcd/
-        cp /livemnt/boot/???linux/{initram.igz,rescue64} /mnt/backup/sysrcd/
-        wget -P /mnt/backup/grub/locale/ https://raw.githubusercontent.com/pindanet/router/master/clients/nl.mo
-        umount /mnt/custom
-        wget -P /mnt/backup/grub/grub https://raw.githubusercontent.com/pindanet/router/master/grub.cfg
-        wget -P /mnt/backup https://raw.githubusercontent.com/pindanet/router/master/autorun
+        grub-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/custom --bootloader-id=grub --recheck /dev/sda
+        mkdir /mnt/custom/sysrcd
+        cp /livemnt/boot/{sysrcd.dat,sysrcd.md5} /mnt/custom/sysrcd/
+        cp /livemnt/boot/???linux/{initram.igz,rescue64} /mnt/custom/sysrcd/
+        wget -P /mnt/custom/grub/locale/ https://raw.githubusercontent.com/pindanet/router/master/clients/nl.mo
+        wget -P /mnt/custom/grub/ https://raw.githubusercontent.com/pindanet/router/master/grub.cfg
+        wget -P /mnt/custom https://raw.githubusercontent.com/pindanet/router/master/autorun
 
 ### Installatie
 Zorg voor een actieve LAN verbinding (kabel naar ingeschakelde switch of computer)
