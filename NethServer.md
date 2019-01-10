@@ -1,4 +1,4 @@
-* ESC > Opstarten van DVD
+* ESC > boot from DVD
 * Other NethServer installation methods
 * Manual installation
 * Keyboard > + Dutch; Flemish (Belgian), - English (US)
@@ -10,3 +10,5 @@
 * Begin Installation
 * Root password > snt+4567 > Done > Done
 * User creation > SNT Beheerder, sntbeheerder, snt+4567 > Done > Done
+* Reboot
+* Remove DVD
