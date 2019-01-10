@@ -3,7 +3,7 @@
 * Manual installation
 * Keyboard > + Dutch; Flemish (Belgian), - English (US)
 * Date & Time > Region: Europe, City: Brussels
-* Language support > Nrderlands > Nederlands (België) activeren
+* Language support > Nederlands > Nederlands (België) activeren
 * Installation Destination > ATA SAMSUNG MZ7PD128 (sda), Automatiocally configure partitioning, I would like to make additional space available > Done
 * Delete all > Reclaim space
 * Network & Hostname > Ethernet (eno1): On, Host name: router.pindanet.home > Apply
