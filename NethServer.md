@@ -12,3 +12,11 @@
 * User creation > SNT Beheerder, sntbeheerder, snt+4567 > Done > Done
 * Reboot
 * Remove DVD
+* Surf naar https://IPAdres:980 > Certificaat accepteren
+* Username: root, Password: snt+4567 > LOGIN
+* Welcome, Restore configuration, Set host name, Date and iime, SSH, Smarthost, Usage statistics > NEXT > Apply
+* Security - Network: enp2s0 > Configure
+* Role: LAN (green), IP address: 192.168.0.1, Netmask: 255.255.255.0 > Submit
+* Security - Network: eno1 > Edit
+* Role: Internet (red), DHCP > Submit
+* Security - Network - DNS servers: Secondary DNS: 8.8.8.8 > Submit
