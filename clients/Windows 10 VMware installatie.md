@@ -112,7 +112,7 @@ sdb2	50%	ntfs	D:Werkschijf
   * Tweede toetsenbordindeling Overslaan
 10. Instellen voor persoonlijk gebruik > Volgende
 11. Account
-  * Offlineaccount
+  * Offlineaccount > Nee
   * Wie gaat deze pc gebruiken? SNT Cursist
   * snt+456
   * snt+456
@@ -121,6 +121,7 @@ sdb2	50%	ntfs	D:Werkschijf
   * Hoe heette uw eerste huisdier? Loebas
   * Volgende
 12. Privacy
+  * Op meerdere apparaten tegelijk werken met activiteitengeschiedenis > Ja
   * Gebruik spraakherkenning > Accepteren
   * Ja Ontvang op locatie gebaseerde ervaringen > Accepteren
   * Ja Schakel Mijn apparaat zoeken in > Accepteren
