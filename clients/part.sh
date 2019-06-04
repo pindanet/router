@@ -32,6 +32,8 @@ if [ -d /sys/firmware/efi ]; then
         label="SYSRCD"$(cat /mnt/gentoo/sysresccd/VERSION)
         label="${label//./}"
         e2label /dev/sdb1 $label
+	
+	cp /mnt/gentoo/boot/grub/grubsrcd.cfg /mnt/gentoo/grub/grub.cfg
 
         mkdir /mnt/gentoo/sysrcd
 	# voor start vanaf SystemRescueCD.iso (CD-station)
