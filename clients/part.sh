@@ -22,9 +22,11 @@ if [ -d /sys/firmware/efi ]; then
         exit
     fi
     if [ "$1" == "bootmgr" ]; then
+        mkdir /mnt/custom
+	mkdir /mnt/gentoo
         mount /dev/sda2 /mnt/custom
         mount /dev/sdb1 /mnt/gentoo
-        grub2-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/gentoo --bootloader-id=grub --recheck /dev/sda
+        grub-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/gentoo --bootloader-id=grub --recheck /dev/sda
 
         mkdir /mnt/gentoo/sysrcd
 	# voor start vanaf SystemRescueCD.iso (CD-station)
