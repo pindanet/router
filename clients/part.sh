@@ -27,6 +27,11 @@ if [ -d /sys/firmware/efi ]; then
         mount /dev/sda2 /mnt/custom
         mount /dev/sdb1 /mnt/gentoo
         grub-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/gentoo --bootloader-id=grub --recheck /dev/sda
+	
+	cp -ar /run/archiso/bootmnt/. /mnt/gentoo/
+        label="SYSRCD"$(cat /mnt/gentoo/sysresccd/VERSION)
+        label="${label//./}"
+        e2label /dev/sdb1 $label
 
         mkdir /mnt/gentoo/sysrcd
 	# voor start vanaf SystemRescueCD.iso (CD-station)
