@@ -33,6 +33,8 @@ if [ -d /sys/firmware/efi ]; then
         label="${label//./}"
         e2label /dev/sdb1 $label
 	
+	cp -a /mnt/gentoo/boot/. /mnt/custom/boot/
+	
 	cp /mnt/gentoo/boot/grub/grubsrcd.cfg /mnt/gentoo/grub/grub.cfg
 
         mkdir /mnt/gentoo/sysrcd
