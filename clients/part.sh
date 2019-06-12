@@ -4,6 +4,19 @@ if [ -d /sys/firmware/efi ]; then
         echo UEFI, dus GPT partitionering
         echo Windows schijf initialiseren
         parted /dev/sda mklabel gpt
+	
+        parted /dev/sda mkpart primary ntfs 1MiB 556MB
+        parted /dev/sda set 1 hidden on
+        parted /dev/sda set 1 diag on
+        sgdisk -c 1:"Basic data partition" /dev/sda
+        mkfs.ntfs -Q /dev/sda1
+
+        parted /dev/sda mkpart primary fat32 556MB 2661MB
+        parted /dev/sda set 2 boot on
+        parted /dev/sda set 2 esp on
+        sgdisk -c 2:"EFI system partition" /dev/sda
+        mkfs.fat -F32 /dev/sda2
+	
         parted /dev/sda print
         echo Gegevensschijf initialiseren
         parted /dev/sdb mklabel gpt
