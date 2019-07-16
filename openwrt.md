@@ -33,7 +33,7 @@ info: https://openwrt.org/docs/guide-user/services/nas/samba_configuration
     vi /etc/config/samba
     
     config 'sambashare'
-        option 'name' 'Sharename'
+        option 'name' 'SNT Cursist'
         option 'path' '/mnt/sdb2'
         option 'create_mask' '0700'
         option 'dir_mask' '0700'
