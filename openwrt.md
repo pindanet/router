@@ -24,3 +24,20 @@ Info: https://openwrt.org/docs/guide-user/storage/usb-drives
     hdparm -S 240 /dev/sdb1
     hdparm -S 240 /dev/sdb2
 ## Samba
+info: https://openwrt.org/docs/guide-user/services/nas/samba_configuration
+
+    opkg update
+    opkg list | grep samba
+    opkg install samba36-server
+    opkg install luci-app-samba
+    vi /etc/config/samba
+    
+    config 'sambashare'
+        option 'name' 'Sharename'
+        option 'path' '/mnt/sdb2'
+        option 'create_mask' '0700'
+        option 'dir_mask' '0700'
+        option read_only 'yes'
+        option 'guest_ok' 'yes'
+    
+    service samba restart
