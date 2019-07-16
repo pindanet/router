@@ -13,6 +13,8 @@
 ## Mount HDD
 * opkg update
 * opkg install block-mount
-*
+* block detect | uci import fstab
+* uci set fstab.@mount[-1].enabled='1'
+* uci commit fstab
 
 ## Samba
