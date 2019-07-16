@@ -39,5 +39,17 @@ info: https://openwrt.org/docs/guide-user/services/nas/samba_configuration
         option 'dir_mask' '0700'
         option read_only 'yes'
         option 'guest_ok' 'yes'
+    config 'sambashare'
+        option 'name' 'SNT Beheerder'
+        option 'path' '/mnt/sdb2'
+        option 'create_mask' '0700'
+        option 'dir_mask' '0700'
+        option read_only 'no'
+        option 'users' 'sntbeheerder'
+
+    vi /etc/passwd
     
+    sntbeheerder:*:1000:65534:sntbeheerder:/var:/bin/false
+    
+    smbpasswd -a sntbeheerder
     service samba restart
