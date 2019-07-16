@@ -32,21 +32,24 @@ info: https://openwrt.org/docs/guide-user/services/nas/samba_configuration
     opkg install luci-app-samba
     vi /etc/config/samba
     
-    config 'sambashare'
-        option 'name' 'SNT Cursist'
-        option 'path' '/mnt/sdb2'
-        option 'create_mask' '0700'
-        option 'dir_mask' '0700'
-        option read_only 'yes'
-        option 'guest_ok' 'yes'
-    config 'sambashare'
-        option 'name' 'SNT Beheerder'
-        option 'path' '/mnt/sdb2'
-        option 'create_mask' '0700'
-        option 'dir_mask' '0700'
-        option read_only 'no'
-        option 'users' 'sntbeheerder'
+    option 'homes'                  '0'
 
+    vi /etc/samba/smb.conf.template
+    
+    [SNT Cursist]                       
+        path = /mnt/sdb2                      
+        read only = yes           
+        guest ok = yes              
+        create mask = 0700                    
+        directory mask = 0700     
+                                  
+    [SNT Beheerder]                               
+        path = /mnt/sdb2                      
+        valid users = sntbeheerder
+        read only = no            
+        force user = root 
+        force group = root   
+    
     vi /etc/passwd
     
     sntbeheerder:*:1000:65534:sntbeheerder:/var:/bin/false
