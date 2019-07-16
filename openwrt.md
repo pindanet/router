@@ -10,3 +10,9 @@
 * config interface 'lan', option ipaddr '192.168.0.1'
 * Esc:wq
 * reboot OpenWrt and reconnect networkconnections on LAN computer
+## Mount HDD
+* opkg update
+* opkg install block-mount
+*
+
+## Samba
