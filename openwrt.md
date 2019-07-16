@@ -15,6 +15,7 @@
 * opkg install block-mount
 * block detect | uci import fstab
 * uci set fstab.@mount[-1].enabled='1'
+* uci set fstab.@mount[-2].enabled='1'
 * uci commit fstab
 
 ## Samba
