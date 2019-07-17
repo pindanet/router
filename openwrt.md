@@ -58,8 +58,10 @@ info: https://openwrt.org/docs/guide-user/services/nas/samba_configuration
     service samba restart
 ## Users
     wachtwoord=snt+4567
+    userid=1000
     for gebruiker in pc01 pc02 pc03 pc04 pc05 pc06 pc07 pc08 pc09 pc10 pc11 pc12 pc13 pc14 pc15 pc16 pc17 pc18 pc19 pc20 pc21 pc22 pc23 pc24 pc25 pc26 pc27 pc28 pc29 pc30; do
-    echo "$gebruiker:*:1001:100:$gebruiker:/mnt/sdb2/home/$gebruiker:/bin/false" >> /etc/passwd
+    userid=$((userid + 1))
+    echo "$gebruiker:*:$userid:100:$gebruiker:/mnt/sdb2/home/$gebruiker:/bin/false" >> /etc/passwd
     passwd $gebruiker <<EOF
     $wachtwoord
     $wachtwoord
