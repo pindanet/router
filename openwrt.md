@@ -56,11 +56,18 @@ info: https://openwrt.org/docs/guide-user/services/nas/samba_configuration
     
     smbpasswd -a sntbeheerder
     service samba restart
+## Users
+    wachtwoord=snt+4567
+    for gebruiker in pc01 pc02 pc03 pc04 pc05 pc06 pc07 pc08 pc09 pc10 pc11 pc12 pc13 pc14 pc15 pc16 pc17 pc18 pc19 pc20 pc21 pc22 pc23 pc24 pc25 pc26 pc27 pc28 pc29 pc30; do
+    echo "$gebruiker:*:1001:100:$gebruiker:/mnt/sdb2/home/$gebruiker:/bin/false" >> /etc/passwd
+    passwd $gebruiker <<EOF
+    $wachtwoord
+    $wachtwoord
+    EOF
+    mkdir -p /mnt/sdb2/home/$gebruiker
+    chown $gebruiker:users /mnt/sdb2/home/$gebruiker
+    done
 ## FTP
-    echo "pc01:*:1001:100:pc01:/mnt/sdb2/home/pc01:/bin/false" >> /etc/passwd
-    passwd pc01
-    mkdir -p /mnt/sdb2/home/pc01
-    chown pc01:users /mnt/sdb2/home/pc01
     opkg update && opkg install vsftpd
     service vsftpd enable
     service vsftpd start
