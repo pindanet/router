@@ -73,3 +73,12 @@ info: https://openwrt.org/docs/guide-user/services/nas/samba_configuration
     opkg update && opkg install vsftpd
     service vsftpd enable
     service vsftpd start
+## ReadyMedia
+    opkg update && opkg install minidlna luci-app-minidlna
+    mkdir -p /mnt/sdb2/ReadyMedia/Videos
+    mkdir -p /mnt/sdb2/ReadyMedia/Music
+    wget -P /mnt/sdb2/ReadyMedia/Music/ --no-check-certificate https://webdesign.pindanet.be/deel2/Linecraft/muziek/erotic_dream.mp3
+    wget -O /mnt/sdb2/ReadyMedia/Music/erotic_dream.jpg --no-check-certificate https://webdesign.pindanet.be/deel2/Linecraft/muziek/speedsound.jpg
+    wget -O /mnt/sdb2/ReadyMedia/Videos/kajimba.mp4 --no-check-certificate https://webdesign.pindanet.be/deel2/Linecraft/films/Kajimba.mp4
+    wget -P /mnt/sdb2/ReadyMedia/Videos/ --no-check-certificate https://webdesign.pindanet.be/deel2/Linecraft/films/kajimba.jpg
+    
