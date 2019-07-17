@@ -56,3 +56,11 @@ info: https://openwrt.org/docs/guide-user/services/nas/samba_configuration
     
     smbpasswd -a sntbeheerder
     service samba restart
+## FTP
+    echo "pc01:*:1001:100:pc01:/mnt/sdb2/home/pc01:/bin/false" >> /etc/passwd
+    passwd pc01
+    mkdir -p /mnt/sdb2/home/pc01
+    chown pc01:users /mnt/sdb2/home/pc01
+    opkg update && opkg install vsftpd
+    service vsftpd enable
+    service vsftpd start
