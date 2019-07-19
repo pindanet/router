@@ -87,4 +87,35 @@ info: https://openwrt.org/docs/guide-user/services/nas/samba_configuration
     echo "" >> /etc/config/minidlna
     wget -O /mnt/sdb2/ReadyMedia/Videos/kajimba.mp4 --no-check-certificate https://webdesign.pindanet.be/deel2/Linecraft/films/Kajimba.mp4
     wget -P /mnt/sdb2/ReadyMedia/Videos/ --no-check-certificate https://webdesign.pindanet.be/deel2/Linecraft/films/kajimba.jpg
+## Apache
+    service uhttpd stop
+    service uhttpd disable
+    vi /etc/init.d/apache
     
+    #!/bin/sh /etc/rc.common
+    # Example script
+    # Copyright (C) 2007 OpenWrt.org
+
+    START=60
+    STOP=15
+
+    start() {
+        echo launch apache
+        # commands to launch application
+        apachectl start
+    }
+
+    restart() {
+        echo re-start apache
+        # commands to launch application
+        apachectl restart
+    }
+
+    stop() {
+        echo stop apache
+        # commands to kill application
+        apachectl stop
+    }
+    
+    chmod +x /etc/init.d/apache
+    service apache start
