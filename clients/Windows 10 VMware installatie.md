@@ -103,7 +103,6 @@ sdb2	50%	ntfs	D:Werkschijf
 6. Ik ga akkoord met de licentievoorwaarden > Volgende
 7. Aangepast: alleen Windows installeren (geavanceerd)
 8. Partitionering
-  * Alle partities op station 0 verwijderen
   * Niet-toegewezen ruimte van station 0
   * Volgende
 9. Instellingen
@@ -122,7 +121,7 @@ sdb2	50%	ntfs	D:Werkschijf
   * Volgende
 12. Privacy
   * Op meerdere apparaten tegelijk werken met activiteitengeschiedenis > Ja
-  * Gebruik spraakherkenning > Accepteren
+  * Gebruik online spraakherkenning > Accepteren
   * Ja Ontvang op locatie gebaseerde ervaringen > Accepteren
   * Ja Schakel Mijn apparaat zoeken in > Accepteren
   * Volledig Stuur alle diagnostische gegevens > Accepteren
