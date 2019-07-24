@@ -5,23 +5,27 @@ if [ -d /sys/firmware/efi ]; then
         echo Windows schijf initialiseren
         parted /dev/sda mklabel gpt
 	
-        parted /dev/sda mkpart primary ntfs 1MiB 556MB
-        parted /dev/sda set 1 hidden on
-        parted /dev/sda set 1 diag on
-        sgdisk -c 1:"Basic data partition" /dev/sda
-        mkfs.ntfs -Q /dev/sda1
+#        parted /dev/sda mkpart primary ntfs 1MiB 556MB
+#        parted /dev/sda set 1 hidden on
+#        parted /dev/sda set 1 diag on
+#        sgdisk -c 1:"Basic data partition" /dev/sda
+#        mkfs.ntfs -Q /dev/sda1
 
-        parted /dev/sda mkpart primary fat32 556MB 2661MB
-        parted /dev/sda set 2 boot on
-        parted /dev/sda set 2 esp on
-        sgdisk -c 2:"EFI system partition" /dev/sda
-        mkfs.fat -F32 /dev/sda2
+        parted /dev/sda mkpart primary fat32 1MB 2001MB
+        parted /dev/sda set 1 boot on
+        parted /dev/sda set 1 esp on
+        sgdisk -c 1:"EFI system partition" /dev/sda
+        mkfs.fat -F32 /dev/sda1
 	
         parted /dev/sda print
         echo Gegevensschijf initialiseren
         parted /dev/sdb mklabel gpt
-        parted /dev/sdb mkpart primary ext4 1MiB 10%
-        parted /dev/sdb mkpart primary 10% 100%
+	# Klascomputer
+        #parted /dev/sdb mkpart primary ext4 1MiB 10%
+        #parted /dev/sdb mkpart primary 10% 100%
+	# VMWare Testcomputer
+        parted /dev/sdb mkpart primary ext4 1MiB 50%
+        parted /dev/sdb mkpart primary 50% 100%
         mkfs.ext4 -L systemrescue /dev/sdb1
         mkfs.ntfs -Q -L Werkschijf /dev/sdb2
         parted /dev/sdb print
