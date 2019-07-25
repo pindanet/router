@@ -7,6 +7,7 @@ mkdir /mnt/esp
 mount /dev/sda1 /mnt/esp/
 cp -a /mnt/cdrom/sysresccd /mnt/esp/
 UUID=$(lsblk -o partlabel,uuid | grep "EFI system partition" | awk '{print $4}')
+DEVICE=$(blkid | grep $UUID | cut -d':' -f1)
 cat > /etc/grub.d/25_sysresccd <<EOF
 #!/bin/sh
 exec tail -n +3 $0
@@ -20,7 +21,7 @@ menuentry 'SystemRescueCd' {
   search --no-floppy --fs-uuid $UUID --set=root --hint hd0,gpt1
 #  search --no-floppy --label boot --set=root
   echo   'Loading Linux kernel ...'
-  linux  /sysresccd/vmlinuz archisobasedir=sysresccd archisolabel=boot copytoram setkmap=us
+  linux  /sysresccd/vmlinuz archisobasedir=sysresccd archisodevice=$DEVICE copytoram setkmap=be
   echo   'Loading initramfs ...'
   initrd /sysresccd/sysresccd.img
 }
