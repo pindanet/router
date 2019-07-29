@@ -63,8 +63,7 @@ menuentry 'SystemRescueCd (64bit)' {
 }
 EOF
 wget -O /mnt/esp/grub/themes/starfield/starfield.png https://raw.githubusercontent.com/pindanet/router/master/clients/snt.png
-        wget -P /mnt/gentoo/grub/locale/ https://raw.githubusercontent.com/pindanet/router/master/clients/nl.mo
-        wget -O /mnt/gentoo/grub/grub.cfg https://raw.githubusercontent.com/pindanet/router/master/clients/grub.cfg
-        wget -O /mnt/gentoo/autorun https://raw.githubusercontent.com/pindanet/router/master/clients/autorun
-        umount /mnt/custom
-        umount /mnt/gentoo
+wget -O /mnt/esp/grub/grub.cfg https://raw.githubusercontent.com/pindanet/router/master/clients/grub.cfg
+wget -O /mnt/esp/autorun https://raw.githubusercontent.com/pindanet/router/master/clients/autorun
+umount /mnt/esp
+umount /mnt/cdrom
