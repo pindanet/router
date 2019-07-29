@@ -6,12 +6,16 @@ function fout {
 }
 echo Welkom bij het PindaNet SNT Backupsysteem
 if [ "`grep restorewindows /proc/cmdline`" ]; then
-        gunzip -c /livemnt/boot/windows.img.gz | ntfsclone --restore-image --overwrite /dev/sda4 -
+        mkdir /mnt/backup
+	mount /dev/sdb1 /mnt/backup/
+        gunzip -c /livemnt/boot/windows.img.gz | ntfsclone --restore-image --overwrite /dev/sda3 -
         if [ $? -ne 0 ]; then
         	fout "Herstellen Windows mislukt"
         fi
-        shutdown -h now
+	umount /mnt/backup/
+        shutdown -h
 fi
+setkmap be-latin1
 read -s -p "Backupwachtwoord: " wachtwoord
 echo
 if [ $wachtwoord == "sntlcvo" ]; then
