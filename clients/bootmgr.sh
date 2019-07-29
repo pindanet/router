@@ -26,3 +26,5 @@ menuentry 'SystemRescueCd' {
   initrd /sysresccd/sysresccd.img
 }
 EOF
+grub-install --target=x86_64-efi --efi-directory=/mnt/esp --boot-directory=/mnt/esp --bootloader-id=grub --recheck /dev/sda
+
