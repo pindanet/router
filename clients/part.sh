@@ -28,15 +28,15 @@ if [ -d /sys/firmware/efi ]; then
         exit
     fi
     if [ "$1" == "bootmgr" ]; then
-	mkdir /mnt/cdrom
-	mount /dev/sr0 /mnt/cdrom
-	mkdir /mnt/esp
-	mount /dev/sda1 /mnt/esp/
-	cp -a /mnt/cdrom/sysresccd /mnt/esp/
-	grub-install --target=x86_64-efi --efi-directory=/mnt/esp --boot-directory=/mnt/esp --bootloader-id=grub --recheck /dev/sda
-	UUID=$(lsblk -o partlabel,uuid | grep "EFI system partition" | awk '{print $4}')
-	DEVICE=$(blkid | grep $UUID | cut -d':' -f1)
-	cat > /mnt/esp/grub/grub.cfg <<EOF
+        mkdir /mnt/cdrom
+        mount /dev/sr0 /mnt/cdrom
+        mkdir /mnt/esp
+        mount /dev/sda1 /mnt/esp/
+        cp -a /mnt/cdrom/sysresccd /mnt/esp/
+        grub-install --target=x86_64-efi --efi-directory=/mnt/esp --boot-directory=/mnt/esp --bootloader-id=grub --recheck /dev/sda
+        UUID=$(lsblk -o partlabel,uuid | grep "EFI system partition" | awk '{print $4}')
+        DEVICE=$(blkid | grep $UUID | cut -d':' -f1)
+        cat > /mnt/esp/grub/grub.cfg <<EOF
 # Global options
 set timeout=20
 set default=0
@@ -88,11 +88,11 @@ menuentry 'SystemRescueCd (64bit)' {
   initrd /sysresccd/boot/x86_64/sysresccd.img
 }
 EOF
-	wget -O /mnt/esp/grub/themes/starfield/starfield.png https://raw.githubusercontent.com/pindanet/router/master/clients/snt.png
-	# wget -O /mnt/esp/autorun https://raw.githubusercontent.com/pindanet/router/master/clients/autorun
-	umount /mnt/esp
-	umount /mnt/cdrom
-	exit
+        wget -O /mnt/esp/grub/themes/starfield/starfield.png https://raw.githubusercontent.com/pindanet/router/master/clients/snt.png
+        # wget -O /mnt/esp/autorun https://raw.githubusercontent.com/pindanet/router/master/clients/autorun
+        umount /mnt/esp
+        umount /mnt/cdrom
+        exit
     fi
 else
 # de BIOS versie wordt niet langer onderhouden
