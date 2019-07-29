@@ -5,12 +5,6 @@ if [ -d /sys/firmware/efi ]; then
         echo Windows schijf initialiseren
         parted /dev/sda mklabel gpt
 	
-#        parted /dev/sda mkpart primary ntfs 1MiB 556MB
-#        parted /dev/sda set 1 hidden on
-#        parted /dev/sda set 1 diag on
-#        sgdisk -c 1:"Basic data partition" /dev/sda
-#        mkfs.ntfs -Q /dev/sda1
-
         parted /dev/sda mkpart primary fat32 1MB 2001MB
         parted /dev/sda set 1 boot on
         parted /dev/sda set 1 esp on
@@ -30,41 +24,75 @@ if [ -d /sys/firmware/efi ]; then
         mkfs.ntfs -Q -L Werkschijf /dev/sdb2
         parted /dev/sdb print
 
-# 	start=`parted /dev/sda print | tail -2 | head -1 | awk '{ print $3; }'`
-# 	parted /dev/sda mkpart primary ext4 $start 100%
-# 	mkfs.ext4 -L systemrescue /dev/sda6
-# 	parted /dev/sda print
-
         echo Installeer nu Windows
         exit
     fi
     if [ "$1" == "bootmgr" ]; then
-        mkdir /mnt/custom
-	mkdir /mnt/gentoo
-        mount /dev/sda2 /mnt/custom
-        mount /dev/sdb1 /mnt/gentoo
-        grub-install --target=x86_64-efi --efi-directory=/mnt/custom --boot-directory=/mnt/gentoo --bootloader-id=grub --recheck /dev/sda
-	
-	cp -ar /run/archiso/bootmnt/. /mnt/gentoo/
-        label="SYSRCD"$(cat /mnt/gentoo/sysresccd/VERSION)
-        label="${label//./}"
-        e2label /dev/sdb1 $label
-	
-	cp -a /mnt/gentoo/boot/. /mnt/custom/boot/
-	
-	cp /mnt/gentoo/boot/grub/grubsrcd.cfg /mnt/gentoo/grub/grub.cfg
-
-        mkdir /mnt/gentoo/sysrcd
-	# voor start vanaf SystemRescueCD.iso (CD-station)
-        cp /livemnt/boot/isolinux/{initram.igz,rescue64} /mnt/gentoo/sysrcd/
-        cp /livemnt/boot/{sysrcd.dat,sysrcd.md5,initram.igz,rescue64} /mnt/gentoo/sysrcd/
-        wget -O /mnt/gentoo/grub/themes/starfield/starfield.png https://raw.githubusercontent.com/pindanet/router/master/clients/snt.png
-        wget -P /mnt/gentoo/grub/locale/ https://raw.githubusercontent.com/pindanet/router/master/clients/nl.mo
-        wget -O /mnt/gentoo/grub/grub.cfg https://raw.githubusercontent.com/pindanet/router/master/clients/grub.cfg
-        wget -O /mnt/gentoo/autorun https://raw.githubusercontent.com/pindanet/router/master/clients/autorun
-        umount /mnt/custom
-        umount /mnt/gentoo
-        exit
+	mkdir /mnt/cdrom
+	mount /dev/sr0 /mnt/cdrom
+	mkdir /mnt/esp
+	mount /dev/sda1 /mnt/esp/
+	cp -a /mnt/cdrom/sysresccd /mnt/esp/
+	grub-install --target=x86_64-efi --efi-directory=/mnt/esp --boot-directory=/mnt/esp --bootloader-id=grub --recheck /dev/sda
+	UUID=$(lsblk -o partlabel,uuid | grep "EFI system partition" | awk '{print $4}')
+	DEVICE=$(blkid | grep $UUID | cut -d':' -f1)
+	cat > /mnt/esp/grub/grub.cfg <<EOF
+# Global options
+set timeout=20
+set default=0
+set fallback=1
+set pager=1
+# Display settings
+if loadfont /grub/fonts/unicode.pf2 ; then
+  set gfxmode=auto
+  insmod efi_gop
+  insmod efi_uga
+  insmod gfxterm
+  insmod videotest
+  insmod videoinfo
+  terminal_output gfxterm
+  insmod gfxmenu
+  insmod png
+  set theme=/grub/themes/starfield/theme.txt
+  export theme
+  set locale_dir=/grub/locale
+  set lang=nl
+  insmod gettext
+fi
+menuentry "Windows 10 starten" {
+  insmod part_gpt
+  insmod chain
+  set root='(hd0,gpt1)'
+  chainloader /efi/Microsoft/Boot/bootmgfw.efi 
+}
+menuentry "Windows 10 terugzetten" {
+  insmod gzio
+  insmod part_gpt
+  insmod part_msdos
+  insmod ext2
+  set root='(hd0,gpt1)'
+  echo   'Loading Linux kernel ...'
+  linux  /sysresccd/boot/x86_64/vmlinuz archisobasedir=sysresccd archisodevice=$DEVICE copytoram setkmap=be restorewindows
+  echo   'Loading initramfs ...'
+  initrd /sysresccd/boot/x86_64/sysresccd.img
+}
+menuentry 'SystemRescueCd (64bit)' {
+  insmod gzio
+  insmod part_gpt
+  insmod part_msdos
+  insmod ext2
+  set root='(hd0,gpt1)'
+  echo   'Loading Linux kernel ...'
+  linux  /sysresccd/boot/x86_64/vmlinuz archisobasedir=sysresccd archisodevice=$DEVICE copytoram setkmap=be
+  echo   'Loading initramfs ...'
+  initrd /sysresccd/boot/x86_64/sysresccd.img
+}
+EOF
+	wget -O /mnt/esp/grub/themes/starfield/starfield.png https://raw.githubusercontent.com/pindanet/router/master/clients/snt.png
+	# wget -O /mnt/esp/autorun https://raw.githubusercontent.com/pindanet/router/master/clients/autorun
+	umount /mnt/esp
+	umount /mnt/cdrom
+	exit
     fi
 else
 # de BIOS versie wordt niet langer onderhouden
