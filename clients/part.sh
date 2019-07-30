@@ -72,7 +72,7 @@ menuentry "Windows 10 terugzetten" {
   insmod ext2
   set root='(hd0,gpt1)'
   echo   'Loading Linux kernel ...'
-  linux  /sysresccd/boot/x86_64/vmlinuz archisobasedir=sysresccd archisodevice=$DEVICE copytoram setkmap=be restorewindows
+  linux  /sysresccd/boot/x86_64/vmlinuz archisobasedir=sysresccd archisodevice=$DEVICE copytoram setkmap=be ar_source=$DEVICE restorewindows
   echo   'Loading initramfs ...'
   initrd /sysresccd/boot/x86_64/sysresccd.img
 }
@@ -83,7 +83,7 @@ menuentry 'SystemRescueCd (64bit)' {
   insmod ext2
   set root='(hd0,gpt1)'
   echo   'Loading Linux kernel ...'
-  linux  /sysresccd/boot/x86_64/vmlinuz archisobasedir=sysresccd archisodevice=$DEVICE copytoram setkmap=be
+  linux  /sysresccd/boot/x86_64/vmlinuz archisobasedir=sysresccd archisodevice=$DEVICE copytoram setkmap=be ar_source=$DEVICE
   echo   'Loading initramfs ...'
   initrd /sysresccd/boot/x86_64/sysresccd.img
 }
