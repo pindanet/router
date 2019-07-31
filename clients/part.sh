@@ -89,7 +89,15 @@ menuentry 'SystemRescueCd (64bit)' {
 }
 EOF
         wget -O /mnt/esp/grub/themes/starfield/starfield.png https://raw.githubusercontent.com/pindanet/router/master/clients/snt.png
-        # wget -O /mnt/esp/autorun https://raw.githubusercontent.com/pindanet/router/master/clients/autorun
+        cat > /mnt/esp/autorun <<EOF
+#!/sbin/bash
+mkdir /mnt/backup
+mount /dev/sdb1 /mnt/backup/
+echo '. /mnt/backup/pindanet.sh' >> /root/.bashrc
+EOF
+        mkdir /mnt/backup
+        mount /dev/sdb1 /mnt/backup/
+        wget -O /mnt/backup/pindanet.sh https://raw.githubusercontent.com/pindanet/router/master/clients/pindanet.sh
         umount /mnt/esp
         umount /mnt/cdrom
         exit
