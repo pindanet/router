@@ -13,9 +13,13 @@ if [ -d /sys/firmware/efi ]; then
         parted $schijf set 1 boot on
         parted $schijf set 1 esp on
         sgdisk -c 1:"EFI system partition" $schijf
-        mkfs.fat -F32 $schijf
+	# Klascomputer
+        #mkfs.fat -F32 $schijf1
+	# VMWare Testcomputer
+	mkfs.fat -F32 $schijfp1
 	
         parted $schijf print
+	
         echo Gegevensschijf initialiseren
         # Klascomputer
         #schijf="/dev/sdb"
@@ -28,9 +32,13 @@ if [ -d /sys/firmware/efi ]; then
 	# VMWare Testcomputer
         parted $schijf mkpart primary ext4 1MiB 50%
         parted $schijf mkpart primary 50% 100%
-        mkfs.ext4 -L systemrescue $schijf1
-        mkfs.ntfs -Q -L Werkschijf $schijf2
+        # Klascomputer
+        #mkfs.ext4 -L systemrescue $schijf1
+        #mkfs.ntfs -Q -L Werkschijf $schijf2
+	# VMWare Testcomputer
         parted $schijf print
+        mkfs.ext4 -L systemrescue $schijfp1
+        mkfs.ntfs -Q -L Werkschijf $schijfp2
 
         echo Installeer nu Windows
         exit
