@@ -47,9 +47,12 @@ if [ -d /sys/firmware/efi ]; then
         mkdir /mnt/cdrom
         mount /dev/sr0 /mnt/cdrom
         mkdir /mnt/esp
-        mount /dev/sda1 /mnt/esp/
+	# Klascomputer
+        #mount /dev/sda1 /mnt/esp/
+	# VMWare Testcomputer
+	mount /dev/nvme0n1p1 /mnt/esp/
         cp -a /mnt/cdrom/sysresccd /mnt/esp/
-        grub-install --target=x86_64-efi --efi-directory=/mnt/esp --boot-directory=/mnt/esp --bootloader-id=grub --recheck /dev/sda
+        grub-install --target=x86_64-efi --efi-directory=/mnt/esp --boot-directory=/mnt/esp --bootloader-id=grub --recheck /dev/nvme0n1
         UUID=$(lsblk -o partlabel,uuid | grep "EFI system partition" | awk '{print $4}')
         DEVICE=$(blkid | grep $UUID | cut -d':' -f1)
         cat > /mnt/esp/grub/grub.cfg <<EOF
@@ -108,11 +111,11 @@ EOF
         cat > /mnt/esp/autorun <<EOF
 #!/sbin/bash
 mkdir /mnt/backup
-mount /dev/sdb1 /mnt/backup/
+mount /dev/nvme0n2p1 /mnt/backup/
 echo '. /mnt/backup/pindanet.sh' >> /root/.bashrc
 EOF
         mkdir /mnt/backup
-        mount /dev/sdb1 /mnt/backup/
+        mount /dev/nvme0n2p1 /mnt/backup/
         wget -O /mnt/backup/pindanet.sh https://raw.githubusercontent.com/pindanet/router/master/clients/pindanet.sh
         umount /mnt/esp
         umount /mnt/cdrom
