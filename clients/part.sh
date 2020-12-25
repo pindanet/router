@@ -3,26 +3,34 @@ if [ -d /sys/firmware/efi ]; then
     if [ "$1" == "part" ]; then
         echo UEFI, dus GPT partitionering
         echo Windows schijf initialiseren
-        parted /dev/sda mklabel gpt
-	
-        parted /dev/sda mkpart primary fat32 1MB 2001MB
-        parted /dev/sda set 1 boot on
-        parted /dev/sda set 1 esp on
-        sgdisk -c 1:"EFI system partition" /dev/sda
-        mkfs.fat -F32 /dev/sda1
-	
-        parted /dev/sda print
-        echo Gegevensschijf initialiseren
-        parted /dev/sdb mklabel gpt
-	# Klascomputer
-        #parted /dev/sdb mkpart primary ext4 1MiB 10%
-        #parted /dev/sdb mkpart primary 10% 100%
+        # Klascomputer
+        #schijf="/dev/sda"
 	# VMWare Testcomputer
-        parted /dev/sdb mkpart primary ext4 1MiB 50%
-        parted /dev/sdb mkpart primary 50% 100%
-        mkfs.ext4 -L systemrescue /dev/sdb1
-        mkfs.ntfs -Q -L Werkschijf /dev/sdb2
-        parted /dev/sdb print
+	schijf="/dev/nvme0n1"
+        parted $schijf mklabel gpt
+	
+        parted $schijf mkpart primary fat32 1MB 2001MB
+        parted $schijf set 1 boot on
+        parted $schijf set 1 esp on
+        sgdisk -c 1:"EFI system partition" $schijf
+        mkfs.fat -F32 $schijf
+	
+        parted $schijf print
+        echo Gegevensschijf initialiseren
+        # Klascomputer
+        #schijf="/dev/sdb"
+	# VMWare Testcomputer
+	schijf="/dev/nvme0n2"
+        parted $schijf mklabel gpt
+	# Klascomputer
+        #parted $schijf mkpart primary ext4 1MiB 10%
+        #parted $schijf mkpart primary 10% 100%
+	# VMWare Testcomputer
+        parted $schijf mkpart primary ext4 1MiB 50%
+        parted $schijf mkpart primary 50% 100%
+        mkfs.ext4 -L systemrescue $schijf1
+        mkfs.ntfs -Q -L Werkschijf $schijf2
+        parted $schijf print
 
         echo Installeer nu Windows
         exit
